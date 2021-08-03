@@ -6,14 +6,8 @@ public class Recipe {
     private String name;
     private String image;               //Unsure if image should be a String or not?
 
-    @Override
-    public String toString() {
-        return "Recipe{" +
-                "recipeID=" + recipeID +
-                ", name='" + name + '\'' +
-                ", image='" + image + '\'' +
-                '}';
-    }
+    // Constructor?
+
 
     public int getRecipeID() {
         return recipeID;
@@ -38,6 +32,18 @@ public class Recipe {
     public void setImage(String image) {
         this.image = image;
     }
-}
+
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "recipeID=" + recipeID +
+                ", name='" + name + '\'' +
+                ", image='" + image + '\'' +
+                '}';
+    }
+
+
+
+}//END
 
 

@@ -3,15 +3,10 @@ package com.techelevator.application.model;
 public class Category {
 
     private int categoryId;
-    private String name;
+    private String categoryName;
 
-    @Override
-    public String toString() {
-        return "Category{" +
-                "categoryId=" + categoryId +
-                ", name='" + name + '\'' +
-                '}';
-    }
+//Contructor?
+
 
     public int getCategoryId() {
         return categoryId;
@@ -21,11 +16,23 @@ public class Category {
         this.categoryId = categoryId;
     }
 
-    public String getName() {
-        return name;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
-}
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "categoryId=" + categoryId +
+                ", categoryName='" + categoryName + '\'' +
+                '}';
+    }
+
+
+
+
+}//END

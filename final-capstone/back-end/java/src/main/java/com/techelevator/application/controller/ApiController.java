@@ -4,15 +4,43 @@
 
 package com.techelevator.application.controller;
 
-import java.sql.Timestamp;
+import com.techelevator.application.dao.IngredientDAO;
+import com.techelevator.application.dao.RecipeDAO;
+import com.techelevator.application.jdbcdao.IngredientJDBCDAO;
+import com.techelevator.application.jdbcdao.RecipeJBDCDAO;
+import com.techelevator.application.model.Recipe;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Timestamp;
+import java.util.List;
+
+@CrossOrigin
+@RestController
 public class ApiController {
 
+    private RecipeDAO recipeDAO;
+    private IngredientDAO ingredientDAO;
+
+    public ApiController() {
+        this.recipeDAO = new RecipeJBDCDAO();
+        this.ingredientDAO = new IngredientJDBCDAO();
+    }
 /**********************************************************************************************************************
 * Put your Application API Controllers here
 **********************************************************************************************************************/
 
-	
+// List all recipes
+    @RequestMapping(path = "/recipes", method = RequestMethod.GET)
+    public List<Recipe> recipeList() {
+        logRequest("Request to get all recipes - /recipes");
+        return recipeDAO.recipeList();
+    }
+
+
+
 	
 	
 	
