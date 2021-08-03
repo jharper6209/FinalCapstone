@@ -7,7 +7,14 @@ public class Recipe {
     private String image;               //Unsure if image should be a String or not?
 
     // Constructor?
+    public Recipe(int recipeID, String name) {
+        this.recipeID = recipeID;
+        this.name = name;
+    }
 
+    public Recipe() {
+
+    }
 
     public int getRecipeID() {
         return recipeID;
