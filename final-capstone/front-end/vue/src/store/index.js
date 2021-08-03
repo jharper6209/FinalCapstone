@@ -19,7 +19,29 @@ if(currentToken != null) {
 export default new Vuex.Store({
   state: {
     token: currentToken || '',
-    user: currentUser || {}
+    user: currentUser || {},
+    dummy:[
+      {
+        id: 1,
+        name: 'Beef and Mustard Pie',
+        image: 'https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg'
+      },
+      {
+        id: 2,
+        name: 'Ayam Percik',
+        image: 'https://www.themealdb.com/images/media/meals/020z181619788503.jpg'
+      },
+      {
+        id: 3,
+        name: 'Fettucine alfredo',
+        image: 'https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg'
+      },
+      {
+        id: 4,
+        name: 'Vegan Chocolate Cake',
+        image: "https://www.themealdb.com/images/media/meals/qxutws1486978099.jpg"
+      },
+    ]
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
