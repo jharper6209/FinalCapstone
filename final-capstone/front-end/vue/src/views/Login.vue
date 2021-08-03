@@ -80,6 +80,7 @@ export default {
 display: flex;
 justify-content: center;
 align-items: center;
+ color:rgb(46, 61, 61);
 
 
 }
@@ -99,7 +100,19 @@ align-items: center;
 }
 body{
   background : maroon;
-  font-family: Arial, Helvitica, sans-serif;
+  font-family:cursive, 'Times New Roman', Times, serif;
+}
+input[type=text]{
+  font-family:cursive, 'Times New Roman', Times, serif ;
+  background-color: lightgray;
+}
+input[type=password]{
+  font-family:cursive, 'Times New Roman', Times, serif ;
+  background-color: lightgray;
+}
+button[type=submit]{
+  font-family:cursive, 'Times New Roman', Times, serif ;
+ 
 }
 
 

@@ -91,17 +91,31 @@ export default {
 </script>
 
 <style>
-.form-control{
+#register{
   display: flex;
   justify-content: center;
   align-items: center;
- 
-  padding: 0%;
-  margin: 0%;
+  margin: 0px;
+  padding: 0 px;
+  color:rgb(46, 61, 61);
+
   
 }
-router-link> text{{
- color: white ;
-}}
+#username.form-control{
+  margin-bottom: 20px;
+}
+a{
+  display: flex;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.btn.btn-lg.btn-primary.btn-block{
+display: flex;  
+justify-content: center;
+align-items: center;
+ font-family:cursive, 'Times New Roman', Times, serif ;
+}
+
 
 </style>
