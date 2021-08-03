@@ -14,11 +14,14 @@ public class IngredientJDBCDAO implements IngredientDAO {
 
     public static List<Ingredient> ingredients = new ArrayList<>();
 
+//-------------------- List all Ingredients --------------------------------------
     @Override
     public List<Ingredient> ingredientList() {
         return ingredients;
     }
 
+
+//----------------------- Get a Ingredient by the ID --------------------------------
     @Override
     public Ingredient getIngredientById(int id) {
         for (Ingredient theIngredient : ingredients) {
@@ -29,6 +32,7 @@ public class IngredientJDBCDAO implements IngredientDAO {
         return null;
     }
 
+//----------- Get a Ingredient by Name ---------------------------
     @Override
     public Ingredient getIngredientByName(String name) {
         for (Ingredient theIngredient : ingredients) {

@@ -29,7 +29,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
 
     public static List<Recipe> recipes = new ArrayList<>();
 
-    //---------- List All Recipes ------------------------------
+//---------- List All Recipes ------------------------------
     @Override
     public List<Recipe> recipeList() {
         String sqlSelectRecipes = "SELECT recipeid, name FROM recipe;";
