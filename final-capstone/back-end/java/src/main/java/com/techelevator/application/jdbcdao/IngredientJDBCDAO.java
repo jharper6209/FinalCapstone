@@ -26,13 +26,14 @@ public class IngredientJDBCDAO implements IngredientDAO {
 //-------------------- List all Ingredients --------------------------------------
     @Override
     public List<Ingredient> ingredientList() {
-        String sqlSelectIngredients = "SELECT ingredient_id, ingredient_name FROM ingredient;";
+        String sqlSelectIngredients = "SELECT ingredient_id, ingredient_name, recipe_id FROM ingredient;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectIngredients);
         while (results.next()) {
             Ingredient currentIngredients = new Ingredient();
             currentIngredients.setIngredientId(results.getInt("ingredient_id"));
             currentIngredients.setIngredientName(results.getString("ingredient_name"));
+            currentIngredients.setRecipeId(results.getInt("recipe_id"));
             ingredients.add(currentIngredients);
         }
         return ingredients;
