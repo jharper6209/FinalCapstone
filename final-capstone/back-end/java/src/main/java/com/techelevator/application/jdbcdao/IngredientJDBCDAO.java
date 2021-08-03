@@ -2,6 +2,9 @@ package com.techelevator.application.jdbcdao;
 
 import com.techelevator.application.dao.IngredientDAO;
 import com.techelevator.application.model.Ingredient;
+import com.techelevator.application.model.Recipe;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -12,11 +15,27 @@ import java.util.List;
 @Service
 public class IngredientJDBCDAO implements IngredientDAO {
 
+    private JdbcTemplate jdbcTemplate;
+
+    public IngredientJDBCDAO(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
     public static List<Ingredient> ingredients = new ArrayList<>();
 
 //-------------------- List all Ingredients --------------------------------------
     @Override
     public List<Ingredient> ingredientList() {
+        String sqlSelectIngredients = "SELECT ingredient_id, ingredient_name, recipe_id FROM ingredient;";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectIngredients);
+        while (results.next()) {
+            Ingredient currentIngredients = new Ingredient();
+            currentIngredients.setIngredientId(results.getInt("ingredient_id"));
+            currentIngredients.setIngredientName(results.getString("ingredient_name"));
+            currentIngredients.setRecipeId(results.getInt("recipe_id"));
+            ingredients.add(currentIngredients);
+        }
         return ingredients;
     }
 
