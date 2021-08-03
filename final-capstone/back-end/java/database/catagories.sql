@@ -1,11 +1,11 @@
-DROP TABLE IF EXISTS catagories CASCADE;
+DROP TABLE IF EXISTS categories CASCADE;
 
-CREATE TABLE catagories(
+CREATE TABLE categories(
 categoryid serial NOT NULL,
 name varchar(255)
 );
 
-INSERT INTO catagories (name)
+INSERT INTO categories (name)
 VALUES
 ('Beef'),
 ('Chicken'), 
