@@ -20,6 +20,13 @@ export default {
     height: 350px;
     border-color:black;
     border: 2px solid black;
+    animation-name: test;
+    animation-duration: 5s;
+}
+
+@keyframes test{
+    0% {background-color: black}
+    100%{background-color: #00AFF0}
 }
 
 .recipe-image{

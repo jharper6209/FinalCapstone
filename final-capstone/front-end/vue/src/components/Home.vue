@@ -1,7 +1,7 @@
 <template>
   <div class="theHomeDiv">
     <div class="header">
-      <h1>Welcome Back, Marty!</h1>
+      <h1 class="message">Welcome Back, Marty!</h1>
     </div>
     <div
       class="card-container"
@@ -24,7 +24,21 @@ export default {
 </script>
 
 <style scoped>
+
+.message{
+    visibility: hidden;
+    opacity: 0;
+    animation-name: hidemessage;
+    animation-duration: 5s;
+}
+
+@keyframes hidemessage{
+    0% {visibility: visible; opacity: 1;}
+    100% {visibility: hidden; opacity: 0;}
+}
+
 .header {
+  display:none;
   font-family: "Berkshire Swash", cursive;
   display: flex;
   justify-content: center;
