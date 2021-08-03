@@ -74,3 +74,34 @@ export default {
   }
 };
 </script>
+<style>
+
+#login{
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+.h3.mb-3.font-weight-normal{
+  display: flex;
+  justify-content: center;
+}
+
+
+#password{
+  display: flex;
+  
+
+}
+#username{
+  display: flex;
+}
+body{
+  background : maroon;
+  font-family: Arial, Helvitica, sans-serif;
+}
+
+
+
+</style>
