@@ -90,4 +90,18 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.form-control{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  padding: 0%;
+  margin: 0%;
+  
+}
+router-link> text{{
+ color: white ;
+}}
+
+</style>
