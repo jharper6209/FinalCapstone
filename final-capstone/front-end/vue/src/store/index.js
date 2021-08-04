@@ -46,15 +46,34 @@ export default new Vuex.Store({
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros."
       },
     ],
+
       currentDummy:[
         {
         id: 0,
         name: '',
-        video: '',
+
         description: ''
       }
-    ]
-  },
+    ],
+    groceryDummy:{},
+    ingredientsDummy:[
+      {
+      id: 1,
+      name: 'Beef'
+    },
+    {
+      id: 2,
+      name: 'Chicken'
+    },
+    {
+      id: 3,
+      name: 'Noodles'
+    },
+    {
+      id: 4,
+      name: 'Cake'
+    }
+  ],
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
@@ -72,8 +91,9 @@ export default new Vuex.Store({
       state.user = {};
       axios.defaults.headers.common = {};
     },
-    SHOW_CURRENT_DETAIL(state, recipeID){
-      state.currentDummy = recipeID;
-    }
-  }
+    SHOW_CURRENT_DETAIL(state, data){
+      state.currentDummy = data;
+    },
+  },
+}
 })

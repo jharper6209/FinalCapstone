@@ -3,13 +3,13 @@
     <h1 class="nav-header">The <u>RIGHT</u> choices</h1>
     <table class="link-table">
       <tr >
-        <router-link class="link" v-bind:to="{ name: 'home' }"
+        <router-link class="link" v-bind:to="{ name: 'home' } " v-if="$store.state.token !=''"
           ><p><i class="fas fa-home"></i> HOME</p></router-link
         >
       </tr>
       <tr>
-        <router-link class="link" v-bind:to="{ name: 'grocery' }"
-          ><p><i class="fas fa-shopping-bag"></i> GROCERY LIST</p></router-link
+        <router-link class="link" v-bind:to="{ name: 'grocery' }"  v-if="$store.state.token !=''">
+          <p><i class="fas fa-shopping-bag"></i> GROCERY LIST</p></router-link
         >
       </tr>
     </table>
@@ -30,7 +30,7 @@
 export default {};
 </script>
 
-<style scope>
+<style scoped>
 #right {
   display: flex;
   flex-direction: column;

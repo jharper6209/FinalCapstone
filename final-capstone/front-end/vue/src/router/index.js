@@ -65,12 +65,12 @@ const router = new Router({
     },
     {
       path:"/recipe/:id",
-      name:"Recipe",
+      name:"recipe",
       component: RecipeDetail,
       meta:{
         requiresAuth: true
       }
-    }
+    },
   ]
 })
 
