@@ -50,8 +50,8 @@ export default new Vuex.Store({
         {
         id: 0,
         name: '',
-        video: '',
-        description: ''
+        description: '',
+        ingredients:''
       }
     ]
   },

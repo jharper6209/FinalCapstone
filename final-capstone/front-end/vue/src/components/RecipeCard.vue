@@ -6,7 +6,7 @@
                 
     <h4 class="recipe-title">{{ card.name }}</h4>
     </router-link>
-
+    <button>Remove</button>
   </div>
 </template>
 
