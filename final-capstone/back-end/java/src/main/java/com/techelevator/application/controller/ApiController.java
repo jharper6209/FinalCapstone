@@ -33,9 +33,9 @@ public class ApiController {
 **********************************************************************************************************************/
 
 // List all recipes
-    @RequestMapping(path = "/recipes", method = RequestMethod.GET)
+    @RequestMapping(path = "/recipe", method = RequestMethod.GET)
     public List<Recipe> recipeList() {
-        logRequest("Request to get all recipes - /recipes");
+        logRequest("Request to get all recipes - /recipe");
         return recipeDAO.recipeList();
     }
 
