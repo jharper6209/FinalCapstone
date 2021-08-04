@@ -90,4 +90,32 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0 px;
+  color:rgb(46, 61, 61);
+
+  
+}
+#username.form-control{
+  margin-bottom: 20px;
+}
+a{
+  display: flex;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.btn.btn-lg.btn-primary.btn-block{
+display: flex;  
+justify-content: center;
+align-items: center;
+ font-family:cursive, 'Times New Roman', Times, serif ;
+}
+
+
+</style>

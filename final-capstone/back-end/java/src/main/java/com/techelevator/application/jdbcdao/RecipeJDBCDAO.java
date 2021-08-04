@@ -29,16 +29,16 @@ public class RecipeJDBCDAO implements RecipeDAO {
 
     public static List<Recipe> recipes = new ArrayList<>();
 
-    //---------- List All Recipes ------------------------------
+//---------- List All Recipes ------------------------------
     @Override
     public List<Recipe> recipeList() {
-        String sqlSelectRecipes = "SELECT recipeid, name FROM recipe;";
+        String sqlSelectRecipes = "SELECT recipe_id, recipe_name FROM recipe;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectRecipes);
         while (results.next()) {
             Recipe currentRecipe = new Recipe();
-            currentRecipe.setRecipeID(results.getInt("recipeid"));
-            currentRecipe.setName(results.getString("name"));
+            currentRecipe.setRecipeID(results.getInt("recipe_id"));
+            currentRecipe.setName(results.getString("recipe_name"));
             recipes.add(currentRecipe);
         }
         return recipes;

@@ -99,8 +99,25 @@ margin:0;
   display: flex;
 }
 body{
+<<<<<<< HEAD
   background-color: maroon;
   font-family: Arial, Helvitica, sans-serif;
+=======
+  background : maroon;
+  font-family:cursive, 'Times New Roman', Times, serif;
+}
+input[type=text]{
+  font-family:cursive, 'Times New Roman', Times, serif ;
+  background-color: lightgray;
+}
+input[type=password]{
+  font-family:cursive, 'Times New Roman', Times, serif ;
+  background-color: lightgray;
+}
+button[type=submit]{
+  font-family:cursive, 'Times New Roman', Times, serif ;
+ 
+>>>>>>> cdec5d3fce37f8e8db638759850300778b9c7ce6
 }
 
 

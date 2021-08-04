@@ -8,6 +8,7 @@ import com.techelevator.application.dao.IngredientDAO;
 import com.techelevator.application.dao.RecipeDAO;
 import com.techelevator.application.jdbcdao.IngredientJDBCDAO;
 import com.techelevator.application.jdbcdao.RecipeJDBCDAO;
+import com.techelevator.application.model.Ingredient;
 import com.techelevator.application.model.Recipe;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -40,6 +41,13 @@ public class ApiController {
         logRequest("Request to get all recipes - /recipes");
         return recipeDAO.recipeList();
     }
+
+// List all ingredients
+    @RequestMapping(path = "/ingredient", method = RequestMethod.GET)
+    public List<Ingredient> ingredientListList() {
+    logRequest("Request to get all ingredients - /ingredient");
+    return ingredientDAO.ingredientList();
+}
 
 
 
