@@ -13,7 +13,7 @@ public interface IngredientDAO {
 
     Ingredient getIngredientByName(String name);
 
-
+    List<Ingredient> getIngredientsByRecipeId(int id);
 
 
 

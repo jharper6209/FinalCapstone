@@ -37,9 +37,9 @@ public class Ingredient {
         return "Ingredient{" +
                 "ingredientId=" + ingredientId +
                 ", ingredientName='" + ingredientName + '\'' +
+                ", recipeId=" + recipeId +
                 '}';
     }
-
 
 
 }//END
