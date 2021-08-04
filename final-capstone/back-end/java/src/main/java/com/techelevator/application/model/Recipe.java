@@ -5,6 +5,7 @@ public class Recipe {
     private int recipeID;
     private String name;
     private String image;               //Unsure if image should be a String or not?
+    private String ingredients;
 
     // Constructor?
     public Recipe(int recipeID, String name) {
@@ -40,15 +41,23 @@ public class Recipe {
         this.image = image;
     }
 
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
+    }
+
     @Override
     public String toString() {
         return "Recipe{" +
                 "recipeID=" + recipeID +
                 ", name='" + name + '\'' +
                 ", image='" + image + '\'' +
+                ", ingredients='" + ingredients + '\'' +
                 '}';
     }
-
 
 
 }//END

@@ -7,7 +7,6 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +27,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
 
 
     public static List<Recipe> recipes = new ArrayList<>();
+    public static List<Recipe> ingredients = new ArrayList<Recipe>();
 
 //---------- List All Recipes ------------------------------
     @Override
@@ -44,7 +44,21 @@ public class RecipeJDBCDAO implements RecipeDAO {
         return recipes;
     }
 
+//----------- Get ingredients by RecipeId -----------------------
 
+    public List<Recipe> getIngredientsByRecipeId() {
+        String sqlSelectIngredients = "SELECT ingredient_name FROM ingredient WHERE recipe_id = ?";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectIngredients);
+    while (results.next()) {
+        Recipe recipeIngredients = new Recipe();
+        recipeIngredients.setIngredients(results.getString("ingredient_name"));
+        if (!results.getString("ingredient_name").equals("")) {
+            ingredients.add(recipeIngredients);
+        }
+    }
+    return ingredients;
+}
 //----------- Get a Recipe by the ID --------------------------
     @Override
     public Recipe getRecipeById(int id) {
@@ -66,6 +80,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
     }
     return null;
 }
+
 
 //------ HELPER METHOD -----------------------------------------------------
 
