@@ -11,10 +11,7 @@ import com.techelevator.application.jdbcdao.RecipeJDBCDAO;
 import com.techelevator.application.model.Ingredient;
 import com.techelevator.application.model.Recipe;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -36,9 +33,9 @@ public class ApiController {
 **********************************************************************************************************************/
 
 // List all recipes
-    @RequestMapping(path = "/recipes", method = RequestMethod.GET)
+    @RequestMapping(path = "/recipe", method = RequestMethod.GET)
     public List<Recipe> recipeList() {
-        logRequest("Request to get all recipes - /recipes");
+        logRequest("Request to get all recipes - /recipe");
         return recipeDAO.recipeList();
     }
 
@@ -49,6 +46,12 @@ public class ApiController {
     return ingredientDAO.ingredientList();
 }
 
+// Get ingredients by recipeId
+    @RequestMapping(path = "/ingredient/recipeid/{id}", method = RequestMethod.GET)
+    public List<Ingredient> getIngredientsByRecipeId(@PathVariable int recipeId) {
+    logRequest("Request to get all ingredientsByRecipeId - /ingredient/recipeid/{id}");
+    return ingredientDAO.getIngredientsByRecipeId(recipeId);
+    }
 
 
 	

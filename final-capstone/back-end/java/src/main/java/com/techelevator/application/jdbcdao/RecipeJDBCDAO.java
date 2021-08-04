@@ -7,7 +7,6 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +28,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
 
     public static List<Recipe> recipes = new ArrayList<>();
 
+
 //---------- List All Recipes ------------------------------
     @Override
     public List<Recipe> recipeList() {
@@ -43,7 +43,6 @@ public class RecipeJDBCDAO implements RecipeDAO {
         }
         return recipes;
     }
-
 
 //----------- Get a Recipe by the ID --------------------------
     @Override
@@ -66,6 +65,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
     }
     return null;
 }
+
 
 //------ HELPER METHOD -----------------------------------------------------
 

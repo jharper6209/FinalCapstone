@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c34af48-53d2-4069-8aa6-9337773cfe42" name="Default Changelist" comment="" />
+    <list default="true" id="bbc2fc84-a473-4eee-af5b-bd957eedae4c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectId" id="1wBEQzTdE4crvfSndmtIQapKgRm" />
+  <component name="ProjectId" id="1wGrCoNXV0RUBbfYFMpsyFz0jW4" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -26,7 +18,6 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RunManager">
@@ -52,11 +43,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5c34af48-53d2-4069-8aa6-9337773cfe42" name="Default Changelist" comment="" />
-      <created>1627923570061</created>
+      <changelist id="bbc2fc84-a473-4eee-af5b-bd957eedae4c" name="Default Changelist" comment="" />
+      <created>1628095641179</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1627923570061</updated>
+      <updated>1628095641179</updated>
     </task>
     <servers />
   </component>

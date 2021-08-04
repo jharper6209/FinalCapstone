@@ -95,6 +95,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   margin: 0px;
   padding: 0 px;
   color:rgb(46, 61, 61);

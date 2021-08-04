@@ -23,6 +23,7 @@ public class IngredientJDBCDAO implements IngredientDAO {
 
     public static List<Ingredient> ingredients = new ArrayList<>();
 
+
 //-------------------- List all Ingredients --------------------------------------
     @Override
     public List<Ingredient> ingredientList() {
@@ -38,7 +39,20 @@ public class IngredientJDBCDAO implements IngredientDAO {
         }
         return ingredients;
     }
+//----------- Get ingredients by RecipeId -----------------------
+    @Override
+    public List<Ingredient> getIngredientsByRecipeId(int recipeId) {
+        String sqlSelectIngredients = "SELECT ingredient_name FROM ingredient WHERE recipe_id = ?";
 
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectIngredients, recipeId);
+        while (results.next()) {
+            Ingredient recipeIngredients = new Ingredient();
+            recipeIngredients.setIngredientName(results.getString("ingredient_name"));
+            ingredients.add(recipeIngredients);
+            }
+
+        return ingredients;
+    }
 
 //----------------------- Get a Ingredient by the ID --------------------------------
     @Override
@@ -61,4 +75,6 @@ public class IngredientJDBCDAO implements IngredientDAO {
         }
         return null;
     }
+
+
 }//END
