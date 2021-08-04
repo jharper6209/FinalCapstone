@@ -47,9 +47,9 @@ public class ApiController {
 }
 
 // Get ingredients by recipeId
-    @RequestMapping(path = "/ingredient/recipe/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/ingredient/recipeid/{id}", method = RequestMethod.GET)
     public List<Ingredient> getIngredientsByRecipeId(@PathVariable int recipeId) {
-    logRequest("Request to get all ingredientsByRecipeId - /ingredient/recipe/{id}");
+    logRequest("Request to get all ingredientsByRecipeId - /ingredient/recipeid/{id}");
     return ingredientDAO.getIngredientsByRecipeId(recipeId);
     }
 
