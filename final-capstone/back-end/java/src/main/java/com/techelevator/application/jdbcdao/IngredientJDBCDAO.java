@@ -40,7 +40,7 @@ public class IngredientJDBCDAO implements IngredientDAO {
         return ingredients;
     }
 //----------- Get ingredients by RecipeId -----------------------
-
+    @Override
     public List<Ingredient> getIngredientsByRecipeId(int recipeId) {
         String sqlSelectIngredients = "SELECT ingredient_name FROM ingredient WHERE recipe_id = ?";
 
