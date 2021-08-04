@@ -4,6 +4,7 @@ public class Ingredient {
 
     private int ingredientId;
     private String ingredientName;
+    private int recipeId;
 
     // Constructor?
 
@@ -21,6 +22,14 @@ public class Ingredient {
 
     public void setIngredientName(String ingredientName) {
         this.ingredientName = ingredientName;
+    }
+
+    public int getRecipeId() {
+        return recipeId;
+    }
+
+    public void setRecipeId(int recipeId) {
+        this.recipeId = recipeId;
     }
 
     @Override

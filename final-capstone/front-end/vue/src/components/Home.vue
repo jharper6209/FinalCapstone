@@ -43,7 +43,6 @@ export default {
   display: flex;
   justify-content: center;
   font-size: 30px;
-  color: white;
 }
 
 .card-container {
