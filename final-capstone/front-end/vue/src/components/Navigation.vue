@@ -12,6 +12,11 @@
           ><p><i class="fas fa-shopping-bag"></i> GROCERY LIST</p></router-link
         >
       </tr>
+      <tr>
+        <router-link class="link" v-bind:to ="{name: 'recipes'}"> <p> <i class="fas fa-book-dead"></i> All Recipes </p>
+           </router-link>
+      </tr>
+
     </table>
 
     <table class="footer-table">

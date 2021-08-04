@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import GroceryList from '../views/GroceryList.vue'
 import RecipeDetail from '../views/RecipeDetail.vue'
+import RecipeList from '../views/RecipeList.vue'
 
 Vue.use(Router)
 
@@ -71,6 +72,7 @@ const router = new Router({
         requiresAuth: true
       }
     }
+
   ]
 })
 
