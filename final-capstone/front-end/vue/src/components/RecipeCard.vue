@@ -1,7 +1,12 @@
 <template>
-  <div class="card">
+  <div>
+      <router-link class="card" v-bind:to="{name: 'Recipe', params:{id: card.id}}">
+      <img class="plate" src="../assests/plate.png">
           <img class="recipe-image" v-bind:src="card.image" />
+                
     <h4 class="recipe-title">{{ card.name }}</h4>
+    </router-link>
+
   </div>
 </template>
 
@@ -14,31 +19,37 @@ export default {
 <style scoped>
 
 .card{
-    background-color: #00AFF0;
-    border-radius: 5%;
-    width: 200px;
-    height: 350px;
-    border-color:black;
-    border: 2px solid black;
-    animation-name: test;
-    animation-duration: 5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
 }
 
-@keyframes test{
-    0% {background-color: black}
-    100%{background-color: #00AFF0}
+.plate{
+    position: absolute;
+    width: 300px;
+    height:300px;
+    z-index: -1;
+}
+
+.card:hover{
+border-style:solid;
+border-color:rgb(255, 255, 255, 0.5);
+border-width: 5px
 }
 
 .recipe-image{
-    display: block;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: 160px;
+    margin-bottom: 50px;
     border-radius: 50%;
-    height: 180px;
-    border-style:solid;
-    border-color: black;
+    height: 150px;
 }
+
 .recipe-title{
     text-align: center;
     color: #FFFFFF;

@@ -80,9 +80,11 @@ export default {
 display: flex;
 justify-content: center;
 align-items: center;
-
-
+height: 100vh;
+padding: 0;
+margin:0;
 }
+
 .h3.mb-3.font-weight-normal{
   display: flex;
   justify-content: center;
@@ -91,14 +93,13 @@ align-items: center;
 
 #password{
   display: flex;
-  
-
 }
+
 #username{
   display: flex;
 }
 body{
-  background : maroon;
+  background-color: maroon;
   font-family: Arial, Helvitica, sans-serif;
 }
 
