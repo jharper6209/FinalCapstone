@@ -46,8 +46,9 @@ public class IngredientJDBCDAO implements IngredientDAO {
         String sqlSelectIngredients = " SELECT * FROM ingredient WHERE recipe_id = ? ";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectIngredients, recipeId);
-        Ingredient recipeIngredients = new Ingredient();
+
         while (results.next()) {
+            Ingredient recipeIngredients = new Ingredient();
             recipeIngredients.setIngredientId(results.getLong("ingredient_id"));
             recipeIngredients.setIngredientName(results.getString("ingredient_name"));
             recipeIngredients.setRecipeId(results.getLong("recipe_id"));
@@ -64,7 +65,6 @@ public class IngredientJDBCDAO implements IngredientDAO {
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetIngredient, ingredientId);
         Ingredient theIngredients = new Ingredient();
         while (results.next()) {
-
             theIngredients.setIngredientId(results.getLong("ingredient_id"));
             theIngredients.setIngredientName(results.getString("ingredient_name"));
             theIngredients.setRecipeId(results.getLong("recipe_id"));
