@@ -71,12 +71,16 @@ const router = new Router({
       meta:{
         requiresAuth: true
       }
-<<<<<<< HEAD
-    }
-
-=======
     },
->>>>>>> f08a7454ec4c0b66c70cbe87fbd9980447d0ad33
+    {
+      path:"/recipe-list",
+      name: "recipes",
+      component: RecipeList,
+      meta:{
+        requiresAuth: true
+      }
+    },
+
   ]
 })
 
