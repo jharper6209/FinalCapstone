@@ -2,17 +2,18 @@ package com.techelevator.application.model;
 
 public class Ingredient {
 
-    private int ingredientId;
+    private long ingredientId;
     private String ingredientName;
-    private int recipeId;
+    private long recipeId;
+
 
     // Constructor?
 
-    public int getIngredientId() {
+
+    public long getIngredientId() {
         return ingredientId;
     }
-
-    public void setIngredientId(int ingredientId) {
+    public void setIngredientId(long ingredientId) {
         this.ingredientId = ingredientId;
     }
 
@@ -24,11 +25,11 @@ public class Ingredient {
         this.ingredientName = ingredientName;
     }
 
-    public int getRecipeId() {
+    public long getRecipeId() {
         return recipeId;
     }
 
-    public void setRecipeId(int recipeId) {
+    public void setRecipeId(long recipeId) {
         this.recipeId = recipeId;
     }
 

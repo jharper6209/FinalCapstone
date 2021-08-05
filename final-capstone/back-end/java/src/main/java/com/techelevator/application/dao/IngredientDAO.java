@@ -9,11 +9,11 @@ public interface IngredientDAO {
 
     List<Ingredient> ingredientList();
 
-    Ingredient getIngredientById(int id);
+    Ingredient getIngredientById(long ingredientId);
 
     Ingredient getIngredientByName(String name);
 
-    List<Ingredient> getIngredientsByRecipeId(int recipeId);
+    List<Ingredient> getIngredientsByRecipeId(long recipeId);
 
 
 

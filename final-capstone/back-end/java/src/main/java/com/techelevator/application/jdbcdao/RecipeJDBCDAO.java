@@ -16,37 +16,34 @@ public class RecipeJDBCDAO implements RecipeDAO {
 
     private JdbcTemplate jdbcTemplate;
 
-   /* public RecipeJDBCDAO(DataSource dataSource) {
-        this.jdbcTemplate = new JdbcTemplate(dataSource);
-    }*/
-
     public RecipeJDBCDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
 
-
     public static List<Recipe> recipes = new ArrayList<>();
-
 
 //---------- List All Recipes ------------------------------
     @Override
     public List<Recipe> recipeList() {
-        String sqlSelectRecipes = "SELECT recipe_id, recipe_name FROM recipe;";
+        String sqlSelectRecipes = "SELECT * FROM recipe;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectRecipes);
         while (results.next()) {
             Recipe currentRecipe = new Recipe();
-            currentRecipe.setRecipeID(results.getInt("recipe_id"));
+            currentRecipe.setRecipeID(results.getLong("recipe_id"));
+            currentRecipe.setCategoryId(results.getString("category_id"));
             currentRecipe.setName(results.getString("recipe_name"));
+            currentRecipe.setImage(results.getString("image"));
             recipes.add(currentRecipe);
         }
         return recipes;
     }
 
 //----------- Get a Recipe by the ID --------------------------
+// ---- NOT WRITTEN
     @Override
-    public Recipe getRecipeById(int id) {
+    public Recipe getRecipeById(long id) {
         for (Recipe theRecipe : recipes) {
             if (theRecipe.getRecipeID() == id) {
                 return theRecipe;
@@ -56,6 +53,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
     }
 
 //----------- Get a Recipe by Name ---------------------------
+//---- NOT WRITTEN
     @Override
     public Recipe getRecipeByName(String name) {
         for (Recipe theRecipe : recipes) {
