@@ -22,47 +22,55 @@ public class IngredientJDBCDAO implements IngredientDAO {
     }
 
     public static List<Ingredient> ingredients = new ArrayList<>();
+    public static Ingredient ingredient = new Ingredient();
 
 
 //-------------------- List all Ingredients --------------------------------------
     @Override
     public List<Ingredient> ingredientList() {
-        String sqlSelectIngredients = "SELECT ingredient_id, ingredient_name, recipe_id FROM ingredient;";
+        String sqlSelectIngredients = "SELECT ingredient_id, ingredient_name, recipe_id FROM ingredient ";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectIngredients);
         while (results.next()) {
             Ingredient currentIngredients = new Ingredient();
-            currentIngredients.setIngredientId(results.getInt("ingredient_id"));
+            currentIngredients.setIngredientId(results.getLong("ingredient_id"));
             currentIngredients.setIngredientName(results.getString("ingredient_name"));
-            currentIngredients.setRecipeId(results.getInt("recipe_id"));
+            currentIngredients.setRecipeId(results.getLong("recipe_id"));
             ingredients.add(currentIngredients);
         }
         return ingredients;
     }
 //----------- Get ingredients by RecipeId -----------------------
     @Override
-    public List<Ingredient> getIngredientsByRecipeId(int recipeId) {
-        String sqlSelectIngredients = "SELECT ingredient_name FROM ingredient WHERE recipe_id = ?";
+    public List<Ingredient> getIngredientsByRecipeId(long recipeId) {
+        String sqlSelectIngredients = " SELECT * FROM ingredient WHERE recipe_id = ? ";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectIngredients, recipeId);
+        Ingredient recipeIngredients = new Ingredient();
         while (results.next()) {
-            Ingredient recipeIngredients = new Ingredient();
+            recipeIngredients.setIngredientId(results.getLong("ingredient_id"));
             recipeIngredients.setIngredientName(results.getString("ingredient_name"));
+            recipeIngredients.setRecipeId(results.getLong("recipe_id"));
             ingredients.add(recipeIngredients);
             }
 
         return ingredients;
     }
 
-//----------------------- Get a Ingredient by the ID --------------------------------
+//----------------------- Get an ingredient by the IngredientId --------------------------------
     @Override
-    public Ingredient getIngredientById(int id) {
-        for (Ingredient theIngredient : ingredients) {
-            if (theIngredient.getIngredientId() == id) {
-                return theIngredient;
-            }
+        public Ingredient getIngredientById(long ingredientId) {
+        String sqlGetIngredient = " SELECT * FROM ingredient WHERE ingredient_id = ? ";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetIngredient, ingredientId);
+        Ingredient theIngredients = new Ingredient();
+        while (results.next()) {
+
+            theIngredients.setIngredientId(results.getLong("ingredient_id"));
+            theIngredients.setIngredientName(results.getString("ingredient_name"));
+            theIngredients.setRecipeId(results.getLong("recipe_id"));
         }
-        return null;
+        return theIngredients;
+
     }
 
 //----------- Get a Ingredient by Name ---------------------------

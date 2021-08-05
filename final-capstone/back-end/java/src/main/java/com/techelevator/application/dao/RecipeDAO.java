@@ -9,7 +9,7 @@ public interface RecipeDAO {
 
     List<Recipe> recipeList();
 
-    Recipe getRecipeById(int id);
+    Recipe getRecipeById(long id);
 
     Recipe getRecipeByName(String name);
 
