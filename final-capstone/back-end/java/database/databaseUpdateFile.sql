@@ -97,5 +97,7 @@ INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Nutmeg', 4);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Parmasean Cheese', 4);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Parsley', 4);
 
-
+ALTER TABLE recipe
+ADD recipe_description VARCHAR(2500),
+ADD recipe_instructions VARCHAR(2500);
 
