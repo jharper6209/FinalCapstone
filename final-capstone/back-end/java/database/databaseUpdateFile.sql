@@ -26,23 +26,24 @@ CONSTRAINT pk_category_category_id PRIMARY KEY (category_id)
 
 ALTER TABLE recipe ADD CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES category(category_id);
 ALTER TABLE ingredient ADD CONSTRAINT fk_recipe_recipe_id FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id);
-ALTER TABLE recipe ADD CONSTRAINT fk_users_user_id FOREIGN KEY (user_id) REFERENCES users(user_id);
+/*ALTER TABLE recipe ADD CONSTRAINT fk_users_user_id FOREIGN KEY (user_id) REFERENCES users(user_id);*/
 
 
 INSERT INTO category (category_name)
 VALUES
-('Beef'),
-('Chicken'), 
-('Pasta'), 
+('Gluten-Free'),
+('Keto/Low Carb'), 
+('No Restrictions'), 
+('Vegetarian'), 
 ('Vegan');
 
 
 
 INSERT INTO recipe (category_id, recipe_name, image)
-VALUES(1, 'Beef and Mustard Pie', 'https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg'),
+VALUES(3, 'Beef and Mustard Pie', 'https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg'),
 (2, 'Ayam Percik','https://www.themealdb.com/images/media/meals/020z181619788503.jpg'),
-(3, 'Fettucine alfredo', 'https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg'),  
-(4, 'Vegan Chocolate Cake', 'https://www.themealdb.com/images/media/meals/qxutws1486978099.jpg');
+(4, 'Fettucine alfredo', 'https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg'),  
+(5, 'Vegan Chocolate Cake', 'https://www.themealdb.com/images/media/meals/qxutws1486978099.jpg');
 
 	
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Butter' , 1);
