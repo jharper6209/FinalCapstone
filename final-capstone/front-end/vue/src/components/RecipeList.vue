@@ -14,7 +14,7 @@
 <template>
   
 <div class ="recipe-list">
-<img class='cooking' src='../assests/stillcooking.png'/>
+<img class='cooking' src='../assests/whatsfordinner.png'/>
 <header> 
   <h1> Available Recipes </h1>
   
