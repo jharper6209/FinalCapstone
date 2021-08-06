@@ -2,7 +2,8 @@ package com.techelevator.application.model;
 
 public class Recipe {
 
-    private int recipeID;
+    private long recipeID;
+    private String categoryId;
     private String name;
     private String image;               //Unsure if image should be a String or not?
 
@@ -16,11 +17,12 @@ public class Recipe {
 
     }
 
-    public int getRecipeID() {
+
+    public long getRecipeID() {
         return recipeID;
     }
 
-    public void setRecipeID(int recipeID) {
+    public void setRecipeID(long recipeID) {
         this.recipeID = recipeID;
     }
 
@@ -38,6 +40,14 @@ public class Recipe {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
     }
 
     @Override
