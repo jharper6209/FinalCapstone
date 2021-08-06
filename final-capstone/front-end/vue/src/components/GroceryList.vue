@@ -1,5 +1,5 @@
 <template>
-<div class ="grocery-list">
+<div class="grocery-list">
 <img class='cooking' src='../assests/stillcooking.png'/>
   <h1>It's not quite ready yet...</h1>
   <h1>COME BACK SOON!</h1>
@@ -13,7 +13,6 @@ export default {
 </script>
 
 <style scoped>
-
 .grocery-list{
   display: flex;
   align-items: center;
@@ -35,5 +34,5 @@ h1{
   align-items: center;
    color:yellow;
    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
+   }
 </style>

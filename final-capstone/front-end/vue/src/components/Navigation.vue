@@ -4,8 +4,7 @@
     <table class="link-table">
       <tr >
         <router-link class="link" v-bind:to="{ name: 'home' } " v-if="$store.state.token !=''"
-          ><p><i class="fas fa-home"></i> HOME</p></router-link
-        >
+          ><p><i class="fas fa-home"></i> HOME</p></router-link>
       </tr>
       <tr>
         <router-link class="link" v-bind:to="{ name: 'grocery' }"  v-if="$store.state.token !=''">
@@ -13,19 +12,26 @@
         >
       </tr>
       <tr>
-        <router-link class="link" v-bind:to ="{name: 'recipes'}"> <p> <i class="fas fa-book-dead"></i> All Recipes </p>
+        <router-link class="link" v-bind:to ="{name: 'recipes'}" v-if="$store.state.token !=''"><p><i class="fas fa-book-dead"></i> ALL RECIPES</p>
            </router-link>
       </tr>
-
     </table>
 
     <table class="footer-table">
-      <tr class="link">
+      <!-- If in need of a hard link for tutorial -->
+      <!-- <tr>
+        <router-link class="link"
+        v-bind:to="{ name: 'tutorial'}"
+        v-if="$store.state.token === ''">
+        <p><i class="fas fa-question-circle"></i> TUTORIAL</p>
+        </router-link>
+      </tr> -->
+      <tr>
         <router-link class="link"
           v-bind:to="{ name: 'logout' }"
-          v-if="$store.state.token != ''"
-          ><p><i class="fas fa-sign-out-alt"></i> LOGOUT</p></router-link
-        >
+          v-if="$store.state.token != ''">
+          <p><i class="fas fa-sign-out-alt"></i> LOGOUT</p>
+          </router-link>
       </tr>
     </table>
   </div>
@@ -52,7 +58,7 @@ export default {};
   align-content: center;
   flex-wrap: wrap;
   flex-direction: column;
-  height: 80vh;
+  height: 75vh;
 }
 
 .link {

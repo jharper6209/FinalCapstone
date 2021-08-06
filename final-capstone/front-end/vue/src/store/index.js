@@ -18,6 +18,7 @@ if(currentToken != null) {
 
 export default new Vuex.Store({
   state: {
+    cursor:`url("https://e7.pngegg.com/pngimages/417/889/png-clipart-fork-fork.png"), pointer;`,
     token: currentToken || '',
     user: currentUser || {},
     dummy:[
@@ -25,55 +26,44 @@ export default new Vuex.Store({
         id: 1,
         name: 'Beef and Mustard Pie',
         image: 'https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg',
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros."
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros.",
+        ingredients:[{
+          id: 1,
+          name: 'Beef'
+        }]
       },
       {
         id: 2,
         name: 'Ayam Percik',
         image: 'https://www.themealdb.com/images/media/meals/020z181619788503.jpg',
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros."
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros.",
+        ingredients:[{
+          id: 2,
+          name: 'Chicken'
+        }]
       },
       {
         id: 3,
         name: 'Fettucine alfredo',
         image: 'https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg',
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros."
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros.",
+        ingredients:[{
+          id: 3,
+          name: 'Noodles'
+        }]
       },
       {
         id: 4,
         name: 'Vegan Chocolate Cake',
         image: "https://www.themealdb.com/images/media/meals/qxutws1486978099.jpg",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros."
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros.",
+        ingredients:[{
+          id: 4,
+          name: 'Cake'
+        }]
       },
     ],
-
-      currentDummy:[
-        {
-        id: 0,
-        name: '',
-
-        description: ''
-      }
-    ],
-    groceryDummy:{},
-    ingredientsDummy:[
-      {
-      id: 1,
-      name: 'Beef'
-    },
-    {
-      id: 2,
-      name: 'Chicken'
-    },
-    {
-      id: 3,
-      name: 'Noodles'
-    },
-    {
-      id: 4,
-      name: 'Cake'
-    }
-  ],
+},
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
@@ -95,5 +85,4 @@ export default new Vuex.Store({
       state.currentDummy = data;
     },
   },
-}
 })

@@ -34,7 +34,7 @@
       <router-link :to="{ name: 'register' }">Need an account?</router-link>
       <button type="submit">Sign in</button>
     </form>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -75,6 +75,14 @@ export default {
 };
 </script>
 <style>
+
+/* #app{
+  background-image: url("https://v.fastcdn.co/u/d1da2199/54578221-0-meal-prep-recipe-var.gif");
+  background-size: cover;
+  top: 0;
+  left: 0;
+} */
+
 
 #login{
 display: flex;

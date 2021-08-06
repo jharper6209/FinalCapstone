@@ -2,6 +2,7 @@
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
       <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+      <h4>Curious before you sign up? Check our tutorial!</h4>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
@@ -67,8 +68,10 @@ export default {
           .register(this.user)
           .then((response) => {
             if (response.status == 201) {
+            this.$store.commit("SET_AUTH_TOKEN", response.data.token);
+            this.$store.commit("SET_USER", response.data.user);
               this.$router.push({
-                path: '/login',
+                path: '/tutorial',
                 query: { registration: 'success' },
               });
             }

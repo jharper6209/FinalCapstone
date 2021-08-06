@@ -8,6 +8,7 @@ import store from '../store/index'
 import GroceryList from '../views/GroceryList.vue'
 import RecipeDetail from '../views/RecipeDetail.vue'
 import Tutorial from '../views/Tutorial.vue'
+import TutorialDetail from '../views/TutorialDetail.vue'
 
 Vue.use(Router)
 
@@ -77,7 +78,15 @@ const router = new Router({
       name: "tutorial",
       component: Tutorial,
       meta:{
-        requiresAuth: true
+        requiresAuth: false
+      }
+    },
+    {
+      path:"/tutorial/tutorialDetail",
+      name: "tutorialDetail",
+      component: TutorialDetail,
+      meta:{
+        requiresAuth: false
       }
     }
   ]

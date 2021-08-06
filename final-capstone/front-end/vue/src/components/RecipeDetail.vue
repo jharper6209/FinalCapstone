@@ -2,7 +2,7 @@
   <div class="recipe-detail">
       <h1>{{ recipe.name }}</h1>
       <p> {{ recipe.description }} </p>
-      <!-- <p> {{ ingreident.name }} </p> -->
+      <p> {{ ingreident.name }} </p>
   </div>    
 </template>
 
@@ -15,7 +15,7 @@ recipe(){
     )}
 },
 ingreident(){
-    return this.$store.state.ingredientsDummy.find((f) =>
+    return this.$store.state.dummy.ingredients.find((f) =>
     f.id === this.$route.params.id
     )}
 }
