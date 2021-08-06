@@ -55,6 +55,29 @@ export default new Vuex.Store({
         description: ''
       }
     ],
+    categoryDummy: [
+      {
+        id:1,
+        name:"Gluten-Free"
+      },
+      {
+        id:2,
+        name:"Keto/Low Carb"
+      },
+      {
+        id:3,
+        name:"No Restrictions"
+      },
+      {
+        id:4,
+        name:"Vegetarian"
+      },
+      {
+        id:5,
+        name: "Vegan"
+      }
+
+    ],
     groceryDummy:{},
     ingredientsDummy:[
       {
