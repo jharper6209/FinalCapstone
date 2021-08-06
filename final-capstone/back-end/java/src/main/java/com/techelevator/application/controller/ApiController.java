@@ -60,6 +60,12 @@ public class ApiController {
         return ingredientDAO.getIngredientById(id);
     }
 
+// Get directions by recipeId
+
+// Get recipe by categoryId
+
+
+
 
 	
 	
