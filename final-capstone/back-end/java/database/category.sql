@@ -1,14 +1,15 @@
-DROP TABLE IF EXISTS Category CASCADE;
+DROP TABLE IF EXISTS category CASCADE;
 
-CREATE TABLE Category (
-categoryId serial NOT NULL,
-categoryName varchar(255) NOT NULL
+CREATE TABLE category(
+category_id SERIAL NOT NULL,
+category_name CHARACTER VARYING(50) NOT NULL,
+CONSTRAINT pk_category_category_id PRIMARY KEY (category_id)
 );
 
-INSERT INTO Category (categoryName)
-VALUES 
-('Beef'),
-('Chicken'),
-('Pasta'),
-('Vegan')
-;
+INSERT INTO category (category_name)
+VALUES
+('Gluten-Free'),
+('Keto/Low Carb'), 
+('No Restrictions'), 
+('Vegetarian'), 
+('Vegan');
