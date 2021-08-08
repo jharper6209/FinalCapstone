@@ -21,6 +21,10 @@
  
 
 </header>
+<select v-for ="aNeed in $store.state.categoryDummy" v-bind:key="aNeed.id" name="needs" >
+  <option value="">--</option>
+  <option value="aNeed" ></option>
+</select>
 <tr v-for="aRecipe in $store.state.dummy" v-bind:key="aRecipe.id">
   <td>
 
@@ -43,14 +47,7 @@
 <script>
 
 export default {
-  computed: {
-    listedRecipes(){
-   
-      return this.$store.state.dummy
-        
-    }
-    
-  }
+ 
   
   };
   

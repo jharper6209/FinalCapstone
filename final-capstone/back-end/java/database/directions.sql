@@ -1,28 +1,4 @@
-DROP TABLE IF EXISTS ingredient CASCADE;
-DROP TABLE IF EXISTS category CASCADE;
-DROP TABLE IF EXISTS recipe CASCADE;
 DROP TABLE IF EXISTS directions CASCADE;
-
-CREATE TABLE recipe (
-recipe_id SERIAL NOT NULL,
-category_id INTEGER NOT NULL,
-recipe_name CHARACTER VARYING(50) NOT NULL,
-image CHARACTER VARYING(100) NOT NULL,
-CONSTRAINT pk_recipe_recipe_id PRIMARY KEY (recipe_id)
-);
-
-CREATE TABLE ingredient (
-ingredient_id SERIAL NOT NULL,
-ingredient_name CHARACTER VARYING(50) NOT NULL,
-recipe_id INTEGER NOT NULL,
-CONSTRAINT pk_ingredient_id PRIMARY KEY (ingredient_id)
-);
-
-CREATE TABLE category(
-category_id SERIAL NOT NULL,
-category_name CHARACTER VARYING(50) NOT NULL,
-CONSTRAINT pk_category_category_id PRIMARY KEY (category_id)
-);
 
 CREATE TABLE directions (
 step_id SERIAL NOT NULL,
@@ -31,71 +7,7 @@ step_directions VARCHAR (2500),
 CONSTRAINT pk_step_id PRIMARY KEY (step_id) 
 );
 
-ALTER TABLE recipe ADD CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES category(category_id);
-ALTER TABLE ingredient ADD CONSTRAINT fk_recipe_recipe_id FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id);
 ALTER TABLE directions ADD CONSTRAINT fk_recipe_recipe_id FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id);
-/*ALTER TABLE recipe ADD CONSTRAINT fk_users_user_id FOREIGN KEY (user_id) REFERENCES users(user_id);*/
-
-INSERT INTO category (category_name)
-VALUES
-('Gluten-Free'),
-('Keto/Low Carb'), 
-('No Restrictions'), 
-('Vegetarian'), 
-('Vegan');
-
-INSERT INTO recipe (category_id, recipe_name, image)
-VALUES(3, 'Beef and Mustard Pie', 'https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg'),
-(2, 'Ayam Percik','https://www.themealdb.com/images/media/meals/020z181619788503.jpg'),
-(4, 'Fettucine alfredo', 'https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg'),  
-(5, 'Vegan Chocolate Cake', 'https://www.themealdb.com/images/media/meals/qxutws1486978099.jpg');
-
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1kg Beef', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbs Plain Flour', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbs Rapeseed Oil', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('200ml Red Wine', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('400ml Beef Stock', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 finely sliced Onion', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 chopped Carrots', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('3 sprigs of Thyme', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbsMustard', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 Egg Yolks', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('400g Puff Pastry', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('300g Green Beans', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('25g Butter' , 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Pinch of Salt', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Pinch of Pepper', 1);
-
-INSERT INTO ingredient (ingredient_name ,recipe_id) VALUES ('6 Chicken Thighs', 2);
-INSERT INTO ingredient (ingredient_name ,recipe_id) VALUES ('1 1/2 Challots' , 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('6 tbs Ginger', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('8 Garlic Cloves', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tsp Cayenne pepper', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 1/2 tbs Tumeric', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 1/2 tbs Cumin', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 1/2 tbs Coriander', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 1/2 cup Fennel', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbs Tamarind Paste', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 8oz can Coconut Milk', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tsp Sugar', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 cup Water', 2);
-
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 1/4 cup Self Rising Flour', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 cup Coco Sugar', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/3 cup raw Cacao', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tsp Baking Powder', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 Flax Eggs', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 cup Almond Milk', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tsp Vanilla', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 cup boiling Water', 3);
-
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('227g Heavy Cream', 4);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('25g Butter' , 4);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tsp Corn Flour', 4);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('100g Parmasean Cheese', 4);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Pinch of grated Nutmeg', 4);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('250g Fettucine', 4);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Rough chopped Parsley', 4);
 
 INSERT INTO directions (recipe_id, step_directions) VALUES (1, 'Preheat the oven to 150C/300F');
 INSERT INTO directions (recipe_id, step_directions) VALUES (1, 'Toss the beef and flour together in a bowl with some salt and black pepper');
@@ -123,7 +35,6 @@ INSERT INTO directions (recipe_id, step_directions) VALUES (3, 'Bake for 45 min 
 INSERT INTO directions (recipe_id, step_directions) VALUES (3, 'Decorate with some melted vegan chocolate ');
 
 INSERT INTO directions (recipe_id, step_directions) VALUES (4, 'In a medium saucepan, stir the clotted cream, butter and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm');
-INSERT INTO directions (recipe_id, step_directions) VALUES (4, 'Put the cheese and nutmeg in a small bowl and add a good grinding of black pepper, then stir everything together (don?t add any salt at this stage)');
+INSERT INTO directions (recipe_id, step_directions) VALUES (4, 'Put the cheese and nutmeg in a small bowl and add a good grinding of black pepper, then stir everything together (don’t add any salt at this stage)');
 INSERT INTO directions (recipe_id, step_directions) VALUES (4, 'Put the pasta in another pan with 2 tsp salt, pour over some boiling water and cook following pack instructions (usually 3-4 mins). When cooked, scoop some of the cooking water into a heatproof jug or mug and drain the pasta, but not too thoroughly');
 INSERT INTO directions (recipe_id, step_directions) VALUES (4, 'Add the pasta to the pan with the clotted cream mixture, then sprinkle over the cheese and gently fold everything together over a low heat using a rubber spatula. When combined, splash in 3 tbsp of the cooking water. At first, the pasta will look wet and sloppy: keep stirring until the water is absorbed and the sauce is glossy. Check the seasoning before transferring to heated bowls. Sprinkle over some chives or parsley, then serve immediately.');
-

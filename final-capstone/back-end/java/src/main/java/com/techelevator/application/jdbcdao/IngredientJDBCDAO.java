@@ -43,7 +43,7 @@ public class IngredientJDBCDAO implements IngredientDAO {
 //----------- Get ingredients by RecipeId -----------------------
     @Override
     public List<Ingredient> getIngredientsByRecipeId(long recipeId) {
-        String sqlSelectIngredients = " SELECT * FROM ingredient WHERE recipe_id = ? ";
+        String sqlSelectIngredients = " SELECT ingredient_id, ingredient_name, recipe_id FROM ingredient WHERE recipe_id = ? ";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectIngredients, recipeId);
 

@@ -5,9 +5,17 @@ public class Category {
     private int categoryId;
     private String categoryName;
 
-//Contructor?
+//Constructor
+    public Category () {
+}
+
+    public Category (int categoryId, String categoryName) {
+        this.categoryId = categoryId;
+        this.categoryName = categoryName;
+    }
 
 
+//Getters & Setters
     public int getCategoryId() {
         return categoryId;
     }
@@ -24,6 +32,7 @@ public class Category {
         this.categoryName = categoryName;
     }
 
+//toString Method
     @Override
     public String toString() {
         return "Category{" +
