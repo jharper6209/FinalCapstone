@@ -33,7 +33,6 @@ public class DirectionsJDBCDAO implements DirectionsDAO {
         String sqlDisplayDirections = "SELECT step_id, recipe_id, step_directions FROM directions WHERE recipe_id = ?";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlDisplayDirections, recipeId);
-
         while (results.next()) {
             Directions preparationSteps = new Directions();
             preparationSteps.setStepId(results.getInt("step_id"));

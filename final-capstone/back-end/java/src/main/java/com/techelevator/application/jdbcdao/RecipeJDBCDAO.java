@@ -23,7 +23,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
 
 
     public static List<Recipe> recipes = new ArrayList<>();
-    public static Recipe recipe = new Recipe();
+    public static Recipe recipeName = new Recipe();
 
 //---------- List All Recipes ------------------------------
     @Override
@@ -34,7 +34,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
         while (results.next()) {
             Recipe currentRecipe = new Recipe();
             currentRecipe.setRecipeID(results.getLong("recipe_id"));
-            currentRecipe.setCategoryId(results.getString("category_id"));
+            currentRecipe.setCategoryId(results.getInt("category_id"));
             currentRecipe.setName(results.getString("recipe_name"));
             currentRecipe.setImage(results.getString("image"));
             recipes.add(currentRecipe);
@@ -44,16 +44,17 @@ public class RecipeJDBCDAO implements RecipeDAO {
 
 //----------- Get Recipe by Category ID ----------------------------
     @Override
-    public Recipe getRecipeByCategoryId(long categoryId) {
-        String sqlDisplayDirections = "SELECT recipe_name FROM recipe WHERE category_id = ?";
+    public Recipe getRecipeByCategoryId(int categoryId) {
+        String sqlDisplayDirections = "SELECT recipe_name, recipe_id, category_id FROM recipe WHERE category_id = ?";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlDisplayDirections, categoryId);
-
         while (results.next()) {
             Recipe recipeNameByCategoryId = new Recipe();
             recipeNameByCategoryId.setName(results.getString("recipe_name"));
+            recipeNameByCategoryId.setRecipeID(results.getLong("recipe_id"));
+            recipeNameByCategoryId.setCategoryId(results.getInt("category_id"));
         }
-        return recipe;
+        return recipeName;
     }
 
 
