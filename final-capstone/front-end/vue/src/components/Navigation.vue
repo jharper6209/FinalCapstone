@@ -1,31 +1,36 @@
 <template>
-  <div id="right">
-    <h1 class="nav-header">The <u>RIGHT</u> choices</h1>
+  <div id="navigation">
+
+    <h1 class="nav-header">The <u>KEY</u> Choices</h1>
     <table class="link-table">
       <tr >
-        <router-link class="link" v-bind:to="{ name: 'home' } " v-if="$store.state.token !=''"
-          ><p><i class="fas fa-home"></i> HOME</p></router-link
+        <router-link class="link" v-bind:to="{ name: 'home' } "><p><i class="fas fa-home"></i> HOME</p></router-link>
+      </tr>
+      <tr>
+        <router-link class="link" v-bind:to="{ name: 'grocery' }"><p><i class="fas fa-shopping-bag"></i> GROCERY LIST</p></router-link
         >
       </tr>
       <tr>
-        <router-link class="link" v-bind:to="{ name: 'grocery' }"  v-if="$store.state.token !=''">
-          <p><i class="fas fa-shopping-bag"></i> GROCERY LIST</p></router-link
-        >
-      </tr>
-      <tr>
-        <router-link class="link" v-bind:to ="{name: 'recipes'}"> <p> <i class="fas fa-book-dead"></i> All Recipes </p>
+        <router-link class="link" v-bind:to ="{name: 'recipes'}"><p><i class="fas fa-book-dead"></i> ALL RECIPES</p>
            </router-link>
       </tr>
-
     </table>
 
     <table class="footer-table">
-      <tr class="link">
+      <!-- If in need of a hard link for tutorial -->
+      <!-- <tr>
+        <router-link class="link"
+        v-bind:to="{ name: 'Error'}"
+        v-if="$store.state.token === ''">
+        <p><i class="fas fa-question-circle"></i> TUTORIAL</p>
+        </router-link>
+      </tr> -->
+      <tr>
         <router-link class="link"
           v-bind:to="{ name: 'logout' }"
-          v-if="$store.state.token != ''"
-          ><p><i class="fas fa-sign-out-alt"></i> LOGOUT</p></router-link
-        >
+          v-if="$store.state.token != ''">
+          <p><i class="fas fa-sign-out-alt"></i> LOGOUT</p>
+          </router-link>
       </tr>
     </table>
   </div>
@@ -36,15 +41,23 @@ export default {};
 </script>
 
 <style scoped>
-#right {
+#navigation {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  height: 95vh;
+
+}
+
+.open-nav{
+  display:flex;
+  justify-content: center;
+  position: absolute;
 }
 
 .nav-header {
   color: white;
+    font-family: "Allerta Stencil", sans-serif;
 }
 
 .link-table {
@@ -52,7 +65,7 @@ export default {};
   align-content: center;
   flex-wrap: wrap;
   flex-direction: column;
-  height: 80vh;
+  height: 100vh;
 }
 
 .link {
@@ -70,5 +83,6 @@ export default {};
   background-color: white;
   height: 50px;
   width: 300px;
+    margin-top: 25px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-      <router-link class="card" v-bind:to="{name: 'Recipe', params:{id: card.id}}">
+      <router-link class="card" v-bind:to="{name: 'recipe', params:{id: card.id}}">
       <img class="plate" src="../assests/plate.png">
           <img class="recipe-image" v-bind:src="card.image" />
                 
@@ -23,6 +23,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     border-radius: 50%;
+    margin-top: 50px;
     width: 300px;
     height: 300px;
 }

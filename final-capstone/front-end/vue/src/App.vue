@@ -1,14 +1,11 @@
 <template>
   <div id="app">
-      <!-- <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
-      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link> -->
-      <div class="nav-buttons">
+      <div class="nav-buttons" v-if="$store.state.token !=''">
       <navigation/>
       </div>
       <div class="router-views">
     <router-view />
-    </div>
-    </div>
+      </div>
   </div>
 </template>
 
@@ -21,18 +18,25 @@ export default {
 </script>
 
 <style>
-#app{
+
+body{
+  background-color: maroon;
   height: 100vh;
+  box-sizing: border-box;
+}
+
+#app{
   display: grid;
   grid-template-columns: 6fr 1fr;
-  grid-template-areas: "page nav"
+  grid-template-areas: "page nav";
+}
+
+.router-views{
+  grid-area: page;
 }
 
 .nav-buttons{
   grid-area: nav;
 }
 
-.router-views{
-  grid-area: page;
-}
 </style>

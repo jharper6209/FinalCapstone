@@ -8,6 +8,7 @@ import store from '../store/index'
 import GroceryList from '../views/GroceryList.vue'
 import RecipeDetail from '../views/RecipeDetail.vue'
 import Tutorial from '../views/Tutorial.vue'
+import Error from '../views/Error.vue'
 import RecipeList from '../views/RecipeList'
 
 Vue.use(Router)
@@ -78,7 +79,15 @@ const router = new Router({
       name: "tutorial",
       component: Tutorial,
       meta:{
-        requiresAuth: true
+        requiresAuth: false
+      }
+    },
+    {
+      path:"/error",
+      name: "error",
+      component: Error,
+      meta:{
+        requiresAuth: false
       }
     },
     {
