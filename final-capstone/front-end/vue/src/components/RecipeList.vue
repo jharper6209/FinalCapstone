@@ -6,21 +6,15 @@
     <img class="filterButton" src="../assests/vegetarian.png"/>
     <img class="filterButton" src="../assests/gf.png"/>
     </div>
-    <select
-      v-for="aNeed in $store.state.categoryDummy"
-      v-bind:key="aNeed.id"
-      name="needs"
-    >
-      <option value="">--</option>
-      <option value="aNeed"></option>
-    </select>
-    <tr v-for="aRecipe in $store.state.dummy" v-bind:key="aRecipe.id">
+  
+
+    <tr v-for="aRecipe in $store.state.dummy" v-bind:key="aRecipe.id" >
       <td>
-        <input type="checkbox" name="list" />
+        <input type="checkbox" name="list" v-on:change="checkedRecipe($event)" v-model='dummy.checked' />
         <label for="list"> {{ aRecipe.name }} </label>
       </td>
     </tr>
-    <input type="submit" />
+    <button v-on:click="checkedRecipes" > Submit </button>
   </div>
 </template>
 
@@ -30,19 +24,35 @@ export default {
   data() {
     return{
     value: "false",
-    recipe: []
+    myRecipes: []
+   
     }
   },
 
 method: {
-  updateList(){
+    checkedRecipes(event) {
+      if (event.target.checked) {
+        this.myRecipes.push(parseInt(event.target.id));
+      } else {
+        this.myRecipes = this.myRecipes.filter((aRecipe) => {
+          return aRecipe !== parseInt(event.target.id);
+        });
+      }
+    },
+    filteredRecipes() {
+ return this.dummy.filter((aRecipe) => {
+ return dummy.name.includes(this.filterText);
+ });
 
-   this.$store.state.recipe.push
-  }
+ }
+
+
+    },
+ 
 }
   
   
-  };
+  
   
 </script>
 
@@ -61,18 +71,12 @@ method: {
   position: fixed;
 }
 
-<<<<<<< HEAD
-.reading{
-  position: absolute;
-  z-index: -1;
-=======
 #header{
   font-size: 50px;
   font-family: "Berkshire Swash", cursive;
   color: yellow;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
->>>>>>> 79d4c5f2ddd6d24a2e9888609ec5fb1c1d0e5a19
 }
 
 .filterButton{

@@ -93,7 +93,7 @@ export default new Vuex.Store({
     },
     SHOW_CURRENT_DETAIL(state, data){
       state.currentDummy = data;
-    },
-    FILTER_GROCERY_DUMMY(state, )
-  },
-})
+    }
+  
+} // end of mutations
+}) // end of data store
