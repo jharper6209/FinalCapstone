@@ -10,7 +10,7 @@
 
     <tr v-for="aRecipe in $store.state.dummy" v-bind:key="aRecipe.id" >
       <td>
-        <input type="checkbox" name="list" v-on:change="checkedRecipe($event)" v-model='dummy.checked' />
+        <input type="checkbox" name="list" v-model='value' v-on:change="checkedRecipe($event)"  />
         <label for="list"> {{ aRecipe.name }} </label>
       </td>
     </tr>
@@ -29,10 +29,11 @@ export default {
     }
   },
 
-method: {
+   method: {
     checkedRecipes(event) {
       if (event.target.checked) {
         this.myRecipes.push(parseInt(event.target.id));
+        value = "true"
       } else {
         this.myRecipes = this.myRecipes.filter((aRecipe) => {
           return aRecipe !== parseInt(event.target.id);
@@ -45,7 +46,6 @@ method: {
  });
 
  }
-
 
     },
  

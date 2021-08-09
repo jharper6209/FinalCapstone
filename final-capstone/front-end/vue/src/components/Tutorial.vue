@@ -1,6 +1,6 @@
 <template>
   <div class="tutorial">
-    <h1>Welcome to the Structly Equal Meals!</h1>
+    <h1>Welcome To The Structly Equal Meals!</h1>
     <p class="answer">
       Here you will build a meal plan
       based on your dietary needs. We are currently under construction so please

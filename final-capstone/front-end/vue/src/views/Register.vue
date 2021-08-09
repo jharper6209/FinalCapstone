@@ -1,13 +1,13 @@
 <template>
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal">Create New Account</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Create New Account To Starting Meal Planning Like A Boss</h1>
       <h4>Curious before you sign up? <router-link v-bind:to="{ name: 'tutorial' }" id="tutorial">Check our tutorial!</router-link></h4>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
       <div class="label">
-      <label for="username">Enter your username</label>
+      <label for="username">Choose A Username</label>
       <input
         type="text"
         id="username"
@@ -19,7 +19,7 @@
       />
       </div>
       <div class="label">
-      <label for="password" class="label">Password</label>
+      <label for="password" class="label">Create Your Password</label>
       <input
         type="password"
         id="password"
@@ -37,7 +37,7 @@
         required
       />
       </div>
-      <router-link :to="{ name: 'login' }" id="login">Have an account? Login!</router-link>
+      <router-link :to="{ name: 'login' }" id="login">Have An Account? Login!</router-link>
       <button class="btn btn-lg btn-primary btn-block" id="create" type="submit">
         Create Account
       </button>

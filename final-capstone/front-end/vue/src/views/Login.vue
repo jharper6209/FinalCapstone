@@ -1,14 +1,15 @@
 <template>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign-In To Our Meal Planner</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Please Sign-In To MealPlanner</h1>
+      
       <div
         class="alert alert-danger"
         role="alert"
         v-if="invalidCredentials"
-      >Invalid username and password!</div>
+      >Invalid Username And Password!</div>
             <div class="label">
-      <label for="username">Enter your username</label>
+      <label for="username">Enter Your Username</label>
       <input
         type="text"
         id="username"
@@ -20,7 +21,7 @@
       />
             </div>
       <div class="label">
-      <label for="password">Enter your password</label>
+      <label for="password">Enter Your Password</label>
       <input
         type="password"
         id="password"
@@ -30,8 +31,8 @@
         required
       />
       </div>
-      <router-link :to="{ name: 'register' }" id="register">Need an account?</router-link>
-      <button type="submit" id="sign-in">Sign in</button>
+      <router-link :to="{ name: 'register' }" id="register">Need An Account?</router-link>
+      <button type="submit" id="sign-in">Sign-In</button>
     </form>
     </div>
 </template>
