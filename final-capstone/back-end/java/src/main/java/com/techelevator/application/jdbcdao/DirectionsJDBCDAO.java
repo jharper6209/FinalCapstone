@@ -4,17 +4,21 @@ import com.techelevator.application.dao.DirectionsDAO;
 import com.techelevator.application.model.Directions;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
+@Service
 public class DirectionsJDBCDAO implements DirectionsDAO {
 
     private JdbcTemplate jdbcTemplate;
 
     public DirectionsJDBCDAO(JdbcTemplate jdbcTemplate) {
-
-        this.jdbcTemplate = jdbcTemplate;}
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     List<Directions> directions = new ArrayList<Directions>();
 
@@ -26,7 +30,7 @@ public class DirectionsJDBCDAO implements DirectionsDAO {
 
     @Override
     public List<Directions> getDirectionsByRecipeId(int recipeId) {
-        String sqlDisplayDirections = "SELECT step_id, recipe_id, step_directions WHERE recipe_id = ?";
+        String sqlDisplayDirections = "SELECT step_id, recipe_id, step_directions FROM directions WHERE recipe_id = ?";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlDisplayDirections, recipeId);
 

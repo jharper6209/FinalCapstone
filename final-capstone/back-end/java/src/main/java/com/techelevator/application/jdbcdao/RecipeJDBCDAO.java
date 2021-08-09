@@ -1,6 +1,7 @@
 package com.techelevator.application.jdbcdao;
 
 import com.techelevator.application.dao.RecipeDAO;
+import com.techelevator.application.model.Directions;
 import com.techelevator.application.model.Recipe;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -22,6 +23,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
 
 
     public static List<Recipe> recipes = new ArrayList<>();
+    public static Recipe recipe = new Recipe();
 
 //---------- List All Recipes ------------------------------
     @Override
@@ -39,6 +41,23 @@ public class RecipeJDBCDAO implements RecipeDAO {
         }
         return recipes;
     }
+
+//----------- Get Recipe by Category ID ----------------------------
+    @Override
+    public Recipe getRecipeByCategoryId(long categoryId) {
+        String sqlDisplayDirections = "SELECT recipe_name FROM recipe WHERE category_id = ?";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlDisplayDirections, categoryId);
+
+        while (results.next()) {
+            Recipe recipeNameByCategoryId = new Recipe();
+            recipeNameByCategoryId.setName(results.getString("recipe_name"));
+        }
+        return recipe;
+    }
+
+
+
 
 //----------- Get a Recipe by the ID --------------------------
 // ---- NOT WRITTEN
