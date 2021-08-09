@@ -20,6 +20,7 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {},
+   
     dummy:[
       {
         id: 1,
@@ -117,6 +118,7 @@ export default new Vuex.Store({
     SHOW_CURRENT_DETAIL(state, data){
       state.currentDummy = data;
     },
+    FILTER_GROCERY_DUMMY(state, )
   },
 }
 )

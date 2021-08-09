@@ -14,27 +14,31 @@
 <template>
   
 <div class ="recipe-list">
-<img class='cooking' src='../assests/whatsfordinner.png'/>
+<img class='reading' src='../assests/whatsfordinner.png'/>
 <header> 
   <h1> Available Recipes </h1>
   
  
 
 </header>
-<select v-for ="aNeed in $store.state.categoryDummy" v-bind:key="aNeed.id" name="needs" >
-  <option value="">--</option>
-  <option value="aNeed" ></option>
-</select>
-<tr v-for="aRecipe in $store.state.dummy" v-bind:key="aRecipe.id">
-  <td>
-
-<input type="checkbox" name= "list" > 
-<label for= "list"> {{aRecipe.name}} </label>
-
+  <div class="recipeSelections">
+    <select name="needs" v-for="aNeed in $store.state.categoryDummy" v-bind:key="aNeed.id" >
+  
+   <option> {{aNeed.name}}</option>
+      
+  
    
-  </td>
-</tr>
+    </select>
+ </div>
 
+<div class= "recipeOptions">
+  <tr v-for="aRecipe in $store.state.dummy" v-bind:key="aRecipe.id" >
+    <td>
+      <input type="checkbox" name= "list" v-on:click="value = true"  > 
+      <label for= "list"> {{aRecipe.name}} </label>
+    </td>
+  </tr>
+</div>
   
    <input type="submit">
   
@@ -47,7 +51,20 @@
 <script>
 
 export default {
- 
+  data() {
+    return{
+    value: "false",
+    recipe: []
+    }
+  },
+
+method: {
+  updateList(){
+
+   this.$store.state.recipe.push
+  }
+}
+  
   
   };
   
@@ -63,7 +80,7 @@ export default {
   height: 100vh;
 }
 
-.cooking{
+.reading{
   position: absolute;
   z-index: -1;
 }
