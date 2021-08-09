@@ -1,8 +1,5 @@
 <template>
 <div class="grocery-list">
-<img class='cooking' src='../assests/stillcooking.png'/>
-  <h1>It's not quite ready yet...</h1>
-  <h1>COME BACK SOON!</h1>
   </div>
 </template>
 

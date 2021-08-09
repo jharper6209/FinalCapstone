@@ -2,11 +2,12 @@
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
       <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
-      <h4>Curious before you sign up? Check our tutorial!</h4>
+      <h4>Curious before you sign up? <router-link v-bind:to="{ name: 'tutorial' }" id="tutorial">Check our tutorial!</router-link></h4>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
-      <label for="username" class="sr-only">Username</label>
+      <div class="label">
+      <label for="username">Enter your username</label>
       <input
         type="text"
         id="username"
@@ -16,7 +17,9 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only">Password</label>
+      </div>
+      <div class="label">
+      <label for="password" class="label">Password</label>
       <input
         type="password"
         id="password"
@@ -33,8 +36,9 @@
         v-model="user.confirmPassword"
         required
       />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
+      </div>
+      <router-link :to="{ name: 'login' }" id="login">Have an account? Login!</router-link>
+      <button class="btn btn-lg btn-primary btn-block" id="create" type="submit">
         Create Account
       </button>
     </form>
@@ -93,33 +97,76 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #register{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: yellow;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.7em;
+    background-image: url("https://c.tenor.com/uowg16d06EgAAAAC/meal-prepped.gif");
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.label{
+  padding-top: 15px;
+}
+
+.form-register{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#username, #password, #confirmPassword{
+  display: flex;
+  border-radius: 10px;
+  align-content: center;
+  text-decoration: none;
+  font-size: 30px;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+  height: 50px;
+  width: 300px;
+}
+
+#tutorial{
+  color: yellow;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#login{
+  display: flex;
+  color: yellow;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  justify-content: center;
+}
+
+#create{
+  font-family: "Allerta Stencil", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0px;
-  padding: 0 px;
-  color:rgb(46, 61, 61);
-
-  
+  color: yellow;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 30px;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+  height: 50px;
+  width: 300px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-#username.form-control{
-  margin-bottom: 20px;
-}
-a{
-  display: flex;
-  color: white;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-.btn.btn-lg.btn-primary.btn-block{
-display: flex;  
-justify-content: center;
-align-items: center;
- font-family:cursive, 'Times New Roman', Times, serif ;
-}
-
-
 </style>

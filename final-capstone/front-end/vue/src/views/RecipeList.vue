@@ -1,9 +1,5 @@
 <template>
-
-  
-
     <recipe-list/>
-
 </template>
 
 <script>

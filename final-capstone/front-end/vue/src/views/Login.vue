@@ -7,12 +7,8 @@
         role="alert"
         v-if="invalidCredentials"
       >Invalid username and password!</div>
-      <div
-        class="alert alert-success"
-        role="alert"
-        v-if="this.$route.query.registration"
-      >Thank you for registering, please sign in.</div>
-      <label for="username" class="sr-only">Username</label>
+            <div class="label">
+      <label for="username">Enter your username</label>
       <input
         type="text"
         id="username"
@@ -22,7 +18,9 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only">Password</label>
+            </div>
+      <div class="label">
+      <label for="password">Enter your password</label>
       <input
         type="password"
         id="password"
@@ -31,8 +29,9 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
-      <button type="submit">Sign in</button>
+      </div>
+      <router-link :to="{ name: 'register' }" id="register">Need an account?</router-link>
+      <button type="submit" id="sign-in">Sign in</button>
     </form>
     </div>
 </template>
@@ -65,64 +64,80 @@ export default {
         })
         .catch(error => {
           const response = error.response;
-
           if (response.status === 401) {
             this.invalidCredentials = true;
           }
         });
-    }
+    },
   },
 };
 </script>
-<style>
 
-/* #app{
-  background-image: url("https://v.fastcdn.co/u/d1da2199/54578221-0-meal-prep-recipe-var.gif");
+<style scoped>
+#login{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: yellow;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.7em;
+    background-image: url("https://c.tenor.com/uowg16d06EgAAAAC/meal-prepped.gif");
   background-size: cover;
+  position: fixed;
   top: 0;
   left: 0;
-} */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 
+.label{
+  padding-top: 15px;
+}
 
-#login{
+.form-register{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#username, #password{
+  display: flex;
+  border-radius: 10px;
+  align-content: center;
+  text-decoration: none;
+  font-size: 30px;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+  height: 50px;
+  width: 300px;
+}
+
+#register{
+  color: yellow;
+      text-align: center;
 display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-padding: 0;
-margin:0;
-}
+justify-content:center;
+margin-right: 45px;
+margin-top: 20px;
+margin-bottom: 20px;
+      }
 
-.h3.mb-3.font-weight-normal{
+#sign-in{
+  font-family: "Allerta Stencil", sans-serif;
   display: flex;
-  justify-content: center;
+  justify-content: center;  
+  align-items: center;
+  color: yellow;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 30px;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+  height: 50px;
+  width: 300px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-
-
-#password{
-  display: flex;
-}
-
-#username{
-  display: flex;
-}
-body{
-  background : maroon;
-  font-family:cursive, 'Times New Roman', Times, serif;
-}
-input[type=text]{
-  font-family:cursive, 'Times New Roman', Times, serif ;
-  background-color: lightgray;
-}
-input[type=password]{
-  font-family:cursive, 'Times New Roman', Times, serif ;
-  background-color: lightgray;
-}
-button[type=submit]{
-  font-family:cursive, 'Times New Roman', Times, serif ;
- 
-}
-
-
-
 </style>

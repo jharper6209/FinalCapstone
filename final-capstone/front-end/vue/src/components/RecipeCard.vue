@@ -23,6 +23,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     border-radius: 50%;
+    margin-top: 50px;
     width: 300px;
     height: 300px;
 }

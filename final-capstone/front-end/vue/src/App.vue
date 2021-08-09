@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      <div class="nav-buttons" v-if={}>
+      <div class="nav-buttons" v-if="$store.state.token !=''">
       <navigation/>
       </div>
       <div class="router-views">
@@ -18,13 +18,18 @@ export default {
 </script>
 
 <style>
-#app{
+
+body{
+  background-color: maroon;
   height: 100vh;
+  box-sizing: border-box;
+}
+
+#app{
   display: grid;
   grid-template-columns: 6fr 1fr;
   grid-template-areas: "page nav";
 }
-
 
 .router-views{
   grid-area: page;
@@ -33,7 +38,5 @@ export default {
 .nav-buttons{
   grid-area: nav;
 }
-
-
 
 </style>

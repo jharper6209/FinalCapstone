@@ -12,7 +12,7 @@
     <div class="tutorialCard">
 
       <router-link class="tutorialLink"
-        v-bind:to="{ name: 'tutorialDetail', params: { id: recipe.id } }"
+        v-bind:to="{ name: 'error', params: { id: recipe.id } }"
       >
             <div class="card">
         <img class="plate" src="../assests/plate.png" />
