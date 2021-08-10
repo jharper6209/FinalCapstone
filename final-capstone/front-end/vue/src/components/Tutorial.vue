@@ -5,10 +5,11 @@
    <h1 id= "welcome"> Welcome to our site! </h1>
    <h2> Let us help simplify your meal times while keeping your dietary needs in mind. </h2> 
 
-	<h3 id= "info"> How to Navigate our site: </h3>
+
     </div>
     
   <div class= "steps">
+    	<h3 id= "info"> <br>How to Navigate our site: </h3>
     
       <tr name= "stepOne"><span name= "first"> Step 1- </span>  Once you are logged click on the All Recipes tab and take time to browse our recipe inventory. </tr> <br>
 
@@ -66,6 +67,11 @@ export default {
 <style scoped>
 .tutorial{
   color: white;
+  
+  font-family: "Berkshire Swash", cursive;;
+
+   
+  
 
 }
 .tutorialLink{
@@ -136,6 +142,12 @@ a{
 }
 .question>h3{
   text-align: center;
+}
+.steps{
+  background-image: url("../assests/oranges.webp");
+ 
+  background-repeat: no-repeat;
+  background-size: 100%  ;
 }
 
 </style>

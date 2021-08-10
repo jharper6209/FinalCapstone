@@ -85,7 +85,7 @@ export default {
   color: maroon;
    font-family: "Berkshire Swash", cursive;
   
-  background-image: url("../assests/whatsfordinner.png");
+  background-image: url("../assests/chalkboard.webp");
   background-size:cover;
   top: 0;
   left: 0;

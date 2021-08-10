@@ -107,7 +107,7 @@ export default {
   color: maroon;
    font-family: "Berkshire Swash", cursive;
      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-      background-image: url("../assests/whatsfordinner.png");
+      background-image: url("../assests/chalkboard.webp");
   background-size:cover;
   top: 0;
   left: 0;
