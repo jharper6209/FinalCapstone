@@ -10,16 +10,15 @@
     
   <div class= "steps">
     
-      <tr name= "stepOne"><span name= "first"> Step 1- </span>  Once you are logged in take time to browse this weeks recipes
-on the Home page.  </tr> <br>
+      <tr name= "stepOne"><span name= "first"> Step 1- </span>  Once you are logged click on the All Recipes tab and take time to browse our recipe inventory. </tr> <br>
 
-      <tr name = "stepTwo"><span name= "second"> Step 2- </span> Click the All Recipes tab to head over to our full recipe inventory. </tr><br>
-      <tr name = "stepThree"><span name= "third"> Step 3-</span> Choose your dietary restrictions by choosing the icon on the top. Watch
+   
+      <tr name = "stepTwo"><span name= "second"> Step 3-</span> Choose your dietary restrictions by choosing the icon on the top. Watch
 the list morph to one that fits you. </tr><br>
-      <tr name = "stepFour"><span name= "fourth"> Step 4- </span> Check the recipes that excite you. Click add to my recipes to store 
+      <tr name = "stepThree"><span name= "third"> Step 4- </span> Check the recipes that excite you. Click add to my recipes to store 
 them in a personal recipe list. </tr><br>
-      <tr name = "stepFive"><span name= "fifth"> Step 5- </span> Click the My Recipes tab to view your stored recipes. </tr><br>
-      <tr name = "stepSix"><span name= "sixth"> Step 6- </span> Check the recipes for this weeks grind and we'll create a grocery
+      <tr name = "stepFour"><span name= "fourth"> Step 5- </span> Click the My Recipes tab to view and select your stored recipes. </tr><br>
+      <tr name = "stepFive"><span name= "fifth"> Step 6- </span> After checking the recipes for this weeks grind select the create grocery list button and we'll create a customized shopping
 list for you. </tr><br>
     
 
@@ -42,7 +41,7 @@ list for you. </tr><br>
     </div>
 
   <div class ="question">
-        <h3> FAQS </h3>    
+        <h3> FAQS </h3> <br>   
         <p>
            Does this cost anything?
           </p>
@@ -130,6 +129,12 @@ text-align: center;
   text-align: center;
 }
 #navigation{
+  text-align: center;
+}
+a{
+  color: yellow;
+}
+.question>h3{
   text-align: center;
 }
 
