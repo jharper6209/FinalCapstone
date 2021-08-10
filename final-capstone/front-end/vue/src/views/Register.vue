@@ -1,7 +1,7 @@
 <template>
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal">Create New Account To Starting Meal Planning Like A Boss</h1>
+      <h1 class="h3 mb-3 font-weight-normal"><br>Create New Account To Starting Meal Planning Like A Boss</h1>
       <h4>Curious before you sign up? <router-link v-bind:to="{ name: 'tutorial' }" id="tutorial">Check our tutorial!</router-link></h4>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
@@ -104,9 +104,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: yellow;
-  font-family: 'Open Sans', sans-serif;
+  color: maroon;
+   font-family: "Berkshire Swash", cursive;
      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      background-image: url("../assests/whatsfordinner.png");
+  background-size:cover;
+  top: 0;
+  left: 0;
+  position: fixed;
 }
 
 .label{
@@ -124,7 +129,7 @@ export default {
   border-radius: 10px;
   align-content: center;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 20px;
   border-style: solid;
   border-width: 2px;
   background-color: white;
@@ -133,7 +138,7 @@ export default {
 }
 
 #tutorial{
-  color: yellow;
+  color: maroon;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -141,18 +146,18 @@ export default {
 
 #login{
   display: flex;
-  color: yellow;
+  color: maroon;
     margin-top: 20px;
     margin-bottom: 20px;
   justify-content: center;
 }
 
 #create{
-  font-family: "Allerta Stencil", sans-serif;
+ font-family: "Berkshire Swash", cursive;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: yellow;
+  color:maroon;
   border-radius: 10px;
   text-decoration: none;
   font-size: 30px;
@@ -162,5 +167,12 @@ export default {
   height: 50px;
   width: 300px;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.form-control{
+  font-family: "Allerta Stencil", sans-serif;
+  text-align: center;
+}
+label{
+  font-size: 30px;
 }
 </style>
