@@ -13,11 +13,7 @@ recipe(){
     return this.$store.state.dummy.find((f) =>
     f.id === this.$route.params.id
     )}
-},
-// ingreident(){
-//     return this.$store.state.dummy.find((f) =>
-//     f.ingredients.id === this.$route.params.id
-//     )}
+}
 }
 </script>
 

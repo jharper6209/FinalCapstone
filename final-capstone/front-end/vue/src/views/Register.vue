@@ -106,13 +106,7 @@ export default {
   justify-content: center;
   color: yellow;
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.7em;
-    background-image: url("https://c.tenor.com/uowg16d06EgAAAAC/meal-prepped.gif");
-  background-size: cover;
-  position: fixed;
-  top: 0;
-  left: 0;
-   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .label{

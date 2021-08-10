@@ -1,10 +1,25 @@
 <template>
   <div class="recipe-list">
+
     <h1 id="header">Available Recipes</h1>
     <div>
+                    <router-link class="tutorialLink"
+        v-bind:to="{ name: 'error'}"
+      >
     <img class="filterButton" src="../assests/vegan.png"/>
+                    </router-link>
+
+                  <router-link class="tutorialLink"
+        v-bind:to="{ name: 'error'}"
+      >
     <img class="filterButton" src="../assests/vegetarian.png"/>
+                  </router-link>
+
+                  <router-link class="tutorialLink"
+        v-bind:to="{ name: 'error'}"
+      >
     <img class="filterButton" src="../assests/gf.png"/>
+                  </router-link>
     </div>
     <select
       v-for="aNeed in $store.state.categoryDummy"
@@ -20,7 +35,12 @@
         <label for="list"> {{ aRecipe.name }} </label>
       </td>
     </tr>
+              <router-link class="tutorialLink"
+        v-bind:to="{ name: 'error'}"
+      >
     <input type="submit" />
+              </router-link>
+                  <img src="../assests/whatsfordinner.png" id="background"/>
   </div>
 </template>
 
@@ -36,11 +56,15 @@ export default {};
   flex-direction: column;
   height: 100vh;
   width: 80vw;
-  background-image: url("../assests/whatsfordinner.png");
-  background-size: cover;
+  z-index: 1;
+}
+
+#background{
+  z-index: -1;
+  position: absolute;
   top: 0;
   left: 0;
-  position: fixed;
+  opacity: 35%;
 }
 
 #header{

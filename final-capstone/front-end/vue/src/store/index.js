@@ -18,10 +18,10 @@ if(currentToken != null) {
 }
 
 export default new Vuex.Store({
-  state: {
-    currentPage:'',
+  state: {   
     token: currentToken || '',
     user: currentUser || {},
+    groceryList:[],
     dummy:[
       {
         id: 1,
@@ -34,6 +34,7 @@ export default new Vuex.Store({
           name: 'Beef'
         },
         category: 0,
+        checked: false,
       },
       {
         id: 2,
@@ -46,6 +47,7 @@ export default new Vuex.Store({
           name: 'Chicken'
         },
         category: 2,
+        checked: false,
       },
       {
         id: 3,
@@ -57,7 +59,8 @@ export default new Vuex.Store({
           ingredientId: 3,
           name: 'Noodles'
         },
-        category: 1, 
+        category: 1,
+        checked: false, 
       },
       {
         id: 4,
@@ -70,6 +73,7 @@ export default new Vuex.Store({
           name: 'Cake'
         },
         category: 3,
+        checked: false,
       },
     ],
 },
@@ -90,11 +94,8 @@ export default new Vuex.Store({
       state.user = {};
       axios.defaults.headers.common = {};
     },
-    SHOW_CURRENT_DETAIL(state, data){
-      state.currentDummy = data;
-    },
-    SET_ROUTE(state, route) {
-      state.currentPage = route;
+    ADD_GROCERIES(state, data){
+      state.groceryList = data
     },
   },
 })

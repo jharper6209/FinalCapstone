@@ -11,7 +11,7 @@
         >
       </tr>
       <tr>
-        <router-link class="link" v-bind:to ="{name: 'recipes'}"><p><i class="fas fa-book-dead"></i> ALL RECIPES</p>
+        <router-link class="link" v-bind:to ="{name: 'recipes'}"><p><i class="fas fa-book"></i> ALL RECIPES</p>
            </router-link>
       </tr>
     </table>
@@ -33,6 +33,7 @@
           </router-link>
       </tr>
     </table>
+    
   </div>
 </template>
 
@@ -45,8 +46,11 @@ export default {};
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 95vh;
-
+  height: 100vh;
+  top:0;
+  position:sticky;
+  width: 300px;
+  z-index: 1;
 }
 
 .open-nav{
@@ -65,7 +69,7 @@ export default {};
   align-content: center;
   flex-wrap: wrap;
   flex-direction: column;
-  height: 100vh;
+  height: 75vh;
 }
 
 .link {
