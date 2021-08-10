@@ -22,7 +22,6 @@ public class DirectionsJDBCDAO implements DirectionsDAO {
 
     List<Directions> directions = new ArrayList<Directions>();
 
-
     @Override
     public List<Directions> directionsList() {
         return null;

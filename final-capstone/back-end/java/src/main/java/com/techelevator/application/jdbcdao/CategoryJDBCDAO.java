@@ -15,19 +15,19 @@ public class CategoryJDBCDAO implements CategoryDAO {
     public static List<Category> categories = new ArrayList<>();
     public static Category category = new Category();
 
+//----------------- NOT WRITTEN -------------------
     @Override
     public List<Category> categoryList() {
         return categories;
     }
 
+//----------------- NOT WRITTEN -------------------
     @Override
     public Category getCategoryById(int id) {
         return category;
     }
 
-
-
-
+//----------------- NOT WRITTEN -------------------
     @Override
     public Category getCategoryByName(String name) {
         for (Category theCategory : categories) {
