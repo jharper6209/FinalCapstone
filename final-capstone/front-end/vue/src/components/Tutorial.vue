@@ -1,12 +1,29 @@
 <template>
   <div class="tutorial">
     <h1>Welcome To The Structly Equal Meals!</h1>
-    <p class="answer">
-      Here you will build a meal plan
-      based on your dietary needs. We are currently under construction so please
-      bare with our growing pains. Our team is focused on bringing you the best
-      experience.
-    </p>
+    <div class="abstract">
+
+   <h2> Welcome to our site! </h2>
+   <h2> Let us help simplify your meal times while keeping your dietary needs in mind. </h2>
+
+	<h3> How to Navigate our site: </h3>
+    </div>
+  <div class= "steps">
+    
+      <tr name= "stepOne"> Step 1-  Once you are logged in take time to browse this weeks recipes
+on the Home page.  </tr>
+
+      <tr name = "stepTwo"> Step 2- Use the All Recipes tab to head over to our full recipe inventory. </tr>
+      <tr name = "stepThree"> Step 3- Choose your dietary restrictions by choosing the icon on the top. Watch
+the list morph to one that fits you. </tr>
+      <tr name = "stepFour"> Step 4- Choose the recipes that excite you. Click add to my recipes to store 
+them in a personal recipe list. </tr>
+      <tr name = "stepFive"> Step 5- Choose the My Recipes tab to view your stored recipes. </tr>
+      <tr name = "stepSix"> Step 6- Choose the recipes for this weeks grind and we'll create a grocery
+list for you. </tr>
+    
+
+    </div>
     <p class="question">OK so what is going on?</p>
 
     <div class="tutorialCard">

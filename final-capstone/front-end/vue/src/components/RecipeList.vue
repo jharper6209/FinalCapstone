@@ -10,11 +10,11 @@
 
     <tr v-for="aRecipe in $store.state.dummy" v-bind:key="aRecipe.id" >
       <td>
-        <input type="checkbox" name="list" v-model='value' v-on:change="checkedRecipe($event)"  />
+        <input type="checkbox" name="list" v-model='aRecipe.checked'   />
         <label for="list"> {{ aRecipe.name }} </label>
       </td>
     </tr>
-    <button v-on:click="checkedRecipes" > Submit </button>
+    <button v-on:click="checkedRecipes()"> Submit </button>
   </div>
 </template>
 
@@ -23,14 +23,22 @@
 export default {
   data() {
     return{
-    value: "false",
+   
     myRecipes: []
    
     }
   },
 
-   method: {
-    checkedRecipes(event) {
+   methods: {
+    checkedRecipes() {
+let activeRecipe = this.$store.state.dummy.find((q)=>
+console.log(q)
+)
+this.myRecipes.push(this.filteredRecipes)
+    },
+
+savedRecipes(){
+
       if (event.target.checked) {
         this.myRecipes.push(parseInt(event.target.id));
         value = "true"
@@ -40,6 +48,10 @@ export default {
         });
       }
     },
+
+
+
+
     filteredRecipes() {
  return this.dummy.filter((aRecipe) => {
  return dummy.name.includes(this.filterText);
