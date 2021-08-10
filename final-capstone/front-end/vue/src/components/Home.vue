@@ -2,16 +2,16 @@
   <form @submit.prevent="addGroceriesToList">
     <div
       class="form-group form-check"
-      v-for="item in this.$store.state.dummy"
-      v-bind:key="item.id"
+      v-for="select in this.$store.state.groceryList"
+      v-bind:key="select.id"
     >
-      <recipe-card v-bind:card="item" v-bind:key="item.id" />
-      <label class="form-check-label" :for="item.id">{{ item.name }}</label>
+      <personal-card v-bind:card="select" v-bind:key="select.id" />
+      <label class="form-check-label" :for="select.id">{{ select.name }}</label>
       <input
         type="checkbox"
-        v-model="checkedFood"
-        :id="item.name"
-        :value="item.name"
+        v-model="checkedIngredient"
+        :id="select.name"
+        :value="select.ingredients.name"
       />
     </div>
     <div class="form-group">
@@ -22,26 +22,23 @@
 </template>
 
 <script>
-import RecipeCard from "./RecipeCard.vue";
+import PersonalCard from "./PersonalCard.vue";
 export default {
   components: {
-    RecipeCard,
+    PersonalCard,
   },
   data() {
     return {
-      checkedFood: [],
+      checkedIngredient: [],
     };
   },
   methods: {
     addGroceriesToList() {
-      // for(let i = 0; i < this.checkedFood.length; i++) {
-      //   console.log(this.checkedFood[i]),
-        this.$store.commit("ADD_GROCERIES", this.checkedFood);
-      // }
+      this.$store.commit("ADD_INGREDIENTS", this.checkedIngredient);
       this.resetChecked();
     },
     resetChecked() {
-      this.checkedFood = [];
+      this.checkedIngredient = [];
     },
   },
 };

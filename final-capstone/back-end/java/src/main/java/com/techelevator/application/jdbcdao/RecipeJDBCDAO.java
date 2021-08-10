@@ -1,6 +1,7 @@
 package com.techelevator.application.jdbcdao;
 
 import com.techelevator.application.dao.RecipeDAO;
+import com.techelevator.application.model.Directions;
 import com.techelevator.application.model.Recipe;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -22,6 +23,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
 
 
     public static List<Recipe> recipes = new ArrayList<>();
+    public static Recipe recipeName = new Recipe();
 
 //---------- List All Recipes ------------------------------
     @Override
@@ -32,13 +34,32 @@ public class RecipeJDBCDAO implements RecipeDAO {
         while (results.next()) {
             Recipe currentRecipe = new Recipe();
             currentRecipe.setRecipeID(results.getLong("recipe_id"));
-            currentRecipe.setCategoryId(results.getString("category_id"));
+            currentRecipe.setCategoryId(results.getInt("category_id"));
             currentRecipe.setName(results.getString("recipe_name"));
             currentRecipe.setImage(results.getString("image"));
             recipes.add(currentRecipe);
         }
         return recipes;
     }
+
+//----------- Get Recipe by Category ID ----------------------------
+    @Override
+    public Recipe getRecipeByCategoryId(int categoryId) {
+        String sqlDisplayDirections = "SELECT * FROM recipe WHERE category_id = ?";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlDisplayDirections, categoryId);
+        Recipe recipeNameByCategoryId = new Recipe();
+        while (results.next()) {
+
+            recipeNameByCategoryId.setName(results.getString("recipe_name"));
+            recipeNameByCategoryId.setRecipeID(results.getLong("recipe_id"));
+            recipeNameByCategoryId.setCategoryId(results.getInt("category_id"));
+        }
+        return recipeNameByCategoryId;
+    }
+
+
+
 
 //----------- Get a Recipe by the ID --------------------------
 // ---- NOT WRITTEN

@@ -1,51 +1,50 @@
 <template>
-  <div class="recipe-list">
-
-    <h1 id="header">Available Recipes</h1>
-    <div>
-                    <router-link class="tutorialLink"
-        v-bind:to="{ name: 'error'}"
-      >
-    <img class="filterButton" src="../assests/vegan.png"/>
-                    </router-link>
-
-                  <router-link class="tutorialLink"
-        v-bind:to="{ name: 'error'}"
-      >
-    <img class="filterButton" src="../assests/vegetarian.png"/>
-                  </router-link>
-
-                  <router-link class="tutorialLink"
-        v-bind:to="{ name: 'error'}"
-      >
-    <img class="filterButton" src="../assests/gf.png"/>
-                  </router-link>
-    </div>
-    <select
-      v-for="aNeed in $store.state.categoryDummy"
-      v-bind:key="aNeed.id"
-      name="needs"
+  <form @submit.prevent="addGroceriesToList">
+        <h1> What We Do </h1>
+    <h2> Here you can see our recipes! When clicked it will bring up the recipe details and instructions! From there you can choose your recipes and add them to your recipes. After you choose your recipes we will generate a shopping list for you. </h2>
+    <div
+      class="form-group form-check"
+      v-for="item in this.$store.state.dummy"
+      v-bind:key="item.id"
     >
-      <option value="">--</option>
-      <option value="aNeed"></option>
-    </select>
-    <tr v-for="aRecipe in $store.state.dummy" v-bind:key="aRecipe.id">
-      <td>
-        <input type="checkbox" name="list" />
-        <label for="list"> {{ aRecipe.name }} </label>
-      </td>
-    </tr>
-              <router-link class="tutorialLink"
-        v-bind:to="{ name: 'error'}"
-      >
-    <input type="submit" />
-              </router-link>
-                  <img src="../assests/whatsfordinner.png" id="background"/>
-  </div>
+      <recipe-card v-bind:card="item" v-bind:key="item.id" />
+      <label class="form-check-label" :for="item.id">{{ item.name }}</label>
+      <input
+        type="checkbox"
+        v-model="checkedFood"
+        :id="item.name"
+        :value="item"
+      />
+
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary">Submit</button>
+      <img src="../assests/whatsfordinner.png" id="background" />
+    </div>
+  </form>
 </template>
 
 <script>
-export default {};
+import RecipeCard from "./RecipeCard.vue";
+export default {
+  components: {
+    RecipeCard,
+  },
+  data() {
+    return {
+      checkedFood: [],
+    };
+  },
+  methods: {
+    addGroceriesToList() {
+        this.$store.commit("ADD_GROCERIES", this.checkedFood);
+      this.resetChecked();
+    },
+    resetChecked() {
+      this.checkedFood = [];
+    },
+  },
+};
 </script>
 
 <style scoped>

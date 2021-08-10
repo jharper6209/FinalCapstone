@@ -22,6 +22,7 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     groceryList:[],
+    ingredientList:[],
     dummy:[
       {
         id: 1,
@@ -96,6 +97,9 @@ export default new Vuex.Store({
     },
     ADD_GROCERIES(state, data){
       state.groceryList = data
+    },
+    ADD_INGREDIENTS(state, data){
+      state.ingredientList = data
     },
   },
 })

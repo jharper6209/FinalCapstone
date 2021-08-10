@@ -2,9 +2,8 @@
 <div class="grocery-list">
   <h1>Your List of Groceries</h1>
     <p class="recipe-title"
-      v-for="ingredient in $store.state.groceryList"
-      v-bind:key="ingredient.id">
-      {{ ingredient }}
+      v-for="ingredient in $store.state.ingredientList"
+      v-bind:key="ingredient.id">{{ ingredient }}
       </p>
   </div>
 </template>

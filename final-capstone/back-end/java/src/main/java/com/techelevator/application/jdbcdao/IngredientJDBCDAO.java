@@ -24,7 +24,6 @@ public class IngredientJDBCDAO implements IngredientDAO {
     public static List<Ingredient> ingredients = new ArrayList<>();
     public static Ingredient ingredient = new Ingredient();
 
-
 //-------------------- List all Ingredients --------------------------------------
     @Override
     public List<Ingredient> ingredientList() {
@@ -40,6 +39,7 @@ public class IngredientJDBCDAO implements IngredientDAO {
         }
         return ingredients;
     }
+
 //----------- Get ingredients by RecipeId -----------------------
     @Override
     public List<Ingredient> getIngredientsByRecipeId(long recipeId) {
@@ -54,26 +54,26 @@ public class IngredientJDBCDAO implements IngredientDAO {
             recipeIngredients.setRecipeId(results.getLong("recipe_id"));
             ingredients.add(recipeIngredients);
             }
-
         return ingredients;
     }
 
 //----------------------- Get an ingredient by the IngredientId --------------------------------
     @Override
-        public Ingredient getIngredientById(long ingredientId) {
+    public Ingredient getIngredientById(long ingredientId) {
         String sqlGetIngredient = " SELECT * FROM ingredient WHERE ingredient_id = ? ";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetIngredient, ingredientId);
-        Ingredient theIngredients = new Ingredient();
+        Ingredient theIngredient = new Ingredient();
         while (results.next()) {
-            theIngredients.setIngredientId(results.getLong("ingredient_id"));
-            theIngredients.setIngredientName(results.getString("ingredient_name"));
-            theIngredients.setRecipeId(results.getLong("recipe_id"));
+            theIngredient.setIngredientId(results.getLong("ingredient_id"));
+            theIngredient.setIngredientName(results.getString("ingredient_name"));
+            theIngredient.setRecipeId(results.getLong("recipe_id"));
         }
-        return theIngredients;
+        return theIngredient;
 
     }
 
 //----------- Get a Ingredient by Name ---------------------------
+//----------------- NOT WRITTEN -------------------
     @Override
     public Ingredient getIngredientByName(String name) {
         for (Ingredient theIngredient : ingredients) {

@@ -3,16 +3,18 @@
 
     <h1 class="nav-header">The <u>KEY</u> Choices</h1>
     <table class="link-table">
-      <tr >
-        <router-link class="link" v-bind:to="{ name: 'home' } "><p><i class="fas fa-home"></i> HOME</p></router-link>
-      </tr>
-      <tr>
-        <router-link class="link" v-bind:to="{ name: 'grocery' }"><p><i class="fas fa-shopping-bag"></i> GROCERY LIST</p></router-link
-        >
-      </tr>
+
+
       <tr>
         <router-link class="link" v-bind:to ="{name: 'recipes'}"><p><i class="fas fa-book"></i> ALL RECIPES</p>
            </router-link>
+      </tr>
+            <tr >
+        <router-link class="link" v-bind:to="{ name: 'home' } "><p><i class="fas fa-home"></i> MY RECIPES</p></router-link>
+      </tr>
+            <tr>
+        <router-link class="link" v-bind:to="{ name: 'grocery' }"><p><i class="fas fa-shopping-bag"></i> GROCERY LIST</p></router-link
+        >
       </tr>
     </table>
 

@@ -20,6 +20,8 @@ export default {
 <style>
 
 body{
+  color: white;
+  font-size: 1.5rem;
   background-color: maroon;
   height: 100vh;
   box-sizing: border-box;

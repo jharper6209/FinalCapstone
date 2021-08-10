@@ -1,13 +1,30 @@
 <template>
   <div class="tutorial">
-    <h1>Welcome to the Structly Equal Meals!</h1>
-    <p class="answer">
-      Here you will build a meal plan
-      based on your dietary needs. We are currently under construction so please
-      bare with our growing pains. Our team is focused on bringing you the best
-      experience.
-    </p>
-    <p class="question">OK so what is going on?</p>
+    <h1>Welcome To The Structly Equal Meals!</h1>
+    <div class="abstract">
+
+   <h2> Welcome to our site! </h2>
+   <h2> Let us help simplify your meal times while keeping your dietary needs in mind. </h2>
+
+	<h3> How to Navigate our site: </h3>
+    </div>
+  <div class= "steps">
+    
+      <tr name= "stepOne"><span name= "first"> Step 1- </span>  Once you are logged in take time to browse this weeks recipes
+on the Home page.  </tr>
+
+      <tr name = "stepTwo"><span name= "second"> Step 2- </span> Click the All Recipes tab to head over to our full recipe inventory. </tr>
+      <tr name = "stepThree"><span name= "third"> Step 3-</span> Choose your dietary restrictions by choosing the icon on the top. Watch
+the list morph to one that fits you. </tr>
+      <tr name = "stepFour"><span name= "fourth"> Step 4- </span> Check the recipes that excite you. Click add to my recipes to store 
+them in a personal recipe list. </tr>
+      <tr name = "stepFive"><span name= "fifth"> Step 5- </span> Click the My Recipes tab to view your stored recipes. </tr>
+      <tr name = "stepSix"><span name= "sixth"> Step 6- </span> Check the recipes for this weeks grind and we'll create a grocery
+list for you. </tr>
+    
+
+    </div>
+   
 
     <div class="tutorialCard">
 
@@ -25,8 +42,7 @@
     <p class="answer">
       Here you can see one of our recipes! When clicked it will bring up the
       recipe details and instructions! 
-      In this tutorial though there will be nothing there but you can click it and try!
-    </p>
+   </p>
     <p class="question">
       Cool what about the button at the bottom of the page?
     </p>
@@ -48,7 +64,6 @@
           <p class="answer">
             No this is a free service! If you are ready head here to sign up or if you have signed up head here to login!
             </p>
-    </p>
   </div>
 </template>
 
