@@ -50,6 +50,7 @@ public class IngredientJDBCDAO implements IngredientDAO {
         while (results.next()) {
             Ingredient recipeIngredients = new Ingredient();
             recipeIngredients.setIngredientId(results.getLong("ingredient_id"));
+            recipeIngredients.setMeasurement(results.getString("measurement"));
             recipeIngredients.setIngredientName(results.getString("ingredient_name"));
             recipeIngredients.setRecipeId(results.getLong("recipe_id"));
             ingredients.add(recipeIngredients);

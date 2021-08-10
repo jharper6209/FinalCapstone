@@ -3,6 +3,7 @@ package com.techelevator.application.model;
 public class Ingredient {
 
     private long ingredientId;
+    private String measurement;
     private String ingredientName;
     private long recipeId;
 
@@ -13,8 +14,17 @@ public class Ingredient {
     public long getIngredientId() {
         return ingredientId;
     }
+
     public void setIngredientId(long ingredientId) {
         this.ingredientId = ingredientId;
+    }
+
+    public String getMeasurement() {
+        return measurement;
+    }
+
+    public void setMeasurement(String measurement) {
+        this.measurement = measurement;
     }
 
     public String getIngredientName() {
@@ -37,6 +47,7 @@ public class Ingredient {
     public String toString() {
         return "Ingredient{" +
                 "ingredientId=" + ingredientId +
+                ", measurement='" + measurement + '\'' +
                 ", ingredientName='" + ingredientName + '\'' +
                 ", recipeId=" + recipeId +
                 '}';
