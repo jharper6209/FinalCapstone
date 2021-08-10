@@ -73,7 +73,7 @@ public class ApiController {
 }
 // Get recipe by categoryId
     @RequestMapping(path = "/recipe/categoryid/{id}" ,  method = RequestMethod.GET)
-    public Recipe getRecipeByCategoryId(@PathVariable int id) {
+    public List<Recipe> getRecipeByCategoryId(@PathVariable int id) {
         logRequest("Request to get recipeNameByCategoryId - /recipe/categoryid/" +id);
         return recipeDAO.getRecipeByCategoryId(id);
     }

@@ -13,7 +13,7 @@ public interface RecipeDAO {
 
     Recipe getRecipeByName(String name);
 
-    Recipe getRecipeByCategoryId(int id);
+    List<Recipe> getRecipeByCategoryId(int id);
 
 
 
