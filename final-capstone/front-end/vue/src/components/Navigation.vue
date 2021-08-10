@@ -6,11 +6,11 @@
 
 
       <tr>
-        <router-link class="link" v-bind:to ="{name: 'recipes'}"><p><i class="fas fa-book"></i> ALL RECIPES</p>
+        <router-link class="link" v-bind:to ="{name: 'home'}"><p><i class="fas fa-book"></i> ALL RECIPES</p>
            </router-link>
       </tr>
             <tr >
-        <router-link class="link" v-bind:to="{ name: 'home' } "><p><i class="fas fa-home"></i> MY RECIPES</p></router-link>
+        <router-link class="link" v-bind:to="{ name: 'myRecipes' } "><p><i class="fas fa-home"></i> MY RECIPES</p></router-link>
       </tr>
             <tr>
         <router-link class="link" v-bind:to="{ name: 'grocery' }"><p><i class="fas fa-shopping-bag"></i> GROCERY LIST</p></router-link
@@ -34,6 +34,8 @@
           <p><i class="fas fa-sign-out-alt"></i> LOGOUT</p>
           </router-link>
       </tr>
+
+      user.authorties.id
     </table>
     
   </div>

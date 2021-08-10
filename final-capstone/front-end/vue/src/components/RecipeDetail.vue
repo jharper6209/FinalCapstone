@@ -11,8 +11,8 @@ export default {
 computed:{
 recipe(){
     return this.$store.state.dummy.find((f) =>
-    f.id === this.$route.params.id
-    )}
+    f.recipeID === this.$route.params.id
+    )},
 }
 }
 </script>

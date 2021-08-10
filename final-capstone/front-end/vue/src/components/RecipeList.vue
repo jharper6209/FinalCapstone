@@ -4,11 +4,11 @@
     <h2> Here you can see our recipes! When clicked it will bring up the recipe details and instructions! From there you can choose your recipes and add them to your recipes. After you choose your recipes we will generate a shopping list for you. </h2>
     <div
       class="form-group form-check"
-      v-for="item in this.$store.state.dummy"
-      v-bind:key="item.id"
+      v-for="item in $store.state.dummy"
+      v-bind:key="item.recipeID"
     >
-      <recipe-card v-bind:card="item" v-bind:key="item.id" />
-      <label class="form-check-label" :for="item.id">{{ item.name }}</label>
+      <recipe-card v-bind:card="item" v-bind:key="item.recipeID" />
+      <label class="form-check-label" :for="item.recipeID">{{ item.name }}</label>
       <input
         type="checkbox"
         v-model="checkedFood"
@@ -26,6 +26,7 @@
 
 <script>
 import RecipeCard from "./RecipeCard.vue";
+import MealService from '../services/MealService'
 export default {
   components: {
     RecipeCard,
@@ -35,7 +36,16 @@ export default {
       checkedFood: [],
     };
   },
+  created(){
+    this.retrieveRecipes();
+  },
   methods: {
+    retrieveRecipes(){
+      MealService.getRecipes()
+      .then(response =>{
+        this.$store.commit("SET_RECIPES", response.data);
+      })
+    },
     addGroceriesToList() {
         this.$store.commit("ADD_GROCERIES", this.checkedFood);
       this.resetChecked();

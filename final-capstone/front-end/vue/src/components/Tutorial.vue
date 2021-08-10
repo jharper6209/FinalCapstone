@@ -65,15 +65,21 @@ export default {
 </script>
 
 <style scoped>
+
 .tutorial{
   color: white;
+<<<<<<< HEAD
   
   font-family: "Berkshire Swash", cursive;;
 
    
   
 
+=======
+  font-family: "PencilPete", cursive;
+>>>>>>> 983de3d033ccb90ec9579594d1366070867766f0
 }
+
 .tutorialLink{
   display: flex;
   flex-direction: column;
