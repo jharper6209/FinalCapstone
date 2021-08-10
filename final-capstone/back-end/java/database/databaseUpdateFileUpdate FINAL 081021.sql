@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS ingredient CASCADE;
 DROP TABLE IF EXISTS category CASCADE;
 DROP TABLE IF EXISTS recipe CASCADE;
 DROP TABLE IF EXISTS directions CASCADE;
+DROP TABLE IS EXISTS user_recipe CASCADE;
 
 CREATE TABLE recipe (
 recipe_id SERIAL NOT NULL,
@@ -31,9 +32,15 @@ step_directions VARCHAR (2500),
 CONSTRAINT pk_step_id PRIMARY KEY (step_id) 
 );
 
+CREATE TABLE user_recipe 
+(user_id INT NOT NULL,
+recipe_id INT NOT NULL);
+
 ALTER TABLE recipe ADD CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES category(category_id);
 ALTER TABLE ingredient ADD CONSTRAINT fk_recipe_recipe_id FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id);
 ALTER TABLE directions ADD CONSTRAINT fk_recipe_recipe_id FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id);
+ALTER TABLE user_recipe ADD CONSTRAINT fk_users_user_id FOREIGN KEY (user_id) REFERENCES users(user_id);
+ALTER TABLE user_recipe ADD CONSTRAINT fk_recipe_recipe_id FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id);
 /*ALTER TABLE recipe ADD CONSTRAINT fk_users_user_id FOREIGN KEY (user_id) REFERENCES users(user_id);*/
 
 INSERT INTO category (category_name)
