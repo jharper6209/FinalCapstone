@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS category CASCADE;
+DROP TABLE IF EXISTS catagories CASCADE;
 
 CREATE TABLE category(
 category_id SERIAL NOT NULL,

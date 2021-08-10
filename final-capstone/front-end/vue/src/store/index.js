@@ -21,6 +21,7 @@ export default new Vuex.Store({
   state: {   
     token: currentToken || '',
     user: currentUser || {},
+    recipes:[],
     dummy:[
       {
         id: 1,
@@ -94,6 +95,9 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+    },
+    SET_RECIPES(state, data){
+      state.recipes = data;
     },
     ADD_GROCERIES(state, data){
       state.groceryList = data

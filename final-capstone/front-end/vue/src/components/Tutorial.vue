@@ -78,9 +78,12 @@ export default {
 </script>
 
 <style scoped>
+
 .tutorial{
   color: white;
+  font-family: "PencilPete", cursive;
 }
+
 .tutorialLink{
   display: flex;
   flex-direction: column;
