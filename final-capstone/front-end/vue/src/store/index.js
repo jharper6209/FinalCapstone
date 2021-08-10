@@ -21,8 +21,6 @@ export default new Vuex.Store({
   state: {   
     token: currentToken || '',
     user: currentUser || {},
-    groceryList:[],
-    ingredientList:[],
     dummy:[
       {
         id: 1,
@@ -77,7 +75,9 @@ export default new Vuex.Store({
         checked: false,
       },
     ],
-},
+    groceryList:[],
+    ingredientList:[],
+}, // End of Store Data
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
