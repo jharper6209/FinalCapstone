@@ -53,7 +53,12 @@ VALUES(3, 'Beef and Mustard Pie', 'https://www.themealdb.com/images/media/meals/
 (1, 'Baked Caramel Apple French Toast', 'http://tinyimg.io/i/pxMNudO.jpg'), 
 (1, 'Quinoa Stuffed Pork Tenderloin', 'http://tinyimg.io/i/xx7nG2f.jpg'),
 (1, 'Coconut Macaroons', 'http://tinyimg.io/i/dVRJfx8.jpg'), 
-(1, 'Zucchini Lasagna', 'http://tinyimg.io/i/KhfrkNx.jpg');
+(1, 'Zucchini Lasagna', 'http://tinyimg.io/i/KhfrkNx.jpg'), 
+(4, 'Curried Pumpkin Soup', 'http://tinyimg.io/i/CMiIhPe.jpg'),
+(4, 'Shakshuka', 'http://tinyimg.io/i/3owNhXp.jpg'),
+(4, 'Kale and Butternut Squash Frittata', 'http://tinyimg.io/i/5XS6aM7.jpg'),
+(4, 'Cauliflower Fried Rice', 'http://tinyimg.io/i/ysUKrvz.jpg'),
+(4, 'Walnut and Lentil Bolognese', 'http://tinyimg.io/i/ysUKrvz.jpg');
 
 
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1kg Beef', 1);
@@ -241,3 +246,110 @@ INSERT INTO directions (recipe_id, step_directions) VALUES (9, 'Repeat these lay
 INSERT INTO directions (recipe_id, step_directions) VALUES (9, 'Top the lasagna with a final layer of zucchini slices, a sprinkle of chopped parsley and basil, and 1/2 cup mozzarella cheese.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (9, 'Place the lasagna in the oven and cook for 40-45 minutes. Broil for a couple of minutes to get a nice golden top.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (9, 'Garnish with whole basil leaves and serve.');
+
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 1/2 lbs sugar pumpkin, seeded, skinned and cubed', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 1/2 lbs Butternut squash seeded, cubed', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('3 tbsp Olive oil', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 Onions, finely chopped', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('3 Garlic cloves, finely chopped', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbsp Curry powder', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 tsp Grated nutmeg', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 tsp Ground ginger', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 tsp Red pepper (optional)', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tsp Salt', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 tsp Freshly ground pepper (more for serving)', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('6 cups Chicken or vegetable stock', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 cup Coconut milk (more for serving)', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Jalapeño, seeded, sliced (optional)', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Cilantro (optional)', 10);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Pumpkin seeds (optional)', 10);
+
+INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Prepare the pumpkin and butternut squash, if you have a sharp peeler, it actually works quite well to use it to remove the skins from the squash.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Cube the pumpkin and squash flesh into 2-3” chunks.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Heat the oil in a large dutch oven or heavy soup pot, sauté onions until translucent, about 5 minutes. Add garlic and sauté for 2 more minutes.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Add the pumpkin, squash, curry, nutmeg, ginger, red pepper, salt and pepper and stock. Stir and bring to a boil. ');
+INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Reduce to a simmer and cook until squash is tender and can be pierced with a fork, about 15-20 minutes.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Puree the soup in a food processor or blender in small batches.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Once your soup is nice and creamy return it to the pot. Add your coconut milk, additional salt and pepper if needed and warm it back up over medium heat.');
+
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 medium onion, diced', 11);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 red bell pepper, seeded and diced', 11);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('4 garlic cloves, finely chopped', 11);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tsp paprika', 11);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tsp cumin', 11);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/4 tsp chili powder', 11);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 28-ounce can whole peeled tomatoes', 11);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('6 large eggs', 11);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('salt and pepper, to taste', 11);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 small bunch fresh cilantro, chopped', 11);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 small bunch fresh parsley, chopped', 11);
+
+
+INSERT INTO directions (recipe_id, step_directions) VALUES (11, 'Heat olive oil in a large sauté pan on medium heat. Add the chopped bell pepper and onion and cook for 5 minutes or until the onion becomes translucent.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (11, 'Add garlic and spices and cook an additional minute.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (11, 'Pour the can of tomatoes and juice into the pan and break down the tomatoes using a large spoon.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (11, 'Season with salt and pepper and bring the sauce to a simmer.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (11, 'Use your large spoon to make small wells in the sauce and crack the eggs into each well.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (11, 'Cover the pan and cook for 5-8 minutes, or until the eggs are done to your liking.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (11, 'Garnish with chopped cilantro and parsley.');
+
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('3 tbsp olive oil', 12);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 garlic cloves, minced', 12);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 onion, diced', 12);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 cups (packed) chopped kale leaves', 12);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 cups cooked and cubed butternut squash', 12);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('10 large eggs', 12);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 cup yogurt, or coconut milk', 12);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('4 ounces goat cheese', 12);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('salt and pepper', 12);
+
+
+INSERT INTO directions (recipe_id, step_directions) VALUES (12, 'Heat the olive oil in a 10-inch cast iron skillet over medium heat. Add the garlic and onion and saute one minute.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (12, 'Add the kale, reduce the heat to medium-low and stir for another 3-4 minutes, or until the kale has become soft and wilted.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (12, 'While the kale is wilting, add the eggs and yogurt to a large mixing bowl and whisk until creamy. Season the egg mixture with salt and pepper.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (12, 'Reduce the heat to low, add the cubed butternut squash to the pan and stir with the kale and onions.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (12, 'Pour the egg mixture into the skillet and sprinkle the goat cheese on top. Cook for 8-10 minutes, or until the sides are just starting to set.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (12, 'Transfer the frittata to the oven (on a middle shelf) and turn the top broiler on. Continue cooking for another 8-10 minutes, checking every few minutes to ensure the top is browning. ');
+INSERT INTO directions (recipe_id, step_directions) VALUES (12, 'Remove the frittata from the oven, slice and serve.');
+
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 medium head of cauliflower', 13);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbsp sesame oil', 13);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 garlic cloves, minced', 13);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 tsp minced ginger', 13);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 small onion, diced', 13);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 large carrot, diced small', 13);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('4 scallions sliced, white and green separated', 13);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 cup frozen peas, thawed', 13);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 large eggs', 13);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbsp tamari or coconut aminos', 13);
+
+INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Slice the head of cauliflower in half, then slice off the cauliflower florets from the stem. Place the florets through the top of a food processor with the grater adapter. ');
+INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Continue until all cauliflower has been riced, then set aside.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Heat the sesame oil in a large wok or skillet on medium heat. Add the garlic and ginger and sauté for 20 seconds, then stir in the onions, carrots and white parts of the scallions and cook for 3 minutes.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Add the cauliflower rice and peas to the wok and stir together for another 2-3 minutes.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Create a well in the middle of the cauliflower rice and break the eggs into the well. Use your spatula to stir and scramble the eggs.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Once the eggs are cooked, stir everything together.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Add the tamari and green parts of the scallions and stir to combine. Serve immediately.');
+
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbsp Olive oil', 14);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 cup Grated carrots', 14);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 cup Celery, minced', 14);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 cup Onions, finely minced', 14);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 cup Walnuts, finely chopped', 14);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 cup Dried lentils(brown or green), rinsed', 14);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 (24) oz jar Marinara', 14);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('6 cups Water', 14);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tsp Salt', 14);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 lb Wide pasta noodles', 14);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Parmesan cheese or vegan parmesan cheese,
+optional', 14);
+
+
+INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'In a large saucepan or braiser heat olive oil over medium heat.
+Add the carrots, celery and onions and sauté until tender, about
+6 minutes.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'Add the walnuts and lentils along with the salt, water and jar of marinara. Stir to combine.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'Simmer on medium-low for 45 minutes stirring occasionally, until sauce thickens.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'When the lentils have reached your desired tenderness, transfer 2 cups of the sauce to a blender or food processor. Blend until nearly smooth.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'Add the blended sauce back to the pan and stir to combine. Blending is an optional step, but it helps add a creaminess without the need to add cream.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'Remove from heat, and serve over your favorite wide noodle pasta—such as pappardelle or tagliatelle—and top with freshly grated or vegan parmesan cheese.');
