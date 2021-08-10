@@ -14,7 +14,7 @@
         <label for="list"> {{ aRecipe.name }} </label>
       </td>
     </tr>
-    <button v-on:click="checkedRecipes()"> Submit </button>
+    <button v-on:click="checkedRecipes()"> Sen To My Recipes </button>
   </div>
 </template>
 

@@ -10,21 +10,21 @@
     </div>
   <div class= "steps">
     
-      <tr name= "stepOne"> Step 1-  Once you are logged in take time to browse this weeks recipes
+      <tr name= "stepOne"><span name= "first"> Step 1- </span>  Once you are logged in take time to browse this weeks recipes
 on the Home page.  </tr>
 
-      <tr name = "stepTwo"> Step 2- Use the All Recipes tab to head over to our full recipe inventory. </tr>
-      <tr name = "stepThree"> Step 3- Choose your dietary restrictions by choosing the icon on the top. Watch
+      <tr name = "stepTwo"><span name= "second"> Step 2- </span> Click the All Recipes tab to head over to our full recipe inventory. </tr>
+      <tr name = "stepThree"><span name= "third"> Step 3-</span> Choose your dietary restrictions by choosing the icon on the top. Watch
 the list morph to one that fits you. </tr>
-      <tr name = "stepFour"> Step 4- Choose the recipes that excite you. Click add to my recipes to store 
+      <tr name = "stepFour"><span name= "fourth"> Step 4- </span> Check the recipes that excite you. Click add to my recipes to store 
 them in a personal recipe list. </tr>
-      <tr name = "stepFive"> Step 5- Choose the My Recipes tab to view your stored recipes. </tr>
-      <tr name = "stepSix"> Step 6- Choose the recipes for this weeks grind and we'll create a grocery
+      <tr name = "stepFive"><span name= "fifth"> Step 5- </span> Click the My Recipes tab to view your stored recipes. </tr>
+      <tr name = "stepSix"><span name= "sixth"> Step 6- </span> Check the recipes for this weeks grind and we'll create a grocery
 list for you. </tr>
     
 
     </div>
-    <p class="question">OK so what is going on?</p>
+   
 
     <div class="tutorialCard">
 
@@ -42,8 +42,7 @@ list for you. </tr>
     <p class="answer">
       Here you can see one of our recipes! When clicked it will bring up the
       recipe details and instructions! 
-      In this tutorial though there will be nothing there but you can click it and try!
-    </p>
+   </p>
     <p class="question">
       Cool what about the button at the bottom of the page?
     </p>
