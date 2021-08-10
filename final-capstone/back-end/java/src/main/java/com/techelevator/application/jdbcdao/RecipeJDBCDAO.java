@@ -45,16 +45,17 @@ public class RecipeJDBCDAO implements RecipeDAO {
 //----------- Get Recipe by Category ID ----------------------------
     @Override
     public Recipe getRecipeByCategoryId(int categoryId) {
-        String sqlDisplayDirections = "SELECT recipe_name, recipe_id, category_id FROM recipe WHERE category_id = ?";
+        String sqlDisplayDirections = "SELECT * FROM recipe WHERE category_id = ?";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlDisplayDirections, categoryId);
+        Recipe recipeNameByCategoryId = new Recipe();
         while (results.next()) {
-            Recipe recipeNameByCategoryId = new Recipe();
+
             recipeNameByCategoryId.setName(results.getString("recipe_name"));
             recipeNameByCategoryId.setRecipeID(results.getLong("recipe_id"));
             recipeNameByCategoryId.setCategoryId(results.getInt("category_id"));
         }
-        return recipeName;
+        return recipeNameByCategoryId;
     }
 
 
