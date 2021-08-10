@@ -21,13 +21,10 @@ public class RecipeJDBCDAO implements RecipeDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-
-    public static List<Recipe> recipes = new ArrayList<>();
-    public static Recipe recipeName = new Recipe();
-
 //---------- List All Recipes ------------------------------
     @Override
     public List<Recipe> recipeList() {
+        List<Recipe> recipes = new ArrayList<>();
         String sqlSelectRecipes = "SELECT * FROM recipe;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectRecipes);
@@ -45,6 +42,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
 //----------- Get Recipe by Category ID ----------------------------
     @Override
     public List<Recipe> getRecipeByCategoryId(int categoryId) {
+        List<Recipe> recipes = new ArrayList<>();
         String sqlDisplayDirections = "SELECT * FROM recipe WHERE category_id = ?";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlDisplayDirections, categoryId);
@@ -65,11 +63,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
 // ---- NOT WRITTEN
     @Override
     public Recipe getRecipeById(long id) {
-        for (Recipe theRecipe : recipes) {
-            if (theRecipe.getRecipeID() == id) {
-                return theRecipe;
-            }
-        }
+
         return null;
     }
 
@@ -77,11 +71,7 @@ public class RecipeJDBCDAO implements RecipeDAO {
 //---- NOT WRITTEN
     @Override
     public Recipe getRecipeByName(String name) {
-        for (Recipe theRecipe : recipes) {
-            if (theRecipe.getName() == name) {
-                return theRecipe;
-            }
-    }
+
     return null;
 }
 

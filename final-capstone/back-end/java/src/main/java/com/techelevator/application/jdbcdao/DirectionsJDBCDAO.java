@@ -20,15 +20,9 @@ public class DirectionsJDBCDAO implements DirectionsDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    List<Directions> directions = new ArrayList<Directions>();
-
-    @Override
-    public List<Directions> directionsList() {
-        return null;
-    }
-
     @Override
     public List<Directions> getDirectionsByRecipeId(int recipeId) {
+        List<Directions> directions = new ArrayList<Directions>();
         String sqlDisplayDirections = "SELECT step_id, recipe_id, step_directions FROM directions WHERE recipe_id = ?";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlDisplayDirections, recipeId);
@@ -41,4 +35,13 @@ public class DirectionsJDBCDAO implements DirectionsDAO {
         }
         return directions;
     }
-}
+
+//--------- NOT WRITTEN -----------------------------
+    @Override
+    public List<Directions> directionsList() {
+        return null;
+    }
+
+
+}// END
+

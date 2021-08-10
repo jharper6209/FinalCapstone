@@ -21,12 +21,10 @@ public class IngredientJDBCDAO implements IngredientDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public static List<Ingredient> ingredients = new ArrayList<>();
-    public static Ingredient ingredient = new Ingredient();
-
 //-------------------- List all Ingredients --------------------------------------
     @Override
     public List<Ingredient> ingredientList() {
+        List<Ingredient> ingredients = new ArrayList<>();
         String sqlSelectIngredients = "SELECT ingredient_id, ingredient_name, recipe_id FROM ingredient ";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectIngredients);
@@ -43,6 +41,7 @@ public class IngredientJDBCDAO implements IngredientDAO {
 //----------- Get ingredients by RecipeId -----------------------
     @Override
     public List<Ingredient> getIngredientsByRecipeId(long recipeId) {
+        List<Ingredient> ingredients = new ArrayList<>();
         String sqlSelectIngredients = " SELECT ingredient_id, ingredient_name, recipe_id FROM ingredient WHERE recipe_id = ? ";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectIngredients, recipeId);
@@ -77,11 +76,6 @@ public class IngredientJDBCDAO implements IngredientDAO {
 //----------------- NOT WRITTEN -------------------
     @Override
     public Ingredient getIngredientByName(String name) {
-        for (Ingredient theIngredient : ingredients) {
-            if (theIngredient.getIngredientName() == name) {
-                return theIngredient;
-            }
-        }
         return null;
     }
 
