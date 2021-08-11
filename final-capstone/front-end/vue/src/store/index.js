@@ -21,7 +21,6 @@ export default new Vuex.Store({
   state: {   
     token: currentToken || '',
     user: currentUser || {},
-    recipes:[],
     dummy:[
       {
         id: 1,
@@ -76,8 +75,12 @@ export default new Vuex.Store({
         checked: false,
       },
     ],
+    recipes:[],
+    ingredients:[],
     groceryList:[],
     ingredientList:[],
+    filter: 0,
+    show: true,
 }, // End of Store Data
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -99,11 +102,23 @@ export default new Vuex.Store({
     SET_RECIPES(state, data){
       state.recipes = data;
     },
+    SET_INGREIDENTS(state, data){
+      state.ingredients = data
+    },
     ADD_GROCERIES(state, data){
       state.groceryList = data
     },
     ADD_INGREDIENTS(state, data){
       state.ingredientList = data
+    },
+    UPDATE_FILTER(state, filter) {
+      state.filter = filter;
+    },
+    SHOWFILTER(state) {
+      state.show = true;
+    },
+    HIDEFILTER(state) {
+      state.show = false;
     },
   },
 })

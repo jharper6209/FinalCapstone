@@ -1,10 +1,7 @@
 <template>
   <div id="navigation">
-
     <h1 class="nav-header">The <u>KEY</u> Choices</h1>
     <table class="link-table">
-
-
       <tr>
         <router-link class="link" v-bind:to ="{name: 'home'}"><p><i class="fas fa-book"></i> ALL RECIPES</p>
            </router-link>
@@ -18,15 +15,16 @@
       </tr>
     </table>
 
+
     <table class="footer-table">
       <!-- If in need of a hard link for tutorial -->
-      <!-- <tr>
+      <tr>
         <router-link class="link"
-        v-bind:to="{ name: 'Error'}"
-        v-if="$store.state.token === ''">
+        v-bind:to="{ name: 'tutorial'}"
+        v-if="$store.state.token != ''">
         <p><i class="fas fa-question-circle"></i> TUTORIAL</p>
         </router-link>
-      </tr> -->
+      </tr>
       <tr>
         <router-link class="link"
           v-bind:to="{ name: 'logout' }"
@@ -34,18 +32,21 @@
           <p><i class="fas fa-sign-out-alt"></i> LOGOUT</p>
           </router-link>
       </tr>
-
-      user.authorties.id
     </table>
     
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+}
 </script>
 
 <style scoped>
+.icon{
+  width: 50px;
+}
+
 #navigation {
   display: flex;
   flex-direction: column;
@@ -55,6 +56,7 @@ export default {};
   position:sticky;
   width: 300px;
   z-index: 1;
+  background-color: maroon;
 }
 
 .open-nav{
@@ -73,7 +75,8 @@ export default {};
   align-content: center;
   flex-wrap: wrap;
   flex-direction: column;
-  height: 75vh;
+  height: 60vh;
+  background-color: maroon;
 }
 
 .link {
@@ -92,5 +95,9 @@ export default {};
   height: 50px;
   width: 300px;
     margin-top: 25px;
+}
+
+.router-views{
+  background-color: black;
 }
 </style>
