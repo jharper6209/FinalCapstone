@@ -21,66 +21,11 @@ export default new Vuex.Store({
   state: {   
     token: currentToken || '',
     user: currentUser || {},
-    dummy:[
-      {
-        id: 1,
-        name: 'Beef and Mustard Pie',
-        image: 'https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg',
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros.",
-        ingredients:{
-          id: 1,
-          ingredientId: 1,
-          name: 'Beef'
-        },
-        category: 0,
-        checked: false,
-      },
-      {
-        id: 2,
-        name: 'Ayam Percik',
-        image: 'https://www.themealdb.com/images/media/meals/020z181619788503.jpg',
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros.",
-        ingredients:{
-          id: 2,
-          ingredientId: 2,
-          name: 'Chicken'
-        },
-        category: 2,
-        checked: false,
-      },
-      {
-        id: 3,
-        name: 'Fettucine alfredo',
-        image: 'https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg',
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros.",
-        ingredients:{
-          id: 3,
-          ingredientId: 3,
-          name: 'Noodles'
-        },
-        category: 1,
-        checked: false, 
-      },
-      {
-        id: 4,
-        name: 'Vegan Chocolate Cake',
-        image: "https://www.themealdb.com/images/media/meals/qxutws1486978099.jpg",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros.",
-        ingredients:{
-          id: 4,
-          ingredientId: 4,
-          name: 'Cake'
-        },
-        category: 3,
-        checked: false,
-      },
-    ],
     recipes:[],
     ingredients:[],
     groceryList:[],
     ingredientList:[],
-    filter: 0,
-    show: true,
+    filter: 0
 }, // End of Store Data
   mutations: {
     SET_AUTH_TOKEN(state, token) {
