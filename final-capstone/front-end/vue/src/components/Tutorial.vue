@@ -100,11 +100,8 @@ export default {
 
 <style scoped>
 .tutorial{
-  color: white;
-  
-  font-family: "Berkshire Swash", cursive;
-
-   
+  color: white;  
+  font-family: "Berkshire Swash", cursive; 
   
 
 }

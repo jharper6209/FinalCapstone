@@ -1,12 +1,11 @@
 <template>
   <div id="navigation">
-    <h1 class="nav-header">The <u>KEY</u> Choices</h1>
-    <table class="link-table">
+    <h1 id="nav-header"><u>The Key Choices</u></h1>
+    <table id="top-table">
       <tr>
-        <router-link class="link" v-bind:to ="{name: 'home'}"><p><i class="fas fa-book"></i> ALL RECIPES</p>
-           </router-link>
+        <router-link class="link" v-bind:to ="{name: 'home'}"><p><i class="fas fa-book"></i> ALL RECIPES</p></router-link>
       </tr>
-            <tr >
+            <tr>
         <router-link class="link" v-bind:to="{ name: 'myRecipes' } "><p><i class="fas fa-home"></i> MY RECIPES</p></router-link>
       </tr>
             <tr>
@@ -16,8 +15,7 @@
     </table>
 
 
-    <table class="footer-table">
-      <!-- If in need of a hard link for tutorial -->
+    <table id="bottom-table">
       <tr>
         <router-link class="link"
         v-bind:to="{ name: 'tutorial'}"
@@ -41,61 +39,41 @@
 </script>
 
 <style scoped>
-.icon{
-  width: 50px;
-}
-
 #navigation {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
   top:0;
+  right:0;
   position:sticky;
-  width: 300px;
-  z-index: 1;
+  z-index: 999;
   background-color: maroon;
-}
-
-.open-nav{
-  display:flex;
-  justify-content: center;
-  position: absolute;
-}
-
-.nav-header {
-  color: white;
-    font-family: "Allerta Stencil", sans-serif;
-}
-
-.link-table {
-  display: flex;
-  align-content: center;
+  padding-left: 10px;
   flex-wrap: wrap;
+}
+
+#nav-header {
+  color: white;
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 2rem;
+}
+
+#top-table {
+  display: flex;
   flex-direction: column;
-  height: 60vh;
+  height: 64vh;
   background-color: maroon;
 }
 
 .link {
   font-family: "Allerta Stencil", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: maroon;
-  border-radius: 10px;
-  align-content: center;
   text-decoration: none;
   font-size: 30px;
-  border-style: solid;
-  border-width: 2px;
   background-color: white;
   height: 50px;
   width: 300px;
-    margin-top: 25px;
-}
-
-.router-views{
-  background-color: black;
+  margin-top: 25px;
 }
 </style>

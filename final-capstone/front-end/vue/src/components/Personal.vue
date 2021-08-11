@@ -10,13 +10,14 @@
       <input
         type="checkbox"
         v-model="checkedIngredient"
-        :id="select.name"
-        :value="select.ingredients.name"
+
       />
+              <!-- :id="select.name" -->
+        <!-- :value="select.ingredients.name" -->
     </div>
     <div class="form-group">
       <button class="btn btn-primary">Submit</button>
-      <img src="../assests/whatsfordinner.png" id="background" />
+      <!-- <img src="../assests/whatsfordinner.png" id="background" /> -->
     </div>
   </form>
 </template>

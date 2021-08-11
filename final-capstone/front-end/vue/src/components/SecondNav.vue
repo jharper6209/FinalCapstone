@@ -26,7 +26,6 @@ export default {
 .buttons{
   display: flex;
   position: sticky;
-  z-index: 1;
 }
 
 .link {
@@ -40,12 +39,12 @@ export default {
   border-radius: 10px;
   align-content: center;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 15px;
   border-style: solid;
   border-width: 2px;
   background-color: white;
   height: 50px;
-  width: 300px;
+  width: 200px;
     margin-top: 25px;
 }
 
