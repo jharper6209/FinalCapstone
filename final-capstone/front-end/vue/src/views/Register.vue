@@ -1,11 +1,13 @@
 <template>
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+      <h1 class="h3 mb-3 font-weight-normal"><br>Create New Account To Starting Meal Planning Like A Boss</h1>
+      <h4>Curious before you sign up? <router-link v-bind:to="{ name: 'tutorial' }" id="tutorial">Check our tutorial!</router-link></h4>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
-      <label for="username" class="sr-only">Username</label>
+      <div class="label">
+      <label for="username">Choose A Username</label>
       <input
         type="text"
         id="username"
@@ -15,7 +17,9 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only">Password</label>
+      </div>
+      <div class="label">
+      <label for="password" class="label">Create Your Password</label>
       <input
         type="password"
         id="password"
@@ -32,8 +36,9 @@
         v-model="user.confirmPassword"
         required
       />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
+      </div>
+      <router-link :to="{ name: 'login' }" id="login">Have An Account? Login!</router-link>
+      <button class="btn btn-lg btn-primary btn-block" id="create" type="submit">
         Create Account
       </button>
     </form>
@@ -67,8 +72,10 @@ export default {
           .register(this.user)
           .then((response) => {
             if (response.status == 201) {
+            this.$store.commit("SET_AUTH_TOKEN", response.data.token);
+            this.$store.commit("SET_USER", response.data.user);
               this.$router.push({
-                path: '/login',
+                path: '/tutorial',
                 query: { registration: 'success' },
               });
             }
@@ -90,32 +97,86 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #register{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: maroon;
+   font-family: "Berkshire Swash", cursive;
+     text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #000;
+      background-image: url("../assests/fullFridge.webp");
+        background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  position: fixed;
+ 
+
+
+}
+
+.label{
+  padding-top: 15px;
+}
+
+.form-register{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#username, #password, #confirmPassword{
+  display: flex;
+  border-radius: 10px;
+  align-content: center;
+  text-decoration: none;
+  font-size: 20px;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+  height: 50px;
+  width: 300px;
+}
+
+#tutorial{
+  color: maroon;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#login{
+  display: flex;
+  color: maroon;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  justify-content: center;
+}
+
+#create{
+ font-family: "Berkshire Swash", cursive;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px;
-  padding: 0 px;
-  color:rgb(46, 61, 61);
-
-  
+  color:maroon;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 30px;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+  height: 50px;
+  width: 300px;
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-#username.form-control{
-  margin-bottom: 20px;
+.form-control{
+  font-family: "Allerta Stencil", sans-serif;
+  text-align: center;
 }
-a{
-  display: flex;
-  color: white;
-  margin-top: 20px;
-  margin-bottom: 10px;
+label{
+  font-size: 30px;
 }
-.btn.btn-lg.btn-primary.btn-block{
-display: flex;  
-justify-content: center;
-align-items: center;
- font-family:cursive, 'Times New Roman', Times, serif ;
-}
-
-
 </style>

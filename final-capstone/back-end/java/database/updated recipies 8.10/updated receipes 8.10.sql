@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS ingredient CASCADE;
 DROP TABLE IF EXISTS category CASCADE;
 DROP TABLE IF EXISTS recipe CASCADE;
+DROP TABLE IF EXISTS directions CASCADE;
 
 CREATE TABLE recipe (
 recipe_id SERIAL NOT NULL,
@@ -24,11 +25,6 @@ category_name CHARACTER VARYING(50) NOT NULL,
 CONSTRAINT pk_category_category_id PRIMARY KEY (category_id)
 );
 
-<<<<<<< HEAD
-ALTER TABLE recipe ADD CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES category(category_id);
-ALTER TABLE ingredient ADD CONSTRAINT fk_recipe_recipe_id FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id);
-
-=======
 CREATE TABLE directions (
 step_id SERIAL NOT NULL,
 recipe_id INTEGER NOT NULL,
@@ -40,7 +36,6 @@ ALTER TABLE recipe ADD CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFER
 ALTER TABLE ingredient ADD CONSTRAINT fk_recipe_recipe_id FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id);
 ALTER TABLE directions ADD CONSTRAINT fk_recipe_recipe_id FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id);
 /*ALTER TABLE recipe ADD CONSTRAINT fk_users_user_id FOREIGN KEY (user_id) REFERENCES users(user_id);*/
->>>>>>> test
 
 INSERT INTO category (category_name)
 VALUES
@@ -53,61 +48,6 @@ VALUES
 INSERT INTO recipe (category_id, recipe_name, image)
 VALUES(3, 'Beef and Mustard Pie', 'https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg'),
 (2, 'Ayam Percik','https://www.themealdb.com/images/media/meals/020z181619788503.jpg'),
-<<<<<<< HEAD
-(3, 'Fettucine alfredo', 'https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg'),  
-(4, 'Vegan Chocolate Cake', 'https://www.themealdb.com/images/media/meals/qxutws1486978099.jpg');
-
-/*BEEF AND MUSTARD PIE INGREDIENTS*/
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Butter' , 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Beef Stock', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Beef', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Carrots', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Egg Yolks', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Green Beans', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Mustard', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Pepper', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Plain Flour', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Puff Pastry', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Thyme', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Rapeseed Oil', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Red Wine', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Salt', 1);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Onion', 1);
-
-/*AYAM PERCIK INGREDIENTS*/
-INSERT INTO ingredient (ingredient_name , recipe_id) VALUES ('Chicken Thighs', 2);
-INSERT INTO ingredient (ingredient_name , recipe_id) VALUES ('Challots' , 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Ginger', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Garlic Clove', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Cayenne pepper', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Tumeric', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Cumin', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Coriander', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Fennel', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Tamarind Paste', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Coconut Milk', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Sugar', 2);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Water', 2);
-
-/*VEGAN CHOCOLATE CAKE INGREDIENTS*/
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Self Rising Flour', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Coco Sugar', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Cacao', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Baking Powder', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Flax Eggs', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Almond Milk', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Vanilla', 3);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Water', 3);
-
-/*FETTUCINE ALFREDO INGREDIENTS*/
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Butter' , 4);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Corn Flour', 4);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Fettucine', 4);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Heavy Cream', 4);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Nutmeg', 4);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Parmasean Cheese', 4);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Parsley', 4);
-=======
 (4, 'Fettucine alfredo', 'https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg'),  
 (5, 'Vegan Chocolate Cake', 'https://www.themealdb.com/images/media/meals/qxutws1486978099.jpg'),
 (1, 'Arugula and Canadian Bacon Omelet', 'https://tinyimg.io/i/hJUwIvw.jpg'), 
@@ -119,10 +59,11 @@ INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Parsley', 4);
 (4, 'Shakshuka', 'http://tinyimg.io/i/3owNhXp.jpg'),
 (4, 'Kale and Butternut Squash Frittata', 'http://tinyimg.io/i/5XS6aM7.jpg'),
 (4, 'Cauliflower Fried Rice', 'http://tinyimg.io/i/ysUKrvz.jpg'),
-(4, 'Walnut and Lentil Bolognese', 'http://tinyimg.io/i/ysUKrvz.jpg'), 
+(4, 'Walnut and Lentil Bolognese', 'http://tinyimg.io/i/ysUKrvz.jpg'),
 (5, 'Butternut Risotto with Leeks and Spinach', 'http://tinyimg.io/i/ZukdcR3.jpg'),
 (5, 'Chiptole Portobello Tacos', 'http://tinyimg.io/i/9wj2bVF.jpg'),
 (5, 'Szechuan Tofu and Veggies', 'http://tinyimg.io/i/wS2LDdp.jpg');
+
 
 
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1kg', 'Beef', 1);
@@ -226,7 +167,7 @@ INSERT INTO directions (recipe_id, step_directions) VALUES (5, 'Transfer omelet 
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 loaf', 'Gluten-free Bread, torn into 1 inch pieces', 6);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 cup', 'Pumpkin Puree', 6);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1/4 cup', 'Flaxmeal', 6);
-INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('ï¿½ cup', 'Warm Water', 6);
+INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('¾ cup', 'Warm Water', 6);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 3/4 cup', 'Dairy-free Milk', 6);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 tsp', 'Tapioca Starch', 6);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1/4 cup', 'Maple Syrup', 6);
@@ -237,22 +178,22 @@ INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2', 'm
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1/4 cup', 'Gluten-Free All Purpose Flour', 6);
 
 INSERT INTO directions (recipe_id, step_directions) VALUES (6, 'Put the torn bread into a large bowl.');
-INSERT INTO directions (recipe_id, step_directions) VALUES (6, 'In another bowl whisk together the pumpkin puree, flaxmeal and warm water mixture (this is your ï¿½eggï¿½), dairy free milk, tapioca starch, maple syrup, cinnamon and vanilla extract. Pour over the bread.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (6, 'In another bowl whisk together the pumpkin puree, flaxmeal and warm water mixture (this is your “egg”), dairy free milk, tapioca starch, maple syrup, cinnamon and vanilla extract. Pour over the bread.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (6, 'Using your hands, gently turn the bread to coat every pieces with the pumpkin mixture.');
-INSERT INTO directions (recipe_id, step_directions) VALUES (6, 'Pour into a rectangular baker or a 9ï¿½13 glass baking dish.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (6, 'Pour into a rectangular baker or a 9×13 glass baking dish.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (6, 'Cover with plastic and refrigerate overnight.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (6, 'When ready to bake, preheat oven to 350?F.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (6, 'Make the caramel apple topping by adding the margarine, caramel apple chewy bars, pumpkin seeds, medjool dates, and gluten-free all purpose flour to the bowl of a food processor and pulsing until it is crumbly. Sprinkle over the bread mixture and then cover the dish with foil.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (6, 'Bake for 30 minutes. Remove the foil and bake an additional 20 minutes until cooked through.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (6, 'Serve with powdered sugar sprinkle on top and additional maple syrup.');
 
-INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('ï¿½ cup', 'uncooked Quinoa', 7);
-INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('ï¿½ cup', 'water', 7);
+INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('½ cup', 'uncooked Quinoa', 7);
+INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('½ cup', 'water', 7);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2 tbsp', 'olive oil', 7);
-INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('ï¿½ ', 'onion, chopped', 7);
+INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('½ ', 'onion, chopped', 7);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2', 'cloves garlic, chopped', 7);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1', 'small apples - peeled, cored and chopped', 7);
-INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('ï¿½ cup', 'raisins', 7);
+INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('¼ cup', 'raisins', 7);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2 tbsp', 'pine nuts', 7);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('4', 'mushrooms, chopped', 7);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2 tbsp', 'white wine', 7);
@@ -273,12 +214,12 @@ INSERT INTO directions (recipe_id, step_directions) VALUES (7, 'Roast in the pre
 longer pink in the center, about 35 minutes. An instant-read thermometer inserted into the center of the filling should read 145 degrees F (63 degrees C).');
 INSERT INTO directions (recipe_id, step_directions) VALUES (7, 'Cover with aluminum foil, and let rest for 10 minutes before slicing.');
 
-INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2ï¿½ cups', 'shredded coconut', 8);
+INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2½ cups', 'shredded coconut', 8);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 cup', 'white sugar', 8);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('6', 'egg whites', 8);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 tbsp', 'cornstarch', 8);
-INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('ï¿½ tsp', 'almond extract', 8);
-INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1ï¿½ cups', 'halved red candied cherries', 8);
+INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('¼ tsp', 'almond extract', 8);
+INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1½ cups', 'halved red candied cherries', 8);
 
 INSERT INTO directions (recipe_id, step_directions) VALUES (8, 'Preheat oven to 350 degrees F (175 degrees C). Line 2 cookie sheets with parchment paper.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (8, 'In small bowl, combine sugar and cornstarch.');
@@ -324,13 +265,13 @@ INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 tsp'
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1/2 tsp', 'Freshly ground pepper (more for serving)', 10);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('6 cups', 'Chicken or vegetable stock', 10);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1/2 cup', 'Coconut milk (more for serving)', 10);
-INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1', 'Jalapeï¿½o, seeded, sliced (optional)', 10);
+INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1', 'Jalapeño, seeded, sliced (optional)', 10);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('As Desired', 'Cilantro (optional)', 10);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('As Desired', 'Pumpkin seeds (optional)', 10);
 
 INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Prepare the pumpkin and butternut squash, if you have a sharp peeler, it actually works quite well to use it to remove the skins from the squash.');
-INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Cube the pumpkin and squash flesh into 2-3ï¿½ chunks.');
-INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Heat the oil in a large dutch oven or heavy soup pot, sautï¿½ onions until translucent, about 5 minutes. Add garlic and sautï¿½ for 2 more minutes.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Cube the pumpkin and squash flesh into 2-3” chunks.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Heat the oil in a large dutch oven or heavy soup pot, sauté onions until translucent, about 5 minutes. Add garlic and sauté for 2 more minutes.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Add the pumpkin, squash, curry, nutmeg, ginger, red pepper, salt and pepper and stock. Stir and bring to a boil. ');
 INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Reduce to a simmer and cook until squash is tender and can be pierced with a fork, about 15-20 minutes.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (10, 'Puree the soup in a food processor or blender in small batches.');
@@ -348,7 +289,7 @@ INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('to tas
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 small bunch, chopped', 'fresh parsley', 11);
 
 
-INSERT INTO directions (recipe_id, step_directions) VALUES (11, 'Heat olive oil in a large sautï¿½ pan on medium heat. Add the chopped bell pepper and onion and cook for 5 minutes or until the onion becomes translucent.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (11, 'Heat olive oil in a large sauté pan on medium heat. Add the chopped bell pepper and onion and cook for 5 minutes or until the onion becomes translucent.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (11, 'Add garlic and spices and cook an additional minute.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (11, 'Pour the can of tomatoes and juice into the pan and break down the tomatoes using a large spoon.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (11, 'Season with salt and pepper and bring the sauce to a simmer.');
@@ -388,7 +329,7 @@ INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2 tbsp
 
 INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Slice the head of cauliflower in half, then slice off the cauliflower florets from the stem. Place the florets through the top of a food processor with the grater adapter. ');
 INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Continue until all cauliflower has been riced, then set aside.');
-INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Heat the sesame oil in a large wok or skillet on medium heat. Add the garlic and ginger and sautï¿½ for 20 seconds, then stir in the onions, carrots and white parts of the scallions and cook for 3 minutes.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Heat the sesame oil in a large wok or skillet on medium heat. Add the garlic and ginger and sauté for 20 seconds, then stir in the onions, carrots and white parts of the scallions and cook for 3 minutes.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Add the cauliflower rice and peas to the wok and stir together for another 2-3 minutes.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Create a well in the middle of the cauliflower rice and break the eggs into the well. Use your spatula to stir and scramble the eggs.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (13, 'Once the eggs are cooked, stir everything together.');
@@ -404,18 +345,18 @@ INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 (24)
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('6 cups', 'Water', 14);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 tsp', 'Salt', 14);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 lb', 'Wide pasta noodles', 14);
-INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('As needed', 'Parmesan cheese or vegan parmesan cheese,
-optional', 14);
+INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('As needed', 'Parmesan cheese,
+optional',14);
 
 
 INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'In a large saucepan or braiser heat olive oil over medium heat.
-Add the carrots, celery and onions and sautï¿½ until tender, about
+Add the carrots, celery and onions and sauté until tender, about
 6 minutes.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'Add the walnuts and lentils along with the salt, water and jar of marinara. Stir to combine.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'Simmer on medium-low for 45 minutes stirring occasionally, until sauce thickens.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'When the lentils have reached your desired tenderness, transfer 2 cups of the sauce to a blender or food processor. Blend until nearly smooth.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'Add the blended sauce back to the pan and stir to combine. Blending is an optional step, but it helps add a creaminess without the need to add cream.');
-INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'Remove from heat, and serve over your favorite wide noodle pastaï¿½such as pappardelle or tagliatelleï¿½and top with freshly grated or vegan parmesan cheese.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (14, 'Remove from heat, and serve over your favorite wide noodle pasta—such as pappardelle or tagliatelle—and top with freshly grated or vegan parmesan cheese.');
 
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2 tbsp', 'Olive Oil', 15);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2 cups sliced', 'Leeks', 15);
@@ -428,9 +369,6 @@ INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2 cups
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1/2 tsp', 'Salt', 15);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1/2 tsp', 'Nutmeg', 15);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2-3 handfuls', 'Baby Spinach', 15);
-
-
-
 INSERT INTO directions (recipe_id, step_directions) VALUES (15, 'Slice and rinse leeks, separating rings (rinsing will help them to soften faster).');
 INSERT INTO directions (recipe_id, step_directions) VALUES (15, 'Set Instant Pot to the Saute function.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (15, 'Heat oil in the instant pot, add the rinsed leeks and stir for 2 minutes. Add garlic, sage and rice, stir for 2 minutes.');
@@ -438,9 +376,6 @@ INSERT INTO directions (recipe_id, step_directions) VALUES (15, 'Add butternut s
 INSERT INTO directions (recipe_id, step_directions) VALUES (15, 'Add the wine and scrape up the browned bits. A wooden spoon is good for this. Let all the wine cook off about 2-3 minutes. Add the stock or broth. Scrape up more browned bits. Add the salt, pepper and nutmeg, and give a good stir.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (15, 'Seal the instant pot and pressure cook on HIGH for 6 minutes. Naturally, release for 5 minutes, then manually release.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (15, 'Stir the risotto adding the spinach and cheese or butter if you like, or leave them out. As the butternut breaks down a bit it will add a nice natural creaminess to the risotto).');
-
-
-
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2', 'extra large Portobello Mushroom', 16);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1', 'Red Bell Pepper', 16);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1/2', 'Onion', 16);
@@ -449,18 +384,12 @@ INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2 tbsp
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2 tbsp minced', 'Garlic clove', 16);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('4 warmed', 'Tortillas', 16);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 can', 'Refried Black Beans', 16);
-
-
-
 INSERT INTO directions (recipe_id, step_directions) VALUES (16, 'Preheat oven to 425F.');
-INSERT INTO directions (recipe_id, step_directions) VALUES (16, 'Slice the portobellos into ï¿½ inch thick wedges and slice bell pepper in to ï¿½ thick strips. If adding onion, cut into ï¿½ inch thick rings or half moons.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (16, 'Slice the portobellos into ½ inch thick wedges and slice bell pepper in to ½ thick strips. If adding onion, cut into ½ inch thick rings or half moons.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (16, 'Place all on a sheet-pan lined sheet pan & Mix marinade ingredients together in a small bowl (oil,canned Chipotle in Adobo sauce ,minced garlic clove ,cumin,coriander');
 INSERT INTO directions (recipe_id, step_directions) VALUES (16, 'Brush both sides of mushrooms liberally with the marinade, then remaining red bell pepper and onion lightly. Sprinkle portobellos with salt.  Roast 20 minutes or until portobellos are fork-tender.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (16, 'While this is roasting, heat the beans any prep any additional garnishes. Pickled onions and Vegan cilantro Crema both take about 10 minutes to make. Or simply use avocado slices.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (16, 'When ready to serve, warm the tortillas ( over a gas flame on the stove, or in a toaster oven) and spread generously with the refried black beans. Divide chipotle portobellos and peppers (and onions if used)among the tortillas. Top with Cilantro Crema, Poblano Salsa, or avocado, fresh cilantro and optional pickled onions.');
-
-
-
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('8 oz', 'Tofu  patted dry and cubed', 17);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('2 tbsp', 'Peanut Oil', 17);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1/2 cup, thinly sliced', 'Onion ', 17);
@@ -470,10 +399,7 @@ INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 cup'
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1/2 sliced', 'Red Bell Pepper', 17);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('1 cup', 'Asparagus', 17);
 INSERT INTO ingredient (measurement, ingredient_name, recipe_id) VALUES ('As Desired', 'Szechuan Sauce', 17);
-
 INSERT INTO directions (recipe_id, step_directions) VALUES (17, 'Preheat oven to 425F.Season oil generously with salt and pepper. Add tofu and sear on at least two sides, until crispy and golden. Be patient here. Set aside.');
-INSERT INTO directions (recipe_id, step_directions) VALUES (17, 'To the same pan, add a little more oil if needed,  onion, and mushrooms and sautï¿½ over medium-high heat  stirring constantly, until tender, about 3 minutes.');
-INSERT INTO directions (recipe_id, step_directions) VALUES (17, 'Add the Szechuan Sauce, starting with ï¿½ cup and adding more to taste.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (17, 'To the same pan, add a little more oil if needed,  onion, and mushrooms and sauté over medium-high heat  stirring constantly, until tender, about 3 minutes.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (17, 'Add the Szechuan Sauce, starting with ¼ cup and adding more to taste.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (17, 'Cook the sauce 2 minutes, letting it thicken a bit. Toss in the crispy tofu right at the end just to warm it up.');
-
->>>>>>> test

@@ -1,18 +1,15 @@
 <template>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Please Sign-In To MealPlanner</h1>
+      
       <div
         class="alert alert-danger"
         role="alert"
         v-if="invalidCredentials"
-      >Invalid username and password!</div>
-      <div
-        class="alert alert-success"
-        role="alert"
-        v-if="this.$route.query.registration"
-      >Thank you for registering, please sign in.</div>
-      <label for="username" class="sr-only">Username</label>
+      >Invalid Username And Password!</div>
+            <div class="label">
+      <label for="username">Enter Your Username</label>
       <input
         type="text"
         id="username"
@@ -22,7 +19,9 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only">Password</label>
+            </div>
+      <div class="label">
+      <label for="password">Enter Your Password</label>
       <input
         type="password"
         id="password"
@@ -31,10 +30,11 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
-      <button type="submit">Sign in</button>
+      </div>
+      <router-link :to="{ name: 'register' }" id="register">Need An Account?</router-link>
+      <button type="submit" id="sign-in">Sign-In</button>
     </form>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -60,61 +60,100 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            this.$router.push("/");
+            this.$router.push("/Tutorial");
           }
         })
         .catch(error => {
           const response = error.response;
-
           if (response.status === 401) {
             this.invalidCredentials = true;
           }
         });
-    }
-  }
+    },
+  },
 };
 </script>
-<style>
 
+<style scoped>
 #login{
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-padding: 0;
-margin:0;
-}
-
-.h3.mb-3.font-weight-normal{
+  height: 100vh;
+  width: 100vw;
   display: flex;
+  align-items: center;
   justify-content: center;
-}
+  color: maroon;
+   font-family: "Berkshire Swash", cursive;
+  
 
+  text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #000;
 
-#password{
-  display: flex;
-}
-
-#username{
-  display: flex;
-}
-body{
-  background : maroon;
-  font-family:cursive, 'Times New Roman', Times, serif;
-}
-input[type=text]{
-  font-family:cursive, 'Times New Roman', Times, serif ;
-  background-color: lightgray;
-}
-input[type=password]{
-  font-family:cursive, 'Times New Roman', Times, serif ;
-  background-color: lightgray;
-}
-button[type=submit]{
-  font-family:cursive, 'Times New Roman', Times, serif ;
+    background-image: url("../assests/fullFridge.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  position: fixed;
  
 }
 
+.label{
+  padding-top: 15px;
+}
 
+.form-signin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+#username, #password{
+  display: flex;
+  border-radius: 10px;
+    justify-content: center;
+  align-content: center;
+  text-decoration: none;
+  font-size: 20px;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+  height: 50px;
+  width: 300px;
+}
+
+#register{
+  color: maroon;
+      text-align: center;
+display: flex;
+justify-content:center;
+margin-right: 45px;
+margin-top: 20px;
+margin-bottom: 20px;
+      }
+
+#sign-in{
+ font-family: "Berkshire Swash", cursive;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  color:maroon;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 30px;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+  height: 50px;
+  width: 300px;
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+h3.mb-3.font-weight-normal{
+  align-content: center;
+}
+.form-control{
+  font-family: "Allerta Stencil", sans-serif;
+  text-align: center;
+}
+label{
+  font-size: 30px;
+}
 </style>

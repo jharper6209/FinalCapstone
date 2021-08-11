@@ -1,12 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../views/Home.vue'
+import Personal from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import GroceryList from '../views/GroceryList.vue'
 import RecipeDetail from '../views/RecipeDetail.vue'
+import Tutorial from '../views/Tutorial.vue'
+import Error from '../views/Error.vue'
+import RecipeList from '../views/RecipeList'
 
 Vue.use(Router)
 
@@ -26,7 +29,7 @@ const router = new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: RecipeList,
       meta: {
         requiresAuth: true
       }
@@ -65,12 +68,38 @@ const router = new Router({
     },
     {
       path:"/recipe/:id",
-      name:"Recipe",
+      name:"recipe",
       component: RecipeDetail,
       meta:{
         requiresAuth: true
       }
+    },
+    {
+      path:"/tutorial",
+      name: "tutorial",
+      component: Tutorial,
+      meta:{
+        requiresAuth: false
+      }
+    },
+    {
+      path:"/error",
+      name: "error",
+      component: Error,
+      meta:{
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/my-recipes",
+      name: "myRecipes",
+      component: Personal,
+      meta:{
+        requiresAuth: true
+      }
     }
+  
+
   ]
 })
 

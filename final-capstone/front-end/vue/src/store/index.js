@@ -9,6 +9,7 @@ Vue.use(Vuex)
  * the page is refreshed. When that happens you need to check for the token in local storage and if it
  * exists you should set the header so that it will be attached to each request
  */
+
 const currentToken = localStorage.getItem('token')
 const currentUser = JSON.parse(localStorage.getItem('user'));
 
@@ -17,44 +18,15 @@ if(currentToken != null) {
 }
 
 export default new Vuex.Store({
-  state: {
+  state: {   
     token: currentToken || '',
     user: currentUser || {},
-    dummy:[
-      {
-        id: 1,
-        name: 'Beef and Mustard Pie',
-        image: 'https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg',
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros."
-      },
-      {
-        id: 2,
-        name: 'Ayam Percik',
-        image: 'https://www.themealdb.com/images/media/meals/020z181619788503.jpg',
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros."
-      },
-      {
-        id: 3,
-        name: 'Fettucine alfredo',
-        image: 'https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg',
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros."
-      },
-      {
-        id: 4,
-        name: 'Vegan Chocolate Cake',
-        image: "https://www.themealdb.com/images/media/meals/qxutws1486978099.jpg",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sapien ac nisi venenatis, id varius purus convallis. Morbi vestibulum sollicitudin maximus. Vestibulum nibh eros, vulputate quis ex vitae, hendrerit faucibus velit. Cras vitae lectus quis lorem dignissim suscipit ut sed neque. Quisque rutrum mi in sapien rhoncus, nec elementum enim posuere. Cras dignissim imperdiet dolor vitae consequat. Morbi a odio ante. Nunc ac malesuada est. Etiam fringilla non elit et commodo. Proin tempor ultrices finibus. Maecenas mattis nisi et justo pellentesque volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce sed gravida lacus, at dignissim ante. In pretium facilisis sagittis. Proin felis ipsum, ultricies ac mi eu, fermentum dapibus dolor. Integer ut congue eros."
-      },
-    ],
-      currentDummy:[
-        {
-        id: 0,
-        name: '',
-        description: '',
-        ingredients:''
-      }
-    ]
-  },
+    recipes:[],
+    ingredients:[],
+    groceryList:[],
+    ingredientList:[],
+    filter: 0
+}, // End of Store Data
   mutations: {
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
@@ -72,8 +44,26 @@ export default new Vuex.Store({
       state.user = {};
       axios.defaults.headers.common = {};
     },
-    SHOW_CURRENT_DETAIL(state, recipeID){
-      state.currentDummy = recipeID;
-    }
-  }
+    SET_RECIPES(state, data){
+      state.recipes = data;
+    },
+    SET_INGREIDENTS(state, data){
+      state.ingredients = data
+    },
+    ADD_GROCERIES(state, data){
+      state.groceryList = data
+    },
+    ADD_INGREDIENTS(state, data){
+      state.ingredientList = data
+    },
+    UPDATE_FILTER(state, filter) {
+      state.filter = filter;
+    },
+    SHOWFILTER(state) {
+      state.show = true;
+    },
+    HIDEFILTER(state) {
+      state.show = false;
+    },
+  },
 })

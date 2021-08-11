@@ -3,4 +3,4 @@
 *.iws
 *.iml
 *.ipr
-/back-end/.idea/workspace.xml
+workspace.xml
