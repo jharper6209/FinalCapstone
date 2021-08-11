@@ -7,8 +7,8 @@ INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Kosher Salt', 18);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('freshly ground Black Pepper', 18);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tbsp Butter', 18);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tbsp finely chopped Chives', 18);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('12 slices Bacon', 18);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 cups Shredded Cheddar', 18);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('12 Slices Bacon', 18);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 Cups of Shredded Cheddar', 18);
 INSERT INTO directions (recipe_id, step_directions) VALUES (18, 'In a large bowl, whisk together eggs, milk, and garlic powder and season with salt and pepper.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (18, 'In a nonstick skillet over medium heat, melt butter. Add eggs and scramble, 3 minutes, then stir in chives.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (18, 'On a cutting board, lay out three strips of bacon. Sprinkle the bottom third with cheddar and top with a large spoonful of scrambled eggs. Roll up tightly. Repeat with remaining cheese and eggs.');
@@ -30,7 +30,7 @@ INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 cups chopped Ch
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 cups Corn', 19);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 cup Shredded Cheddar', 19);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 cup Shredded Monterey Jack', 19);
-INSERT INTO directions (recipe_id, step_directions) VALUES (19, 'Preheat oven to 350°. Score zucchini and scoop out insides reserving them for later. Place zucchini halves cut side-up into bottom of 9x13 baking dish and drizzle with 1 tablespoon oil. Season with salt and pepper. Bake until zucchini turns bright green and is just beginning to soften 10 minutes.')
+INSERT INTO directions (recipe_id, step_directions) VALUES (19, 'Preheat oven to 350°. Score zucchini and scoop out insides reserving them for later. Place zucchini halves cut side-up into bottom of 9x13 baking dish and drizzle with 1 tablespoon oil. Season with salt and pepper. Bake until zucchini turns bright green and is just beginning to soften 10 minutes.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (19, 'In a large skillet over medium heat, heat oil. Add onion and reserved zucchini and cook until soft, about 5 minutes. Stir in garlic and cook until fragrant, about 1 minute more. Add ground beef, breaking up the meat with a wooden spoon. Cook until beef is no longer pink, about 6 minutes. Drain fat.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (19, 'Stir in chili powder, cumin, and paprika, then season with salt and pepper. Stir in black beans, cherry tomatoes, and corn.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (19, 'Spoon beef mixture into zucchini then top with cheeses. Bake until zucchini is just tender and cheeses are melted, about 15 minutes. Garnish with cilantro before serving.');
