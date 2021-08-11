@@ -99,12 +99,16 @@ export default {
 </script>
 
 <style scoped>
-.tutorial {
+.tutorial{
   color: white;
-  font-family: "PencilPete", cursive;
-}
+  
+  font-family: "Berkshire Swash", cursive;
 
-.tutorialLink {
+   
+  
+
+}
+.tutorialLink{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -158,7 +162,7 @@ export default {
 .answer {
   text-align: center;
 }
-.abstract > h3 > {
+.abstract>h3, .abstract>h4{
   text-align: center;
 }
 #info {
@@ -173,7 +177,8 @@ a {
 .question > h3 {
   text-align: center;
 }
-.steps {
+.steps{
+  font-family: "pencilPete";
   background-image: url("../assests/oranges.webp");
 
   background-repeat: no-repeat;

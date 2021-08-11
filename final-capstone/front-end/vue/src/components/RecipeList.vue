@@ -1,9 +1,14 @@
 <template>
-  <form @submit.prevent="addGroceriesToList">
-        <h1> What We Do </h1>
+<div class= "recipelist">
+  <div class= "abstract">
+     <h1> What We Do </h1>
     <h2> Here you can see our recipes! When clicked it will bring up the recipe details and instructions! From there you can choose your recipes and add them to your recipes. After you choose your recipes we will generate a shopping list for you. </h2>
-    <second-nav/>
-    <div
+   </div>
+   <second-nav/>
+    <div>
+  <form @submit.prevent="addGroceriesToList">
+   
+      <div
       class="form-group form-check"
       v-for="recipe in filteredRecipes"
       v-bind:key="recipe.recipeID"
@@ -23,6 +28,7 @@
       <!-- <img src="../assests/whatsfordinner.png" id="background" /> -->
     </div>
   </form>
+</div>
 </template>
 
 <script>
@@ -86,7 +92,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  flex-direction: column;
+  flex-direction: row;
   height: 100vh;
   width: 80vw;
   z-index: 1;
