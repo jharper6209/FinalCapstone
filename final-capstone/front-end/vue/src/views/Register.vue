@@ -106,13 +106,16 @@ export default {
   justify-content: center;
   color: maroon;
    font-family: "Berkshire Swash", cursive;
-     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-      background-image: url("../assests/emptyFridge.webp");
-  background-size:contain;
-
+     text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #000;
+      background-image: url("../assests/fullFridge.webp");
+        background-repeat: no-repeat;
+  background-size: cover;
   top: 0;
   left: 0;
   position: fixed;
+ 
+
+
 }
 
 .label{
@@ -167,7 +170,7 @@ export default {
   background-color: white;
   height: 50px;
   width: 300px;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 .form-control{
   font-family: "Allerta Stencil", sans-serif;

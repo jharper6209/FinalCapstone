@@ -86,13 +86,13 @@ export default {
   
 
   text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #000;
-}
-.text-center{
+
     background-image: url("../assests/fullFridge.webp");
   background-repeat: no-repeat;
-  background-size: 1500px 1000px;
+  background-size: cover;
   top: 0;
   left: 0;
+  position: fixed;
  
 }
 

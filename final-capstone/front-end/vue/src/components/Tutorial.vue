@@ -71,7 +71,9 @@
       <p class="question">
         No this is a free service!
       </p>
-      <p id="navigation">
+    </div>
+    <div class= "navigation"
+      <p>
         When you are ready head
         <span>
           <router-link v-bind:to="{ name: 'register' }"
