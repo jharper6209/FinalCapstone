@@ -1,62 +1,80 @@
 <template>
-  <div>
-    <router-link
-      class="card"
-      v-bind:to="{ name: 'recipe', params: { id: recipe.recipeID } }"
-    >
+  <div class="card">
+    <router-link class="recipeLink"  v-bind:to="{ name: 'recipe', params: { id: recipe.recipeID } }">
       <img class="plate" src="../assests/plate.png" />
       <img class="recipe-image" v-bind:src="recipe.image" />
-    </router-link>    
-    <p class="recipe-title">{{ recipe.name }}</p>
+    </router-link>
+          <p class="recipe-name">{{ recipe.name }}</p>
   </div>
 </template>
 
 <script>
-export default {    
+export default {
+    data() {
+    return {
+      checkedRecipe: [],
+    };
+  },    
   props: ["recipe"],
+  methods:{
+      addGroceriesToList() {
+      this.$store.commit("ADD_GROCERIES", this.checkedRecipe);
+      this.resetChecked();
+    },
+    resetChecked() {
+      this.checkedFood = [];
+    },
   }
+}
 </script>
 
 <style scoped>
-#labelforbox{
-    color: white;
-    font-size: 20px;
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-
-.card {
+.recipeLink {
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 50%;
-  margin-top: 25px;
   width: 300px;
   height: 300px;
   border-style: solid;
-  border-color: rgb(255, 255, 255, 0);
+  border-color: rgba(255, 255, 0, 0.0);
   border-width: 5px;
+  border-radius: 50%;
+}
+
+.recipeLink:hover {
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-width: 5px;
+  border-radius: 50%;
 }
 
 .plate {
   position: absolute;
-  width: 300px;
+  width: 290px;
   height: 300px;
   z-index: -1;
 }
 
-.card:hover {
-  border-style: solid;
-  border-color: rgba(255, 255, 0, 0.5);
-  border-width: 5px;
-}
+
 
 .recipe-image {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 60px;
-  margin-bottom: 50px;
   border-radius: 50%;
   height: 150px;
+}
+
+.recipe-name{
+  font-family: 'Open Sans', sans-serif;
+      font-size: 1.5rem;
 }
 
 .recipe-title {

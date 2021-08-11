@@ -1,6 +1,8 @@
 <template>
   <div id="navigation">
-    <h1 id="nav-header"><u>The Key Choices</u></h1>
+    <div id="nav-header">
+    <img  id="our-logo" src="../assests/logo.png"/>
+    </div>
     <table id="top-table">
       <tr>
         <router-link class="link" v-bind:to ="{name: 'home'}"><p><i class="fas fa-book"></i> ALL RECIPES</p></router-link>
@@ -13,36 +15,18 @@
         >
       </tr>
     </table>
-
-
     <table id="bottom-table">
       <tr>
-        <router-link class="link"
-        v-bind:to="{ name: 'tutorial'}"
-        >
-        <p><i class="fas fa-question-circle"></i> TUTORIAL</p>
-        </router-link>
+        <router-link class="link" v-bind:to="{ name: 'tutorial'}"><p><i class="fas fa-question-circle"></i> TUTORIAL</p></router-link>
       </tr>
       <tr>
-        <router-link class="link"
-          v-bind:to="{ name: 'logout' }"
-          v-if="$store.state.token != ''">
-          <p><i class="fas fa-sign-out-alt"></i> LOGOUT</p>
-          </router-link>
+        <router-link class="link" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"><p><i class="fas fa-sign-out-alt"></i> LOGOUT</p></router-link>
       </tr>
-    </table>
-    
+    </table>    
   </div>
 </template>
-
-<script>
-</script>
-
 <style scoped>
 #navigation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 100vh;
   top:0;
   right:0;
@@ -54,15 +38,18 @@
 }
 
 #nav-header {
-  color: white;
-  font-family: "Allerta Stencil", sans-serif;
-  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+#our-logo{
+height: 150px;
 }
 
 #top-table {
   display: flex;
   flex-direction: column;
-  height: 64vh;
+  height: 58vh;
   background-color: maroon;
 }
 

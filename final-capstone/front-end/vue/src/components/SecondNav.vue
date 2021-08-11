@@ -23,10 +23,7 @@ export default {
   width: 50px;
 }
 
-.buttons{
-  display: flex;
-  position: sticky;
-}
+
 
 .link {
   font-family: "Allerta Stencil", sans-serif;
