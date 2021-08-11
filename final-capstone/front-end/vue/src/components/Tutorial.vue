@@ -71,7 +71,9 @@
       <p class="question">
         No this is a free service!
       </p>
-      <p id="navigation">
+    </div>
+    <div class= "navigation"
+      <p>
         When you are ready head
         <span>
           <router-link v-bind:to="{ name: 'register' }"
@@ -176,7 +178,7 @@ a {
 }
 .steps{
   font-family: "pencilPete";
-  background-image: url("../assests/oranges.webp");
+  background-image: url("../assests/chalkboard.webp");
 
   background-repeat: no-repeat;
   background-size: 100%;

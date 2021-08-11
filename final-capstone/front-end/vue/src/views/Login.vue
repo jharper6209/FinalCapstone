@@ -84,12 +84,16 @@ export default {
   color: maroon;
    font-family: "Berkshire Swash", cursive;
   
-  background-image: url("../assests/chalkboard.webp");
-  background-size:cover;
+
+  text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #000;
+
+    background-image: url("../assests/fullFridge.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
   top: 0;
   left: 0;
   position: fixed;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+ 
 }
 
 .label{
@@ -140,7 +144,7 @@ margin-bottom: 20px;
   background-color: white;
   height: 50px;
   width: 300px;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 h3.mb-3.font-weight-normal{
   align-content: center;
