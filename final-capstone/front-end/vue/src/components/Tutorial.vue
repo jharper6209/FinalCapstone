@@ -52,7 +52,7 @@
     <div class="tutorialCard">
       <router-link
         class="tutorialLink"
-        v-bind:to="{ name: 'error', params: { id: recipe.id } }"
+        v-bind:to="{ name: 'error', params: { id: recipe.recipeID } }"
       >
         <div class="card">
           <img class="plate" src="../assests/plate.png" />
@@ -92,7 +92,7 @@
 export default {
   computed: {
     recipe() {
-      return this.$store.state.dummy.find((f) => f.id === 1);
+      return this.$store.state.recipes.find((f) => f.recipeID === 1);
     },
   },
 };

@@ -21,7 +21,7 @@
       <tr>
         <router-link class="link"
         v-bind:to="{ name: 'tutorial'}"
-        v-if="$store.state.token != ''">
+        >
         <p><i class="fas fa-question-circle"></i> TUTORIAL</p>
         </router-link>
       </tr>
@@ -38,8 +38,6 @@
 </template>
 
 <script>
-export default {
-}
 </script>
 
 <style scoped>
