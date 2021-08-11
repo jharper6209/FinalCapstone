@@ -179,7 +179,7 @@ a {
 }
 .steps{
   font-family: "pencilPete";
-  background-image: url("../assests/oranges.webp");
+  background-image: url("../assests/chalkboard.webp");
 
   background-repeat: no-repeat;
   background-size: 100%;
