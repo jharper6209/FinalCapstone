@@ -35,7 +35,6 @@
       <button type="submit" id="sign-in">Sign-In</button>
     </form>
     </div>
-    </div>
 </template>
 
 <script>

@@ -2,18 +2,18 @@
   <div>
     <router-link
       class="card"
-      v-bind:to="{ name: 'recipe', params: { id: card.id } }"
+      v-bind:to="{ name: 'recipe', params: { id: recipe.recipeID } }"
     >
       <img class="plate" src="../assests/plate.png" />
-      <img class="recipe-image" v-bind:src="card.image" />
+      <img class="recipe-image" v-bind:src="recipe.image" />
     </router-link>    
-    <p class="recipe-title">{{ card.name }}</p>
+    <p class="recipe-title">{{ recipe.name }}</p>
   </div>
 </template>
 
 <script>
 export default {    
-  props: ["card"],
+  props: ["recipe"],
   }
 </script>
 

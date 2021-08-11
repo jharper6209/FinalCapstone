@@ -6,7 +6,7 @@ export default{
   getRecipes(){
     return http.get('/recipe')
   },
-  getIngredient(){
+  getIngredients(){
     return http.get('/ingredient')
   }
 }
