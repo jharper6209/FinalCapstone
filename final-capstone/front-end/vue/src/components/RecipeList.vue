@@ -3,16 +3,15 @@
 
     <h1 id="listHeader">All Recipes List</h1>
     <h2 id="listDescription">
-      Here you can see our recipes! When clicked it will bring up the recipe
-      details and instructions! From there you can choose your recipes and add
-      them to your recipes. After you choose your recipes we will generate a
-      shopping list for you.
+      Here you can see our recipes! From here you can choose your recipes and add
+      them to your own list. In the future when the plates are clicked it will bring
+      up the recipe details and instructions! 
     </h2>
         <div class="buttons">
-    <button class="filterLink" v-on:click="updateFilter(0)"> Clear Filter </button>
-    <button class="filterLink" v-on:click="updateFilter(1)"> <img src="../assests/gf.png" class="icon"/> Gluten Free </button>
-    <button class="filterLink" v-on:click="updateFilter(2)"> <img src="../assests/keto.png" class="icon"/> Keto </button>
-    <button class="filterLink" v-on:click="updateFilter(4)"><img src="../assests/vegetarian.png" class="icon"/> Vegatarian </button>
+    <button class="link" v-on:click="updateFilter(0)"> Clear Filter </button>
+    <button class="link" v-on:click="updateFilter(1)"><img src="../assests/gf.png" class="icon"/> Gluten Free </button>
+    <button class="link" v-on:click="updateFilter(2)"><img src="../assests/keto.png" class="icon"/> Keto </button>
+    <button class="link" v-on:click="updateFilter(4)"><img src="../assests/vegetarian.png" class="icon"/> Vegatarian </button>
     <button class="link" v-on:click="updateFilter(5)"><img src="../assests/vegan.png" class="icon"/> Vegan </button>
     </div>
     <div class="recipeWrap">
@@ -34,7 +33,7 @@
       </div>
     </div>
     <div class="form-group">
-
+<button class="btn btn-primary">Submit</button>
       <!-- <img src="../assests/whatsfordinner.png" id="background" /> -->
     </div>
   </form>
@@ -99,6 +98,7 @@ export default {
   position: sticky;
   top:0;
   background-color: maroon;
+    justify-content: center;
 }
 .form-group{
   display: flex;
@@ -109,6 +109,7 @@ export default {
 .form-check-label{
       font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
+  border-bottom: 30px;
 }
 
 #listHeader {
@@ -126,12 +127,13 @@ export default {
 
 .recipeWrap {
   display: flex;
-  align-content: row;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .card {
   display: flex;
   width: 300px;
+  height: 400px;
 }
 .recipe-list {
   display: flex;

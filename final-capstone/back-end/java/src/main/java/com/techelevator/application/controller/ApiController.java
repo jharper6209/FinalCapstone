@@ -7,11 +7,15 @@ package com.techelevator.application.controller;
 import com.techelevator.application.dao.DirectionsDAO;
 import com.techelevator.application.dao.IngredientDAO;
 import com.techelevator.application.dao.RecipeDAO;
+// import com.techelevator.application.dao.UserRecipeDAO;
 import com.techelevator.application.jdbcdao.IngredientJDBCDAO;
 import com.techelevator.application.jdbcdao.RecipeJDBCDAO;
 import com.techelevator.application.model.Directions;
 import com.techelevator.application.model.Ingredient;
 import com.techelevator.application.model.Recipe;
+// import com.techelevator.application.model.UserRecipe;
+import com.techelevator.security.model.User;
+import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,11 +29,18 @@ public class ApiController {
     private RecipeDAO recipeDAO;
     private IngredientDAO ingredientDAO;
     private DirectionsDAO directionsDAO;
+//    private UserRecipeDAO userrecipeDAO;
 
-    public ApiController(RecipeDAO theRecipe, IngredientDAO theIngredient, DirectionsDAO theDirections) {
+    public ApiController(RecipeDAO theRecipe,
+                         IngredientDAO theIngredient,
+                         DirectionsDAO theDirections
+//            , UserRecipeDAO theUserRecipe
+                ) {
+
         recipeDAO = theRecipe;
         ingredientDAO = theIngredient;
         directionsDAO = theDirections;
+//        userrecipeDAO = theUserRecipe;
 
 
     }
@@ -77,6 +88,14 @@ public class ApiController {
         logRequest("Request to get recipeNameByCategoryId - /recipe/categoryid/" +id);
         return recipeDAO.getRecipeByCategoryId(id);
     }
+
+// Link RecipeId to UserID
+/*    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(path = "/user_recipe" , method = RequestMethod.POST)
+    public UserRecipe addRecipeToUserId(@RequestBody Recipe recipeId, User userId) {
+        logRequest("Post - /user_recipe");
+        return userrecipeDAO.addRecipeToUserId(recipeId, userId);
+    }*/
 
 
 

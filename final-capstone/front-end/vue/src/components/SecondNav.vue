@@ -3,7 +3,7 @@
     <button class="link" v-on:click="updateFilter(0)"> Clear Filter </button>
     <button class="link" v-on:click="updateFilter(1)"> <img src="../assests/gf.png" class="icon"/> Gluten Free </button>
     <button class="link" v-on:click="updateFilter(2)"> <img src="../assests/keto.png" class="icon"/> Keto </button>
-    <button class="link" v-on:click="updateFilter(4)"><img src="../assests/vegetarian.png" class="icon"/> Vegatarian </button>
+    <button class="link" v-on:click="updateFilter(4)"><img src="../assests/vegetarian.png" class="icon"/> Vegetarian </button>
     <button class="link" v-on:click="updateFilter(5)"><img src="../assests/vegan.png" class="icon"/> Vegan </button>
     </div>
 </template>
