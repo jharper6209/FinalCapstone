@@ -9,8 +9,8 @@
         <div class="buttons">
          
     <button class="link" v-on:click="updateFilter(0)"> Clear Filter </button>
-    <button class="link" v-on:click="updateFilter(1)"> <img src="../assests/gf.png" class="icon"/> Gluten Free </button>
-    <button class="link" v-on:click="updateFilter(2)"> <img src="../assests/keto.png" class="icon"/> Keto </button>
+    <button class="link" v-on:click="updateFilter(1)"><img src="../assests/gf.png" class="icon"/> Gluten Free </button>
+    <button class="link" v-on:click="updateFilter(2)"><img src="../assests/keto.png" class="icon"/> Keto </button>
     <button class="link" v-on:click="updateFilter(4)"><img src="../assests/vegetarian.png" class="icon"/> Vegatarian </button>
     <button class="link" v-on:click="updateFilter(5)"><img src="../assests/vegan.png" class="icon"/> Vegan </button>
     </div>
@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="form-group">
-
+<button class="btn btn-primary">Submit</button>
       <!-- <img src="../assests/whatsfordinner.png" id="background" /> -->
     </div>
   </form>
@@ -103,6 +103,7 @@ export default {
   
 
   margin-bottom: 100px;
+    justify-content: center;
 }
 
 .form-group{
@@ -114,6 +115,7 @@ export default {
 .form-check-label{
       font-family: "Berkshire Swash", cursive; 
   font-size: 1.5rem;
+  border-bottom: 30px;
 }
 
 #listHeader {
@@ -132,12 +134,13 @@ export default {
 
 .recipeWrap {
   display: flex;
-  align-content: row;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .card {
   display: flex;
   width: 300px;
+  height: 400px;
 }
 .recipe-list {
   display: flex;
