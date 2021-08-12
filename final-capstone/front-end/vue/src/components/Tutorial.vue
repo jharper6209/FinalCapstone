@@ -13,7 +13,7 @@
 
       <tr name="stepOne">
         <span name="first"> Step 1- </span>
-        Once you are logged click on the All Recipes tab and take time to browse
+        Once you are logged click on the 'All Recipes' tab and take time to browse
         our recipe inventory.
       </tr>
       <br />
@@ -26,19 +26,19 @@
       <br />
       <tr name="stepThree">
         <span name="third"> Step 4- </span>
-        Check the recipes that excite you. Click add to my recipes to store them
+        Check the recipes that excite you. Click 'add to my recipes' to store them
         in a personal recipe list.
       </tr>
       <br />
       <tr name="stepFour">
         <span name="fourth"> Step 5- </span>
-        Click the My Recipes tab to view and select your stored recipes.
+        Click the 'My Recipes' tab to view and select your stored recipes.
       </tr>
       <br />
       <tr name="stepFive">
         <span name="fifth"> Step 6- </span>
-        After checking the recipes for this weeks grind select the create
-        grocery list button and we'll create a customized shopping list for you.
+        After checking the recipes for this weeks grind select the 'create
+        grocery list' button and we'll create a customized shopping list for you.
       </tr>
       <br />
     </div>

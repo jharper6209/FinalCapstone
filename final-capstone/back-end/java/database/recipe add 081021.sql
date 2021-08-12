@@ -23,7 +23,7 @@ INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('Freshly Ground Blac
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 Onion chopped', 19);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 cloves Garlic minced', 19);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 tsp Chili Powder', 19);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 tsp ground Cumin', 19);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 tsp Ground Cumin', 19);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/4 tsp Paprika', 19);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 cups Black Beans', 19);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/2 cups chopped Cherry Tomatoes', 19);
@@ -36,16 +36,16 @@ INSERT INTO directions (recipe_id, step_directions) VALUES (19, 'Stir in chili p
 INSERT INTO directions (recipe_id, step_directions) VALUES (19, 'Spoon beef mixture into zucchini then top with cheeses. Bake until zucchini is just tender and cheeses are melted, about 15 minutes. Garnish with cilantro before serving.');
 INSERT INTO recipe (category_id, recipe_name, image)
 VALUES (3, 'Hoisin Glazed Pork Chops', 'http://tinyimg.io/i/5hx3jBM.JPG');
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('4 Pork chops boneless about 2 lbs', 20);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('4 Pork Chops boneless about 2 lbs', 20);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('3/4 tsp Salt', 20);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbsp Sesame oil', 20);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbsp Sesame Oil', 20);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 Garlic cloves minced', 20);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tsp Ginger minced', 20);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/3 cup Hoisin sauce', 20);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbsp Rice vinegar', 20);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1/3 cup Hoisin Sauce', 20);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbsp Rice Vinegar', 20);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbsp Water', 20);
-INSERT INTO directions (recipe_id, step_directions) VALUES (20, '1. In a small sauce pan set over medium heat. Simmer the garlic,ginger, hoisin, rice vinegar and water, whisking occasionally until the mixture is fully combined, about 4 minutes. Set aside.');
-INSERT INTO directions (recipe_id, step_directions) VALUES (20, 'Lightly salt pork chops. Heat the sesame oil in a large skillet overhigh heat. Once oil is smoking, place the pork chops in theskillet, cook without turning until well browned, 3 to 4 minutes on each side. When an instant read thermometer inserted into the thickest part registers 135°F, remove the pork chops from the pan.Transfer to a cutting board and let rest 5 minutes.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (20, 'In a small saucepan set over medium heat, simmer the garlic,ginger, hoisin, rice vinegar and water, whisking occasionally until the mixture is fully combined, about 4 minutes. Set aside.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (20, 'Lightly salt pork chops. Heat the sesame oil in a large skillet overhigh heat. Once oil is smoking, place the pork chops in theskillet, cook without turning until well browned, 3 to 4 minutes on each side. When an instant-read thermometer inserted into the thickest part registers 135°F, remove the pork chops from the pan. Transfer to a cutting board and let rest 5 minutes.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (20, 'Serve with hoisin sauce drizzled over top.');
 INSERT INTO recipe (category_id, recipe_name, image)
 VALUES (3, 'Grilled Five Spice Flank Steak', 'http://tinyimg.io/i/9ldTwda.jpg');
@@ -53,10 +53,10 @@ INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1.5 lb Flank Steak'
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tsp Salt', 21);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('½ cup Hoisin Sauce', 21);
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tbsp Chinese 5 Spice', 21);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1bag asian salad kit grab one with sesamedressing if possible)', 21);
-INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tbsp Sesame seeds optional', 21);
-INSERT INTO directions (recipe_id, step_directions) VALUES (21, ' Lightly score the surface of the flank steak with a sharp knife.Sprinkle it with salt on both sides.');
-INSERT INTO directions (recipe_id, step_directions) VALUES (21, 'Mix the hoisin and Chinese five spice in a small bowl. Pour over the flank steak on a rimmed baking sheet and coat it entirely. Marinate in the fridge for at least one hour ');
-INSERT INTO directions (recipe_id, step_directions) VALUES (21,'Heat grill to 350°F. Cook the flank steak on both sides to your desired doneness. Normally about 6 minutes per side for medium rare. We suggest using an instant read thermometer.');
-INSERT INTO directions (recipe_id, step_directions) VALUES (21, 'Rest the meat for 5 minutes before thinly slicing against thegrain.');
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 bag Asian Salad Kit (grab one with sesame dressing if possible)', 21);
+INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1 tbsp Sesame Seeds, optional', 21);
+INSERT INTO directions (recipe_id, step_directions) VALUES (21, 'Lightly score the surface of the flank steak with a sharp knife. Sprinkle it with salt on both sides.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (21, 'Mix the hoisin and Chinese five spice in a small bowl. Pour over the flank steak on a rimmed baking sheet and coat it entirely. Marinate in the fridge for at least one hour.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (21, 'Heat grill to 350°F. Cook the flank steak on both sides to your desired doneness. Normally about 6 minutes per side for medium rare. We suggest using an instant-read thermometer.');
+INSERT INTO directions (recipe_id, step_directions) VALUES (21, 'Rest the meat for 5 minutes before thinly slicing against the grain.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (21, 'Toss the salad and all the fixings in a bowl. Serve the steak with extra hoisin sauce over the salad sprinkled with sesame seeds.');
