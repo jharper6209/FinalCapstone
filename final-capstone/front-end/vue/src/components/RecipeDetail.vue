@@ -1,9 +1,10 @@
 <template>
   <div id="recipe-detail">
-      <!-- <h1 id="name">{{ recipe.name }}</h1> -->
+      <h1 id="name">{{ recipe.name }}</h1>
+      <
           <p class="recipe-title"
-      v-for="item in filteredRecipes"
-      v-bind:key="item.recipeID">{{ item.name }}
+      v-for="item in filteredIngredients"
+      v-bind:key="item.recipeID">{{ item.ingredientName }}
       </p>
   </div>    
 </template>
@@ -15,12 +16,22 @@ data(){
     currentIngredient:[],
   }
 },
-created()
-{
-  const currentRecipe = this.$route.params.id
-  this.$store.commit("SET_CURRENT_RECIPE", recipe)
-}
-}
+computed:{
+recipe(){
+    return this.$store.state.recipes.find((f) =>
+    f.recipeID === this.$route.params.id
+    )},
+    filteredSteps(){
+    return this.$store.state.directions.find((f) =>
+    f.recipeID === this.$route.params.id
+    )},
+filteredIngredients() {
+      return this.$store.state.ingredients.filter((diet) =>{
+        return diet.recipeId === this.$route.params.id
+      })
+    }
+  },
+  }
 </script>
 
 <style>

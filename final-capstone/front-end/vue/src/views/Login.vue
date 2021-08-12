@@ -1,7 +1,7 @@
 <template>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign-In To MealPlanner</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Please Sign-In To Key Choices</h1>
       
       <div
         class="alert alert-danger"
@@ -60,7 +60,7 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            this.$router.push("/Tutorial");
+            this.$router.push("/");
           }
         })
         .catch(error => {
@@ -87,13 +87,18 @@ export default {
 
   text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #000;
 
+
+  
+ 
+}
+.text-center{
     background-image: url("../assests/fullFridge.webp");
   background-repeat: no-repeat;
   background-size: cover;
   top: 0;
   left: 0;
   position: fixed;
- 
+  opacity: .8;
 }
 
 .label{

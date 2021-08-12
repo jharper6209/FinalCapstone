@@ -8,5 +8,8 @@ export default{
   },
   getIngredients(){
     return http.get('/ingredient')
+  },
+  getDirections(id){
+    return http.get('/directions/recipeid/${id}')
   }
 }
