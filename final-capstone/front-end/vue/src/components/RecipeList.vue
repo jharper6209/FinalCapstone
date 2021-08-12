@@ -101,7 +101,6 @@ export default {
   position: sticky;
   top:0;
   background-color: maroon;
-  margin-bottom: 100px;
     justify-content: center;
 }
 
