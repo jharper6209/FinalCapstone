@@ -102,7 +102,7 @@ export default {
   
   
 
-  margin-bottom: 100px;
+
     justify-content: center;
 }
 
