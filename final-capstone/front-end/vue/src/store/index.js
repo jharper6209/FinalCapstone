@@ -23,6 +23,7 @@ export default new Vuex.Store({
     user: currentUser || {},
     recipes:[],
     ingredients:[],
+    directions:[],
     groceryList:[],
     ingredientList:[],
     filter: 0

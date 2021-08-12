@@ -42,11 +42,9 @@
 <script>
 import MealService from "../services/MealService";
 import RecipeCard from "./RecipeCard.vue";
-import SecondNav from "./SecondNav.vue";
 export default {
   components: {
     RecipeCard,
-    SecondNav,
   },
   data() {
     return {

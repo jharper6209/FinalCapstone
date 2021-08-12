@@ -10,10 +10,10 @@
             <tr>
         <router-link class="link" v-bind:to="{ name: 'myRecipes' } "><p><i class="fas fa-home"></i> MY RECIPES</p></router-link>
       </tr>
-            <!-- <tr>
+            <tr>
         <router-link class="link" v-bind:to="{ name: 'grocery' }"><p><i class="fas fa-shopping-bag"></i> GROCERY LIST</p></router-link
         >
-      </tr> -->
+      </tr>
     </table>
     <table id="bottom-table">
       <tr>
@@ -35,6 +35,7 @@
   background-color: maroon;
   padding-left: 10px;
   flex-wrap: wrap;
+  align-content: center;
 }
 
 #nav-header {
@@ -55,6 +56,11 @@ height: 150px;
 
 .link {
   font-family: "Allerta Stencil", sans-serif;
+  display:flex;
+    flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   color: maroon;
   text-decoration: none;
   font-size: 30px;
@@ -62,5 +68,12 @@ height: 150px;
   height: 50px;
   width: 300px;
   margin-top: 25px;
+    border-radius: 10px;
+  align-content: center;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+    margin-top: 25px;
 }
 </style>
