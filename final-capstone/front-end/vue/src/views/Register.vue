@@ -113,6 +113,7 @@ export default {
   top: 0;
   left: 0;
   position: fixed;
+  opacity: .8;
  
 
 
