@@ -10,10 +10,10 @@
 
     <div class="steps">
       <h3 id="info"><br />How to Navigate our site:</h3>
-
-      <tr name="stepOne">
+<td class="stepList">
+      <tr id="stepOne">
         <span name="first"> Step 1- </span>
-        Once you are logged click on the All Recipes tab and take time to browse
+        Once you are logged in click on the "All Recipes" tab and take time to browse
         our recipe inventory.
       </tr>
       <br />
@@ -26,21 +26,22 @@
       <br />
       <tr name="stepThree">
         <span name="third"> Step 4- </span>
-        Check the recipes that excite you. Click add to my recipes to store them
+        Check the recipes that excite you. Click "Add to your list" to store them
         in a personal recipe list.
       </tr>
       <br />
       <tr name="stepFour">
         <span name="fourth"> Step 5- </span>
-        Click the My Recipes tab to view and select your stored recipes.
+        Click the "My Recipes" tab to view and select your stored recipes.
       </tr>
       <br />
       <tr name="stepFive">
         <span name="fifth"> Step 6- </span>
-        After checking the recipes for this weeks grind select the create
-        grocery list button and we'll create a customized shopping list for you.
+        After checking the recipes for this weeks' grind select the "Create
+        Grocery List" button and we'll create a customized shopping list for you.
       </tr>
       <br />
+      </td>
     </div>
 
     <div>
@@ -62,18 +63,9 @@
       </router-link>
     </div>
 
-    <div class="question">
-      <h3>FAQS</h3>
-      <br />
-      <p>
-        Does this cost anything?
-      </p>
-      <p class="question">
-        No this is a free service!
-      </p>
-    </div>
-    <div class= "navigation"
-      <p>
+  
+    <div class= "navigation">
+      <p> <br>
         When you are ready head
         <span>
           <router-link v-bind:to="{ name: 'register' }"
@@ -100,12 +92,12 @@ export default {
 };
 </script>
 
+
 <style scoped>
 .tutorial{
   color: white;  
   font-family: "Berkshire Swash", cursive; 
-  
-
+ 
 }
 .tutorialLink{
   display: flex;
@@ -167,20 +159,35 @@ export default {
 #info {
   text-align: center;
 }
-#navigation {
+.navigation {
   text-align: center;
+  font-size: 1.5em;
 }
 a {
   color: yellow;
 }
-.question > h3 {
-  text-align: center;
-}
+
 .steps{
+  text-indent: 10px;
   font-family: "pencilPete";
   background-image: url("../assests/chalkboard.webp");
 
   background-repeat: no-repeat;
   background-size: 100%;
+  opacity: .9;
+  height: 350px;
+  font-size: 1.25em;
+  box-shadow: 0 0 8px 8px maroon inset;
+  
+ 
 }
+.stepList{
+  text-indent: 80px;
+}
+h2{
+  text-align: center;
+}
+
+
+
 </style>
