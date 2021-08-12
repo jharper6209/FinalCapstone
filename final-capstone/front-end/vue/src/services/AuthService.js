@@ -22,18 +22,6 @@ export default {
   },
 
   register(user) {
-    return axios.post('/register', user) // path will be appended to default base url automatically
+    return axios.post('/ingredient', user) // path will be appended to default base url automatically
   },
-
-  // getRecipes(){
-  //   return axios.get('/recipe')
-  // }
-
-    // getIngredients(){
-  //   return axios.get('/ingredient')
-  // }
-
-  // getCategory(){
-  //   return axios.get('/category')
-  // }
 }

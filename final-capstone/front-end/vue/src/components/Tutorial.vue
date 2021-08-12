@@ -1,69 +1,92 @@
 <template>
   <div class="tutorial">
-    <h1>Welcome To The Structly Equal Meals!</h1>
     <div class="abstract">
-
-   <h2> Welcome to our site! </h2>
-   <h2> Let us help simplify your meal times while keeping your dietary needs in mind. </h2>
-
-	<h3> How to Navigate our site: </h3>
+      <h1 id="welcome">Welcome to our site!</h1>
+      <h2>
+        Let us help simplify your meal times while keeping your dietary needs in
+        mind.
+      </h2>
     </div>
-  <div class= "steps">
-    
-      <tr name= "stepOne"><span name= "first"> Step 1- </span>  Once you are logged in take time to browse this weeks recipes
-on the Home page.  </tr>
 
-      <tr name = "stepTwo"><span name= "second"> Step 2- </span> Click the All Recipes tab to head over to our full recipe inventory. </tr>
-      <tr name = "stepThree"><span name= "third"> Step 3-</span> Choose your dietary restrictions by choosing the icon on the top. Watch
-the list morph to one that fits you. </tr>
-      <tr name = "stepFour"><span name= "fourth"> Step 4- </span> Check the recipes that excite you. Click add to my recipes to store 
-them in a personal recipe list. </tr>
-      <tr name = "stepFive"><span name= "fifth"> Step 5- </span> Click the My Recipes tab to view your stored recipes. </tr>
-      <tr name = "stepSix"><span name= "sixth"> Step 6- </span> Check the recipes for this weeks grind and we'll create a grocery
-list for you. </tr>
-    
+    <div class="steps">
+      <h3 id="info"><br />How to Navigate our site:</h3>
 
+      <tr name="stepOne">
+        <span name="first"> Step 1- </span>
+        Once you are logged click on the 'All Recipes' tab and take time to browse
+        our recipe inventory.
+      </tr>
+      <br />
+
+      <tr name="stepTwo">
+        <span name="second"> Step 3-</span>
+        Choose your dietary restrictions by choosing the icon on the top. Watch
+        the list morph to one that fits you.
+      </tr>
+      <br />
+      <tr name="stepThree">
+        <span name="third"> Step 4- </span>
+        Check the recipes that excite you. Click 'add to my recipes' to store them
+        in a personal recipe list.
+      </tr>
+      <br />
+      <tr name="stepFour">
+        <span name="fourth"> Step 5- </span>
+        Click the 'My Recipes' tab to view and select your stored recipes.
+      </tr>
+      <br />
+      <tr name="stepFive">
+        <span name="fifth"> Step 6- </span>
+        After checking the recipes for this weeks grind select the 'create
+        grocery list' button and we'll create a customized shopping list for you.
+      </tr>
+      <br />
     </div>
-   
 
+    <div>
+      <h4 class="answer">
+        Here you can see one of our recipes! When you click the plate it will
+        bring up the recipe details and instructions!
+      </h4>
+    </div>
     <div class="tutorialCard">
-
-      <router-link class="tutorialLink"
-        v-bind:to="{ name: 'error', params: { id: recipe.id } }"
+      <router-link
+        class="tutorialLink"
+        v-bind:to="{ name: 'error', params: { id: recipe.recipeID } }"
       >
-            <div class="card">
-        <img class="plate" src="../assests/plate.png" />
+        <div class="card">
+          <img class="plate" src="../assests/plate.png" />
           <img class="recipe-image" v-bind:src="recipe.image" />
         </div>
         <h4 class="recipe-title">{{ recipe.name }}</h4>
       </router-link>
     </div>
 
-    <p class="answer">
-      Here you can see one of our recipes! When clicked it will bring up the
-      recipe details and instructions! 
-   </p>
-    <p class="question">
-      Cool what about the button at the bottom of the page?
-    </p>
-    <p class="answer">
-      This will add all the ingredidents to your Grocery List where you can
-      print or use the checklist functionality!
-    </p>
-    <p class="question">
-      All these recipes are great but I only want to see a specific one
-    </p>
-    <p class="answer">
-      Coming soon we will have a larger list of recipes for you to look at and
-      try. Once we have our library built you will be able to browse and look at
-      each recipe.
-    </p>
-        <p class="question">
-          Does this cost anything?
-          </p>
-          <p class="answer">
-            No this is a free service! If you are ready head here to sign up or if you have signed up head here to login!
-            </p>
+    <div class="question">
+      <h3>FAQS</h3>
+      <br />
+      <p>
+        Does this cost anything?
+      </p>
+      <p class="question">
+        No this is a free service!
+      </p>
+    </div>
+    <div class= "navigation"
+      <p>
+        When you are ready head
+        <span>
+          <router-link v-bind:to="{ name: 'register' }"
+            >Here
+          </router-link></span
+        >
+        sign up or if you have signed up head
+        <span>
+          <router-link v-bind:to="{ name: 'login' }">Here </router-link></span
+        >
+        to login!
+      </p>
+    </div>
   </div>
 </template>
 
@@ -71,7 +94,7 @@ list for you. </tr>
 export default {
   computed: {
     recipe() {
-      return this.$store.state.dummy.find((f) => f.id === 1);
+      return this.$store.state.recipes.find((f) => f.recipeID === 1);
     },
   },
 };
@@ -79,7 +102,10 @@ export default {
 
 <style scoped>
 .tutorial{
-  color: white;
+  color: white;  
+  font-family: "Berkshire Swash", cursive; 
+  
+
 }
 .tutorialLink{
   display: flex;
@@ -96,14 +122,14 @@ export default {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
 }
 
 .plate {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
   z-index: -1;
 }
 
@@ -123,10 +149,38 @@ export default {
 .recipe-title {
   text-align: center;
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   font-family: "Kalam", cursive;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
 
+#welcome {
+  text-align: center;
+}
+.answer {
+  text-align: center;
+}
+.abstract>h3, .abstract>h4{
+  text-align: center;
+}
+#info {
+  text-align: center;
+}
+#navigation {
+  text-align: center;
+}
+a {
+  color: yellow;
+}
+.question > h3 {
+  text-align: center;
+}
+.steps{
+  font-family: "pencilPete";
+  background-image: url("../assests/chalkboard.webp");
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 </style>

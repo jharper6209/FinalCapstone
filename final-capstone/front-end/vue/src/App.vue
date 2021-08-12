@@ -19,9 +19,14 @@ export default {
 
 <style>
 
+@font-face{
+      font-family: "PencilPete";
+      src: local("PencilPete"),
+      url(../src/assests/PencilpeteFont-2eE3.ttf) format("truetype");
+}
+
 body{
   color: white;
-  font-size: 1.5rem;
   background-color: maroon;
   height: 100vh;
   box-sizing: border-box;

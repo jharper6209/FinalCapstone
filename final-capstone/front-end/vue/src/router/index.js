@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../views/Home.vue'
+import Personal from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
@@ -29,7 +29,7 @@ const router = new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: RecipeList,
       meta: {
         requiresAuth: true
       }
@@ -91,9 +91,9 @@ const router = new Router({
       }
     },
     {
-      path: "/recipe-list",
-      name: "recipes",
-      component: RecipeList,
+      path: "/my-recipes",
+      name: "myRecipes",
+      component: Personal,
       meta:{
         requiresAuth: true
       }

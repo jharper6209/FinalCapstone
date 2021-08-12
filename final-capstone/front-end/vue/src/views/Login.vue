@@ -60,7 +60,7 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            this.$router.push("/");
+            this.$router.push("/Tutorial");
           }
         })
         .catch(error => {
@@ -81,22 +81,26 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: yellow;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.7em;
-  background-image: url("../assests/whatsfordinner.png");
+  color: maroon;
+   font-family: "Berkshire Swash", cursive;
+  
+
+  text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #000;
+
+    background-image: url("../assests/fullFridge.webp");
+  background-repeat: no-repeat;
   background-size: cover;
   top: 0;
   left: 0;
   position: fixed;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+ 
 }
 
 .label{
   padding-top: 15px;
 }
 
-.form-register{
+.form-signin{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,9 +109,10 @@ export default {
 #username, #password{
   display: flex;
   border-radius: 10px;
+    justify-content: center;
   align-content: center;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 20px;
   border-style: solid;
   border-width: 2px;
   background-color: white;
@@ -116,7 +121,7 @@ export default {
 }
 
 #register{
-  color: yellow;
+  color: maroon;
       text-align: center;
 display: flex;
 justify-content:center;
@@ -126,11 +131,11 @@ margin-bottom: 20px;
       }
 
 #sign-in{
-  font-family: "Allerta Stencil", sans-serif;
+ font-family: "Berkshire Swash", cursive;
   display: flex;
   justify-content: center;  
   align-items: center;
-  color: yellow;
+  color:maroon;
   border-radius: 10px;
   text-decoration: none;
   font-size: 30px;
@@ -139,6 +144,16 @@ margin-bottom: 20px;
   background-color: white;
   height: 50px;
   width: 300px;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+h3.mb-3.font-weight-normal{
+  align-content: center;
+}
+.form-control{
+  font-family: "Allerta Stencil", sans-serif;
+  text-align: center;
+}
+label{
+  font-size: 30px;
 }
 </style>
