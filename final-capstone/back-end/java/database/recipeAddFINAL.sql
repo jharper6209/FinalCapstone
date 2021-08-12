@@ -13,6 +13,7 @@ INSERT INTO directions (recipe_id, step_directions) VALUES (18, 'In a large bowl
 INSERT INTO directions (recipe_id, step_directions) VALUES (18, 'In a nonstick skillet over medium heat, melt butter. Add eggs and scramble, 3 minutes, then stir in chives.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (18, 'On a cutting board, lay out three strips of bacon. Sprinkle the bottom third with cheddar and top with a large spoonful of scrambled eggs. Roll up tightly. Repeat with remaining cheese and eggs.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (18, 'Return skillet to heat and add bacon roll-ups seam side down. Cook until crispy on all sides, then transfer to a paper towel-lined plate until ready to serve.');
+
 INSERT INTO recipe (category_id, recipe_name, image)
 VALUES (2, 'Burrito Zucchini Boats', 'http://tinyimg.io/i/PBTbbbc.jpg');
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('3 Zucchini Halved Lengthwise', 19);
@@ -34,6 +35,7 @@ INSERT INTO directions (recipe_id, step_directions) VALUES (19, 'Preheat oven to
 INSERT INTO directions (recipe_id, step_directions) VALUES (19, 'In a large skillet over medium heat, heat oil. Add onion and reserved zucchini and cook until soft, about 5 minutes. Stir in garlic and cook until fragrant, about 1 minute more. Add ground beef, breaking up the meat with a wooden spoon. Cook until beef is no longer pink, about 6 minutes. Drain fat.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (19, 'Stir in chili powder, cumin, and paprika, then season with salt and pepper. Stir in black beans, cherry tomatoes, and corn.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (19, 'Spoon beef mixture into zucchini then top with cheeses. Bake until zucchini is just tender and cheeses are melted, about 15 minutes. Garnish with cilantro before serving.');
+
 INSERT INTO recipe (category_id, recipe_name, image)
 VALUES (3, 'Hoisin Glazed Pork Chops', 'http://tinyimg.io/i/5hx3jBM.JPG');
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('4 Boneless Pork Chops, about 2 lbs', 20);
@@ -47,6 +49,7 @@ INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('2 tbsp Water', 20);
 INSERT INTO directions (recipe_id, step_directions) VALUES (20, 'In a small saucepan set over medium heat, simmer the garlic,ginger, hoisin, rice vinegar and water, whisking occasionally until the mixture is fully combined, about 4 minutes. Set aside.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (20, 'Lightly salt pork chops. Heat the sesame oil in a large skillet over high heat. Once oil is smoking, place the pork chops in the skillet, cook without turning until well browned, 3 to 4 minutes on each side. When an instant-read thermometer inserted into the thickest part registers 135?F, remove the pork chops from the pan. Transfer to a cutting board and let rest 5 minutes.');
 INSERT INTO directions (recipe_id, step_directions) VALUES (20, 'Serve with hoisin sauce drizzled over top.');
+
 INSERT INTO recipe (category_id, recipe_name, image)
 VALUES (3, 'Grilled Five Spice Flank Steak', 'http://tinyimg.io/i/9ldTwda.jpg');
 INSERT INTO ingredient (ingredient_name, recipe_id) VALUES ('1.5 lbs Flank Steak', 21);
