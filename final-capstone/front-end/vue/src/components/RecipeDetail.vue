@@ -22,8 +22,8 @@ recipe(){
     f.recipeID === this.$route.params.id
     )},
     filteredSteps(){
-    return this.$store.state.directions.find((f) =>
-    f.recipeID === this.$route.params.id
+    return this.$store.state.directions.filter((step) =>
+    step.recipeID === this.$route.params.id
     )},
 filteredIngredients() {
       return this.$store.state.ingredients.filter((diet) =>{

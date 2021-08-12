@@ -57,6 +57,7 @@ export default {
   created() {
     this.retrieveRecipes();
     this.retrieveIngredients();
+    this.retrieveDirections();
   },
   computed: {
     filteredRecipes() {
@@ -82,6 +83,7 @@ export default {
         this.$store.commit("SET_RECIPES", response.data);
       });
     },
+
     addGroceriesToList() {
       this.$store.commit("ADD_GROCERIES", this.checkedRecipe);
       this.resetChecked();
@@ -99,11 +101,35 @@ export default {
   position: sticky;
   top:0;
   background-color: maroon;
-  
-  
-
   margin-bottom: 100px;
     justify-content: center;
+}
+
+.link{
+    font-family: "Allerta Stencil", sans-serif;
+  display:flex;
+    flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: maroon;
+  text-decoration: none;
+  font-size: 30px;
+  background-color: white;
+  height: 50px;
+  width: 300px;
+  margin-top: 25px;
+    border-radius: 10px;
+  align-content: center;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 2px;
+  background-color: white;
+    margin-top: 25px;
+}
+
+.icon{
+  width: 50px;
 }
 
 .form-group{
