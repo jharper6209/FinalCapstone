@@ -113,10 +113,10 @@ export default {
   align-items: center;
   color: maroon;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 20px;
   background-color: white;
   height: 50px;
-  width: 300px;
+  width: 200px;
   margin-top: 25px;
     border-radius: 10px;
   align-content: center;
@@ -128,7 +128,7 @@ export default {
 }
 
 .icon{
-  width: 50px;
+  height: 30px;
 }
 
 .form-group{
