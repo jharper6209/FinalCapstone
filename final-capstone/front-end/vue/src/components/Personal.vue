@@ -1,11 +1,11 @@
 <template>
   <form @submit.prevent="addGroceriesToList">
-        <h1 id="listHeader">Your Recipes</h1>
+        <h1 id="listHeader"> My Recipes</h1>
         <h2 id="listDescription">
-      Here you can see the recipes you picked! In the future you will be able to
-      add the ingredients to a printable pdf list so you won't forget on your next
-      shopping trip!
-    </h2>
+      Here you can see the recipes you picked! 
+    </h2> 
+    <h3> Select one or select a few by choosing "Add to Grocery List" when you're done picking select "Create Grocery List" and we'll generate a list for you.
+    </h3>
     <div class="recipeWrap">
     <div
       class="form-group form-check"
@@ -24,7 +24,7 @@
     </div>
     </div>
     <div class="form-group">
-      <!-- <button class="btn btn-primary">Submit</button> -->
+      <!-- <button class="btn btn-primary">Create Grocery List</button> -->
       <!-- <img src="../assests/whatsfordinner.png" id="background" /> -->
     </div>
   </form>
@@ -55,7 +55,7 @@ export default {
 
 <style scoped>
 #listHeader {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Berkshire Swash", cursive; 
     font-size: 3rem;
   font-family: "Berkshire Swash", cursive;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
@@ -63,7 +63,7 @@ export default {
 }
 
 #listDescription{
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Berkshire Swash", cursive; 
     font-size: 1.5rem;
 }
 .recipeWrap {
@@ -110,5 +110,16 @@ export default {
   background-color: white;
   height: 50px;
   margin-top: 25px;
+}
+h1{
+  text-align: center;
+}
+ h2{
+  margin-bottom: 80px;
+  text-align: center;
+
+}
+h3{ 
+  margin-bottom: 20px;
 }
 </style>

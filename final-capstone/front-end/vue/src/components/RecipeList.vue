@@ -3,7 +3,7 @@
 
     <h1 id="listHeader">All Recipes</h1>
     <h2 id="listDescription">
-      Here you can see all of the recipes we have to share! <br> <br>
+      Here you can see all of the recipes we have to share! 
     </h2>
     <h3> Choose your dietary restriction from below: </h3> 
         <div class="buttons">
@@ -14,7 +14,9 @@
     <button class="link" v-on:click="updateFilter(4)"><img src="../assests/vegetarian.png" class="icon"/> Vegatarian </button>
     <button class="link" v-on:click="updateFilter(5)"><img src="../assests/vegan.png" class="icon"/> Vegan </button>
     </div>
-    <h3> Click a plate to view the recipe details and instructions. See one you like? You can add it to your "My Recipes" list by selecting "add to your list" and hitting "submit".</h3>
+    <div class ="instructions">
+    <h3> Click a plate to view the recipe details and instructions. See one you like? You can add it to your "My Recipes" list by selecting "Add o Your List" and hitting "Save ReEcipes".</h3>
+    </div>
     <div class="recipeWrap">
       <div
         class="form-group form-check"
@@ -23,7 +25,7 @@
       >
         <recipe-card v-bind:recipe="recipe" v-bind:key="recipe.recipeID" />
         <div>
-                          <label class="form-check-label" :for="recipe.recipeID">Add to your list?     </label>
+                          <label class="form-check-label" :for="recipe.recipeID"> Add to Your List?     </label>
         <input
           type="checkbox"
           v-model="checkedRecipe"
@@ -34,7 +36,7 @@
       </div>
     </div>
     <div class="form-group">
-<button class="btn btn-primary">Submit</button>
+<button class="btn btn-primary">Save Recipes</button>
       <!-- <img src="../assests/whatsfordinner.png" id="background" /> -->
     </div>
   </form>
@@ -161,9 +163,16 @@ export default {
 }
 h3{
   margin:0;
+  font-family: "Berkshire Swash", cursive; ;
 }
 h2{
   text-align: center;
+  margin-bottom: 80px;
+  font-family: "Berkshire Swash", cursive; 
+}
+.instructions{
+  margin-bottom: 20px;
+  font-family: "Berkshire Swash", cursive; ;
 }
 
 

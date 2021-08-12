@@ -1,7 +1,7 @@
 <template>
   <div class="tutorial">
     <div class="abstract">
-      <h1 id="welcome">Welcome to our site!</h1>
+      <h1 id="welcome">Welcome to Key Choices!</h1>
       <h2>
         Let us help simplify your meal times while keeping your dietary needs in
         mind.
@@ -186,6 +186,11 @@ a {
 }
 h2{
   text-align: center;
+  margin-bottom: 80px;
+}
+h1{
+  margin: 32.16px 0px;
+  font-size: 48px;
 }
 
 
