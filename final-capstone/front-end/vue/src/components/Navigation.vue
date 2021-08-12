@@ -10,10 +10,10 @@
             <tr>
         <router-link class="link" v-bind:to="{ name: 'myRecipes' } "><p><i class="fas fa-home"></i> MY RECIPES</p></router-link>
       </tr>
-            <tr>
+            <!-- <tr>
         <router-link class="link" v-bind:to="{ name: 'grocery' }"><p><i class="fas fa-shopping-bag"></i> GROCERY LIST</p></router-link
         >
-      </tr>
+      </tr> -->
     </table>
     <table id="bottom-table">
       <tr>
@@ -49,7 +49,7 @@ height: 150px;
 #top-table {
   display: flex;
   flex-direction: column;
-  height: 58vh;
+  height: 56vh;
   background-color: maroon;
 }
 
