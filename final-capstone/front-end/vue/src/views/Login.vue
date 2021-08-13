@@ -1,7 +1,7 @@
 <template>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign-In To Key Choices</h1>
+      <h1 class="h3 mb-3 font-weight-normal header">Please Sign-In To Key Choices</h1>
       
       <div
         class="alert alert-danger"
@@ -75,22 +75,21 @@ export default {
 </script>
 
 <style scoped>
+.header{
+   font-family: "Berkshire Swash", cursive;
+     font-size: 3rem;
+}
 #login{
   height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: maroon;
-   font-family: "Berkshire Swash", cursive;
-  
-
-  text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #000;
-
-
-  
- 
+  color: white;
+   font-family: "Open Sans", cursive;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
 }
+
 .text-center{
     background-image: url("../assests/fullFridge.webp");
   background-repeat: no-repeat;
@@ -126,17 +125,15 @@ export default {
 }
 
 #register{
-  color: maroon;
-      text-align: center;
+  color: white;
 display: flex;
 justify-content:center;
-margin-right: 45px;
 margin-top: 20px;
 margin-bottom: 20px;
-      }
-
+font-size: 1.2rem;
+}
 #sign-in{
- font-family: "Berkshire Swash", cursive;
+ font-family: "Allerta Stencil", cursive;
   display: flex;
   justify-content: center;  
   align-items: center;
@@ -149,7 +146,11 @@ margin-bottom: 20px;
   background-color: white;
   height: 50px;
   width: 300px;
-  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#sign-in:hover{
+    color: #169EF2;
 }
 h3.mb-3.font-weight-normal{
   align-content: center;

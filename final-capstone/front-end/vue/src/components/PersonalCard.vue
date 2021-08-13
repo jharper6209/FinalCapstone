@@ -1,13 +1,13 @@
 <template>
-  <div class= "card">
+  <div class= "personal-card">
     <router-link
-      class="recipeLink"
-      v-bind:to="{ name: 'recipe', params: { id: card.id } }"
+      class="personal-detail"
+      v-bind:to="{ name: 'recipe', params: { id: card.recipeID } }"
     >
       <img class="plate" src="../assests/plate.png" />
-      <img class="recipe-image" v-bind:src="card.image" />
+      <img class="personal-image" v-bind:src="card.image" />
     </router-link>    
-    <p class="recipe-name ">{{ card.name }}</p>
+    <p class="personal-name" >{{ card.name }}</p>
   </div>
 </template>
 
@@ -18,13 +18,17 @@ export default {
 </script>
 
 <style scoped>
-.card{
+.personal-card{
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 300px;
+  height: 400px;
+  margin-left:1rem;
+  margin-right: 1rem;
 }
-.recipeLink {
+.personal-detail {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,23 +41,23 @@ export default {
   border-radius: 50%;
 }
 
-.recipeLink:hover {
+.personal-detail:hover {
   border-style: solid;
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(24, 162, 248, 0.8);
   border-width: 5px;
   border-radius: 50%;
 }
 
 .plate {
   position: absolute;
-  width: 290px;
+  width: 300px;
   height: 300px;
   z-index: -1;
 }
 
 
 
-.recipe-image {
+.personal-image {
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -61,17 +65,9 @@ export default {
   height: 150px;
 }
 
-.recipe-name{
+.personal-name{
   font-family: 'Open Sans', sans-serif;
       font-size: 1.5rem;
-}
-
-.recipe-title {
-  text-align: center;
-  color: #ffffff;
-  font-size: 1.5rem;
-  font-family: "Kalam", cursive;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+      margin-top: 0rem;
 }
 </style>

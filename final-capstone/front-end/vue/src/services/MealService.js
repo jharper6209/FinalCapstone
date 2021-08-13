@@ -12,4 +12,7 @@ export default{
   getDirections(id){
     return http.get(`/directions/recipeid/${id}`)
   }
+  // getIngredients(id){
+  //   return 
+  // }
 }

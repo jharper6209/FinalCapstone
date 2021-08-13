@@ -1,13 +1,13 @@
 <template>
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal"><br>Create New Account To Starting Meal Planning Like A Boss</h1>
-      <h4>Curious before you sign up? <router-link v-bind:to="{ name: 'tutorial' }" id="tutorial">Check our tutorial!</router-link></h4>
+      <h1 class="h3 mb-3 font-weight-normal header"><br>Ready to Meal Plan Like A Boss?</h1>
+      <h4 class="header-2">Curious before you sign up? <router-link v-bind:to="{ name: 'tutorial' }" id="tutorial">Check our tutorial!</router-link></h4>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
       <div class="label">
-      <label for="username">Choose A Username</label>
+      <label for="username">Choose a Username</label>
       <input
         type="text"
         id="username"
@@ -19,7 +19,7 @@
       />
       </div>
       <div class="label">
-      <label for="password" class="label">Create Your Password</label>
+      <label for="password" class="label">Create your Password</label>
       <input
         type="password"
         id="password"
@@ -98,15 +98,23 @@ export default {
 </script>
 
 <style scoped>
+.header{
+   font-family: "Berkshire Swash", cursive;
+     font-size: 3rem;
+     margin-bottom: 0;
+}
+.header-2{
+  font-size: 1.5rem;
+}
 #register{
   height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: maroon;
-   font-family: "Berkshire Swash", cursive;
-     text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #000;
+  color: white;
+   font-family: "Open Sans", cursive;
+     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
       background-image: url("../assests/fullFridge.webp");
         background-repeat: no-repeat;
   background-size: cover;
@@ -114,9 +122,6 @@ export default {
   left: 0;
   position: fixed;
   opacity: .8;
- 
-
-
 }
 
 .label{
@@ -143,22 +148,27 @@ export default {
 }
 
 #tutorial{
-  color: maroon;
+  color: white;
   justify-content: center;
   align-items: center;
   align-content: center;
 }
 
+#tutorial:hover{
+    color: #169EF2;
+}
+
 #login{
   display: flex;
-  color: maroon;
+  color: white;
     margin-top: 20px;
     margin-bottom: 20px;
   justify-content: center;
+  font-size: 1.1rem;
 }
 
 #create{
- font-family: "Berkshire Swash", cursive;
+ font-family: "Allerta Stencil", cursive;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,6 +182,10 @@ export default {
   height: 50px;
   width: 300px;
   text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#create:hover{
+    color: #169EF2;
 }
 .form-control{
   font-family: "Allerta Stencil", sans-serif;

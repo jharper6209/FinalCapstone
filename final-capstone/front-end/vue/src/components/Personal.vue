@@ -1,33 +1,37 @@
 <template>
-  <form @submit.prevent="addGroceriesToList">
-        <h1 id="listHeader"> My Recipes</h1>
-        <h2 id="listDescription">
-      Here you can see the recipes you picked! 
-    </h2> 
-    <h3> Select one or select a few by choosing "Add to Grocery List" when you're done picking select "Create Grocery List" and we'll generate a list for you.
+  <div id="personal-list">
+    <h1 id="personal-header">My Recipes</h1>
+    <h2 id="personal-description">
+      Here you can see the recipes you picked!
+    </h2>
+    <div class="personal-instructions">
+    <h3 id="personal-choices">
+      View the details of your recipes by clicking on one of plates below. These will be saved for you for future use.
     </h3>
-    <div class="recipeWrap">
-    <div
-      class="form-group form-check"
-      v-for="select in this.$store.state.groceryList"
-      v-bind:key="select.id"
-    >
-      <personal-card v-bind:card="select" v-bind:key="select.id" />
-      <!-- <label class="form-check-label" :for="select.id">{{ select.name }}</label>
-      <input
-        type="checkbox"
-        v-model="checkedIngredient"
-
-      /> -->
-              <!-- :id="select.name" -->
-        <!-- :value="select.ingredients.name" -->
+    </div>
+    <div class="personal-container">
+      <div
+        class="single-recipe"
+        v-for="select in this.$store.state.groceryList"
+        v-bind:key="select.id"
+      >
+        <personal-card v-bind:card="select" v-bind:key="select.id" />
+                <!-- <div class="recipe-check">
+             <form id="recipe-buttons" @submit.prevent="addIngredientsToList">
+          <label class="myCheckbox" :for="select.recipeID"> Add to your grocery list?
+                      <input
+            type="checkbox"
+            v-model="checkedIngredient"
+            :id="select.recipeId"
+            :value="select"
+          />
+          </label>
+          <button>submit</button>
+          </form>
+          </div> -->
+      </div>
     </div>
     </div>
-    <div class="form-group">
-      <!-- <button class="btn btn-primary">Create Grocery List</button> -->
-      <!-- <img src="../assests/whatsfordinner.png" id="background" /> -->
-    </div>
-  </form>
 </template>
 
 <script>
@@ -42,7 +46,7 @@ export default {
     };
   },
   methods: {
-    addGroceriesToList() {
+    addIngredientsToList() {
       this.$store.commit("ADD_INGREDIENTS", this.checkedIngredient);
       this.resetChecked();
     },
@@ -54,72 +58,46 @@ export default {
 </script>
 
 <style scoped>
-#listHeader {
-    font-family: "Berkshire Swash", cursive; 
-    font-size: 3rem;
-  font-family: "Berkshire Swash", cursive;
+#personal-list{
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
 
-#listDescription{
-    font-family: "Berkshire Swash", cursive; 
-    font-size: 1.5rem;
-}
-.recipeWrap {
-  display: flex;
-  align-content: row;
-  flex-wrap: wrap;
+#personal-header {
+  font-family: "Berkshire Swash", cursive;
+  font-size: 4rem;
+  text-align: center;
+  text-shadow:none;
 }
 
-#background {
-  position: absolute;
-  z-index: -2;
-  top: 0;
-  left: 0;
-  opacity: 35%;
-  background-image: url("../assests/whatsfordinner.png");
-  background-size: cover;
-  background-position: center;
+#personal-description {
+  font-family: "Open Sans", cursive;
+  font-size: 1.5rem;
+    text-align: center;
 }
 
-#card-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-#card {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-
-#button {
-  font-family: "Allerta Stencil", sans-serif;
+.personal-instructions {
   display: flex;
   justify-content: center;
-  align-items: center;
-  color: maroon;
-  border-radius: 10px;
-  align-content: center;
-  text-decoration: none;
-  font-size: 30px;
-  border-style: solid;
-  border-width: 2px;
-  background-color: white;
-  height: 50px;
-  margin-top: 25px;
+  font-family: "Open Sans", cursive;
+  font-size: 1.2rem;
 }
-h1{
-  text-align: center;
-}
- h2{
-  margin-bottom: 80px;
-  text-align: center;
 
+#personal-choices{
+  display: flex;
+  width:58vw;
+  margin-bottom:0rem;
 }
-h3{ 
-  margin-bottom: 20px;
+
+.personal-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.single-recipe{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

@@ -26,7 +26,8 @@ export default new Vuex.Store({
     directions:[],
     groceryList:[],
     ingredientList:[],
-    filter: 0
+    filter: 0,
+    index: 1,
 }, // End of Store Data
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -60,11 +61,8 @@ export default new Vuex.Store({
     UPDATE_FILTER(state, filter) {
       state.filter = filter;
     },
-    SHOWFILTER(state) {
-      state.show = true;
-    },
-    HIDEFILTER(state) {
-      state.show = false;
-    },
+    UPDATE_INDEX(state, index){
+      state.index += 1;
+    }
   },
 })

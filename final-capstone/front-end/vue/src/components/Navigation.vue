@@ -50,7 +50,7 @@ height: 150px;
 #top-table {
   display: flex;
   flex-direction: column;
-  height: 56vh;
+  height: 66vh;
   background-color: maroon;
 }
 
@@ -75,5 +75,9 @@ height: 150px;
   border-width: 2px;
   background-color: white;
     margin-top: 25px;
+}
+
+.link:hover{
+  color: #169EF2;
 }
 </style>

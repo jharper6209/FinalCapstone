@@ -7,7 +7,7 @@
         <div class="recipe-instructions">
     <h3 id="recipe-choices">Choose your dietary restriction from below:</h3>
         </div>
-  <form id="recipe-buttons" @submit.prevent="addGroceriesToList">
+  <div id="recipe-buttons">
       <button class="recipe-link" v-on:click="updateFilter(0)">Clear Filter</button>
       <button class="recipe-link" v-on:click="updateFilter(1)">
         <img src="../assests/gf.png" class="diet-icon"/>Gluten Free</button>
@@ -17,33 +17,31 @@
         <img src="../assests/vegetarian.png" class="diet-icon"/>Vegetarian</button>
       <button class="recipe-link" v-on:click="updateFilter(5)">
         <img src="../assests/vegan.png" class="diet-icon"/>Vegan</button>
-              <button class="recipe-link" v-show="checkedRecipe != ''">Save</button>
-  </form>
+              <button v-on:click="addGroceriesToList" v-bind:class="[checkedRecipe != '' ? activeClass : inactiveClass]">{{checkedRecipe.length > 1 ? 'Save Recipes' : 'Save Recipe'}}</button>
+  </div>
     <div class="recipe-instructions">
       <h3 id="recipe-details">
-        Click a plate to view the recipe details and instructions. See one you
-        like? You can add it to your "My Recipes" list by selecting "Add o Your
-        List" and hitting "Save Recipes".
+        See one you like? You can add it to your "My Recipes" list by selecting "Add to Your
+        List" and hitting "Save Recipe(s)".
       </h3>
     </div>
-    <div id="recipe-flex-wrap">
+    <div id="recipe-container">
       <div
         class="single-recipe"
         v-for="get in filteredRecipes"
         v-bind:key="get.recipeID"
       >
         <recipe-card v-bind:getCard="get" v-bind:key="get.recipeID" />
-        <div>
-          <label class="form-check-label" :for="get.recipeID">
-            Add to Your List?
-          </label>
-          <input
+        <div class="recipe-check">
+          <label class="myCheckbox" :for="get.recipeID"> Add to your recipes?
+                      <input
             type="checkbox"
             v-model="checkedRecipe"
             :id="get.recipeID"
             :value="get"
           />
-        </div>
+          </label>
+          </div>
       </div>
     </div>
 </div>
@@ -59,13 +57,14 @@ export default {
   },
   data() {
     return {
+        activeClass: 'recipeLink',
+  inactiveClass: 'recipeInactive',
       checkedRecipe: [],
     };
   },
   created() {
     this.retrieveRecipes();
     this.retrieveIngredients();
-    this.retrieveDirections();
   },
   computed: {
     filteredRecipes() {
@@ -96,9 +95,10 @@ export default {
       this.$store.commit("ADD_GROCERIES", this.checkedRecipe);
       this.scrollToTop()
       this.resetChecked();
+      this.$router.push("/my-recipes")
     },
     resetChecked() {
-      this.checkedFood = [];
+      this.checkedRecipe = [];
     },
     scrollToTop(){
       document.body.scrollTop = 0;
@@ -109,6 +109,30 @@ export default {
 </script>
 
 <style scoped>
+
+.recipe-check{
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.myCheckbox input {
+  position: hidden;
+  z-index: -9999;
+}
+
+.myCheckbox span {
+  width: 20px;
+  height: 20px;
+  top:0;
+  right:0;
+  display: absolute;
+  background: url("../assests/keto.png");
+}
+
+.myCheckbox input:checked + span{
+  background: url("../assests/keto.png");
+}
+
 #recipeList{
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -124,13 +148,13 @@ export default {
   font-family: "Open Sans", cursive;
   font-size: 1.5rem;
     text-align: center;
-  margin-bottom: 80px;
 }
 
 .recipe-instructions {
   display: flex;
   justify-content: center;
   font-family: "Open Sans", cursive;
+  font-size: 1.2rem;
 }
 
 #recipe-choices{
@@ -167,6 +191,54 @@ export default {
   margin-right:0.3rem;
 }
 
+.recipe-link:hover{
+     color: #169EF2;
+}
+
+.recipeInactive{
+    font-family: "Allerta Stencil", sans-serif;
+  display: flex;
+  color: #cccccc;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  background-color: white;
+  height: 3rem;
+  width: 8.9rem;
+  border-radius: 10px;
+  align-content: center;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color:#000;
+  margin-left:0.3rem;
+  margin-right:0.3rem;
+}
+
+.recipeLink{
+  font-family: "Allerta Stencil", sans-serif;
+  display: flex;
+  color: #800000;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  background-color: white;
+  height: 3rem;
+  width: 8.9rem;
+  border-radius: 10px;
+  align-content: center;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color:#000;
+  margin-left:0.3rem;
+  margin-right:0.3rem;
+}
+
+.recipeLink:hover{
+  color:#169EF2
+}
+
 .diet-icon {
   height: 1.6rem;
   margin-right: 0.3rem;
@@ -184,15 +256,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
-.form-check-label {
-  font-family: "Berkshire Swash", cursive;
-  font-size: 1.5rem;
-  border-bottom: 30px;
-}
-
-#recipe-flex-wrap{
+#recipe-container{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

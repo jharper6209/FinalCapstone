@@ -1,15 +1,26 @@
 <template>
 <div class="grocery-list">
   <h1>Your List of Groceries</h1>
-    <p class="recipe-title"
-      v-for="ingredient in $store.state.ingredientList"
-      v-bind:key="ingredient.id">{{ ingredient }}
-      </p>
+          <p
+      class="detail-ingredients"
+      v-for="item in filteredIngredients"
+      v-bind:key="item.id"
+    >
+      {{ item.ingredientName }}
+    </p>
   </div>
 </template>
 
 <script>
-
+export default{
+methods:{
+filteredIngredients() {
+      return this.$store.state.ingredients.filter((diet) => {
+        return diet.recipeId === this.$store.state.ingredientList.recipeID;
+      });
+    },
+  },
+}
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
 <template>
 <div id="uh-oh">
-<h2 id="header"> Uh-oh! The content you are looking for could not be found!</h2>
+<h2 id="header">Uh-oh! If the recipe doesn't work you will see this as your error page.</h2>
 <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/2Q_ZzBGPdqE?&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </template>

@@ -4,7 +4,7 @@
       <img class="plate" src="../assests/plate.png" />
       <img class="recipe-image" v-bind:src="getCard.image" />
     </router-link>
-    <button>Remove</button>
+        <p class="recipe-name" >{{ getCard.name }}</p>
   </div>
 </template>
 
@@ -20,9 +20,10 @@ export default {
       addGroceriesToList() {
       this.$store.commit("ADD_GROCERIES", this.checkedRecipe);
       this.resetChecked();
+      this.$router.push("/my-recipes")
     },
     resetChecked() {
-      this.checkedFood = [];
+      this.checkedRecipe = [];
     },
   }
 }
@@ -36,8 +37,10 @@ export default {
   text-align: center;
   width: 300px;
   height: 400px;
-
+  margin-left:1rem;
+  margin-right: 1rem;
 }
+
 .recipe-detail {
   display: flex;
   flex-direction: column;
@@ -53,7 +56,7 @@ export default {
 
 .recipe-detail:hover {
   border-style: solid;
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color:rgba(24,162,248, 0.8);
   border-width: 5px;
   border-radius: 50%;
 }
@@ -76,14 +79,7 @@ export default {
 .recipe-name{
   font-family: 'Open Sans', sans-serif;
       font-size: 1.5rem;
-}
-
-.recipe-title {
-  text-align: center;
-  color: #ffffff;
-  font-size: 1.5rem;
-  font-family: "Kalam", cursive;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+      margin-top: 0rem;
+      margin-bottom: 0rem;
 }
 </style>
