@@ -10,6 +10,6 @@ export default{
     return http.get('/ingredient')
   },
   getDirections(id){
-    return http.get('/directions/recipeid/${id}')
+    return http.get(`/directions/recipeid/${id}`)
   }
 }

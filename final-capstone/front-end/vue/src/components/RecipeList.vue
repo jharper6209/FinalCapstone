@@ -1,45 +1,53 @@
 <template>
-  <form @submit.prevent="addGroceriesToList">
-
-    <h1 id="listHeader">All Recipes</h1>
-    <h2 id="listDescription">
-      Here you can see all of the recipes we have to share! 
+<div id="recipeList">
+    <h1 id="recipe-header">All Recipes</h1>
+    <h2 id="recipe-description">
+      Here you can see all of the recipes we have to share!
     </h2>
-    <h3> Choose your dietary restriction from below: </h3> 
-        <div class="buttons">
-         
-    <button class="link" v-on:click="updateFilter(0)"> Clear Filter </button>
-    <button class="link" v-on:click="updateFilter(1)"><img src="../assests/gf.png" class="icon"/> Gluten Free </button>
-    <button class="link" v-on:click="updateFilter(2)"><img src="../assests/keto.png" class="icon"/> Keto </button>
-    <button class="link" v-on:click="updateFilter(4)"><img src="../assests/vegetarian.png" class="icon"/> Vegatarian </button>
-    <button class="link" v-on:click="updateFilter(5)"><img src="../assests/vegan.png" class="icon"/> Vegan </button>
+        <div class="recipe-instructions">
+    <h3 id="recipe-choices">Choose your dietary restriction from below:</h3>
+        </div>
+  <form id="recipe-buttons" @submit.prevent="addGroceriesToList">
+      <button class="recipe-link" v-on:click="updateFilter(0)">Clear Filter</button>
+      <button class="recipe-link" v-on:click="updateFilter(1)">
+        <img src="../assests/gf.png" class="diet-icon"/>Gluten Free</button>
+      <button class="recipe-link" v-on:click="updateFilter(2)">
+        <img src="../assests/keto.png" class="diet-icon"/>Ketogenic</button>
+      <button class="recipe-link" v-on:click="updateFilter(4)">
+        <img src="../assests/vegetarian.png" class="diet-icon"/>Vegetarian</button>
+      <button class="recipe-link" v-on:click="updateFilter(5)">
+        <img src="../assests/vegan.png" class="diet-icon"/>Vegan</button>
+              <button class="recipe-link" v-show="checkedRecipe != ''">Save</button>
+  </form>
+    <div class="recipe-instructions">
+      <h3 id="recipe-details">
+        Click a plate to view the recipe details and instructions. See one you
+        like? You can add it to your "My Recipes" list by selecting "Add o Your
+        List" and hitting "Save Recipes".
+      </h3>
     </div>
-    <div class ="instructions">
-    <h3> Click a plate to view the recipe details and instructions. See one you like? You can add it to your "My Recipes" list by selecting "Add o Your List" and hitting "Save ReEcipes".</h3>
-    </div>
-    <div class="recipeWrap">
+    <div id="recipe-flex-wrap">
       <div
-        class="form-group form-check"
-        v-for="recipe in filteredRecipes"
-        v-bind:key="recipe.recipeID"
+        class="single-recipe"
+        v-for="get in filteredRecipes"
+        v-bind:key="get.recipeID"
       >
-        <recipe-card v-bind:recipe="recipe" v-bind:key="recipe.recipeID" />
+        <recipe-card v-bind:getCard="get" v-bind:key="get.recipeID" />
         <div>
-                          <label class="form-check-label" :for="recipe.recipeID"> Add to Your List?     </label>
-        <input
-          type="checkbox"
-          v-model="checkedRecipe"
-          :id="recipe.recipeID"
-          :value="recipe"
-        />
+          <label class="form-check-label" :for="get.recipeID">
+            Add to Your List?
+          </label>
+          <input
+            type="checkbox"
+            v-model="checkedRecipe"
+            :id="get.recipeID"
+            :value="get"
+          />
         </div>
       </div>
     </div>
-    <div class="form-group">
-<button class="btn btn-primary">Save Recipes</button>
-      <!-- <img src="../assests/whatsfordinner.png" id="background" /> -->
-    </div>
-  </form>
+</div>
+
 </template>
 
 <script>
@@ -86,87 +94,110 @@ export default {
 
     addGroceriesToList() {
       this.$store.commit("ADD_GROCERIES", this.checkedRecipe);
+      this.scrollToTop()
       this.resetChecked();
     },
     resetChecked() {
       this.checkedFood = [];
+    },
+    scrollToTop(){
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     },
   },
 };
 </script>
 
 <style scoped>
-.buttons{
-  display: flex;
-  position: sticky;
-  top:0;
-  background-color: maroon;
-    justify-content: center;
+#recipeList{
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+#recipe-header {
+  font-family: "Berkshire Swash", cursive;
+  font-size: 4rem;
+  text-align: center;
+  text-shadow:none;
 }
 
-.link{
-    font-family: "Allerta Stencil", sans-serif;
-  display:flex;
-    flex-wrap: wrap;
-  flex-direction: row;
+#recipe-description {
+  font-family: "Open Sans", cursive;
+  font-size: 1.5rem;
+    text-align: center;
+  margin-bottom: 80px;
+}
+
+.recipe-instructions {
+  display: flex;
+  justify-content: center;
+  font-family: "Open Sans", cursive;
+}
+
+#recipe-choices{
+  display: flex;
+  width:58vw;
+  margin-bottom:0rem;
+}
+
+#recipe-buttons{
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: none;
+  justify-content: center;
+}
+
+.recipe-link{
+  font-family: "Allerta Stencil", sans-serif;
+  display: flex;
+  color: #800000;
   justify-content: center;
   align-items: center;
-  color: maroon;
-  text-decoration: none;
-  font-size: 20px;
+  font-size: 1.2rem;
   background-color: white;
-  height: 50px;
-  width: 200px;
-  margin-top: 25px;
-    border-radius: 10px;
+  height: 3rem;
+  width: 8.9rem;
+  border-radius: 10px;
   align-content: center;
   text-decoration: none;
   border-style: solid;
-  border-width: 2px;
-  background-color: white;
-    margin-top: 25px;
+  border-width: 0.1rem;
+  border-color:#000;
+  margin-left:0.3rem;
+  margin-right:0.3rem;
 }
 
-.icon{
-  height: 30px;
+.diet-icon {
+  height: 1.6rem;
+  margin-right: 0.3rem;
 }
 
-.form-group{
+#recipe-details{
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+      width: 58vw;
+      text-align:justify;
+}
+
+
+.single-recipe{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.form-check-label{
-      font-family: "Berkshire Swash", cursive; 
+.form-check-label {
+  font-family: "Berkshire Swash", cursive;
   font-size: 1.5rem;
   border-bottom: 30px;
 }
 
-#listHeader {
-    font-family: "Berkshire Swash", cursive; 
-    font-size: 3rem;
-  font-family: "Berkshire Swash", cursive;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-    text-align: center;
-}
-
-#listDescription{
-    font-family: "Berkshire Swash", cursive; 
-    font-size: 1.5rem;
-}
-
-.recipeWrap {
+#recipe-flex-wrap{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-.card {
-  display: flex;
-  width: 300px;
-  height: 400px;
-}
+
 .recipe-list {
   display: flex;
   align-items: center;
@@ -176,27 +207,5 @@ export default {
   width: 80vw;
   z-index: 1;
 }
-
-#background {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 35%;
-}
-h3{
-  margin:0;
-  font-family: "Berkshire Swash", cursive; ;
-}
-h2{
-  text-align: center;
-  margin-bottom: 80px;
-  font-family: "Berkshire Swash", cursive; 
-}
-.instructions{
-  margin-bottom: 20px;
-  font-family: "Berkshire Swash", cursive; ;
-}
-
 
 </style>

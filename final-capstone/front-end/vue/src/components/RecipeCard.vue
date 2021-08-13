@@ -1,8 +1,8 @@
 <template>
-  <div class="card">
-    <router-link class="recipeLink"  v-bind:to="{ name: 'recipe', params: { id: recipe.recipeID } }">
+  <div class="recipe-card">
+    <router-link class="recipe-detail"  v-bind:to="{ name: 'recipe', params: { id: getCard.recipeID } }">
       <img class="plate" src="../assests/plate.png" />
-      <img class="recipe-image" v-bind:src="recipe.image" />
+      <img class="recipe-image" v-bind:src="getCard.image" />
     </router-link>
     <button>Remove</button>
   </div>
@@ -15,7 +15,7 @@ export default {
       checkedRecipe: [],
     };
   },    
-  props: ["recipe"],
+  props: ["getCard"],
   methods:{
       addGroceriesToList() {
       this.$store.commit("ADD_GROCERIES", this.checkedRecipe);
@@ -29,13 +29,16 @@ export default {
 </script>
 
 <style scoped>
-.card{
+.recipe-card{
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 300px;
+  height: 400px;
+
 }
-.recipeLink {
+.recipe-detail {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,7 +51,7 @@ export default {
   border-radius: 50%;
 }
 
-.recipeLink:hover {
+.recipe-detail:hover {
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.5);
   border-width: 5px;
@@ -57,12 +60,10 @@ export default {
 
 .plate {
   position: absolute;
-  width: 290px;
+  width: 300px;
   height: 300px;
   z-index: -1;
 }
-
-
 
 .recipe-image {
   display: flex;
