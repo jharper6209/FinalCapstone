@@ -9,7 +9,7 @@
         v-if="invalidCredentials"
       >Invalid Username And Password!</div>
             <div class="label">
-      <label for="username">Enter Your Username</label>
+      <label for="username">Enter your Username</label>
       <input
         type="text"
         id="username"
@@ -21,7 +21,7 @@
       />
             </div>
       <div class="label">
-      <label for="password">Enter Your Password</label>
+      <label for="password">Enter your Password</label>
       <input
         type="password"
         id="password"

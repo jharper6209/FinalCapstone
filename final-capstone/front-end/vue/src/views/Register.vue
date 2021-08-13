@@ -19,7 +19,7 @@
       />
       </div>
       <div class="label">
-      <label for="password" class="label">Create your Password</label>
+      <label for="password" class="label">Choose a Password</label>
       <input
         type="password"
         id="password"
@@ -28,6 +28,7 @@
         v-model="user.password"
         required
       />
+            <label for="password" class="label second">and once more to be sure...</label>
       <input
         type="password"
         id="confirmPassword"
@@ -126,6 +127,10 @@ export default {
 
 .label{
   padding-top: 15px;
+}
+
+.second{
+  font-size: 1.5rem;
 }
 
 .form-register{
